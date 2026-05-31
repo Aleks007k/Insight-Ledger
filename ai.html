@@ -976,6 +976,154 @@
       </div>
     </div>
   </nav>
+  
+<!-- ========================================== -->
+<!-- START: AI CATEGORY CONTENT (Вставлять сюда) -->
+<!-- ========================================== -->
+<style>
+    /* Изолированные стили только для страницы AI */
+    #ai-category-page {
+        padding: 100px 20px 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: #ffffff;
+        font-family: sans-serif;
+    }
+    
+    .ai-hero {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .ai-hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .ai-hero p {
+        color: #a0aec0;
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .ai-articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .ai-card {
+        background: #111827;
+        border: 1px solid #1f2937;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .ai-card:hover {
+        transform: translateY(-8px);
+        border-color: #4facfe;
+        box-shadow: 0 10px 30px rgba(79, 172, 254, 0.1);
+    }
+
+    .ai-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .ai-card-body {
+        padding: 24px;
+    }
+
+    .ai-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        background: rgba(79, 172, 254, 0.1);
+        color: #4facfe;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+
+    .ai-card-body h3 {
+        font-size: 1.4rem;
+        margin-top: 0;
+        margin-bottom: 12px;
+        color: #f3f4f6;
+    }
+
+    .ai-card-body p {
+        color: #9ca3af;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    .ai-read-btn {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.2s;
+    }
+
+    .ai-read-btn:hover {
+        color: #4facfe;
+    }
+</style>
+
+<main id="ai-category-page">
+    <div class="ai-hero">
+        <h1>Artificial Intelligence</h1>
+        <p>Погрузитесь в мир нейросетей, машинного обучения и технологий, которые прямо сейчас меняют будущее человечества.</p>
+    </div>
+
+    <div class="ai-articles-grid">
+        <!-- Статья 1 -->
+        <article class="ai-card">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="Нейросети">
+            <div class="ai-card-body">
+                <span class="ai-badge">LLM Модели</span>
+                <h3>Эволюция языковых моделей в 2026 году</h3>
+                <p>Как новые алгоритмы научились понимать скрытый контекст и почему размер базы данных больше не имеет решающего значения.</p>
+                <a href="#" class="ai-read-btn">Читать статью <span>&rarr;</span></a>
+            </div>
+        </article>
+
+        <!-- Статья 2 -->
+        <article class="ai-card">
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" alt="Робототехника">
+            <div class="ai-card-body">
+                <span class="ai-badge">Робототехника</span>
+                <h3>ИИ выходит в физический мир</h3>
+                <p>Интеграция ИИ в человекоподобных роботов: как машины учатся выполнять бытовые задачи с помощью визуального анализа.</p>
+                <a href="#" class="ai-read-btn">Читать статью <span>&rarr;</span></a>
+            </div>
+        </article>
+
+        <!-- Статья 3 -->
+        <article class="ai-card">
+            <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&q=80&w=800" alt="Этика ИИ">
+            <div class="ai-card-body">
+                <span class="ai-badge">Безопасность</span>
+                <h3>Проблема галлюцинаций нейросетей</h3>
+                <p>Разработчики предложили новый метод самопроверки ИИ, который снижает процент выдуманных фактов до рекордных 0.1%.</p>
+                <a href="#" class="ai-read-btn">Читать статью <span>&rarr;</span></a>
+            </div>
+        </article>
+    </div>
+</main>
+<!-- ========================================== -->
+<!-- END: AI CATEGORY CONTENT -->
+<!-- ========================================== -->
 
   <!-- ═══════════════════ FOOTER ═══════════════════ -->
   <footer class="footer">
