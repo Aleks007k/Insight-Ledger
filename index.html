@@ -1,11 +1,1566 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Insight Ledger</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insight Ledger — Intelligence for the Informed</title>
+  <meta name="description" content="Insight Ledger tracks the signals that move markets, reshape industries, and define tomorrow. AI, finance, business, fintech, crypto." />
+  <meta property="og:title" content="Insight Ledger — Intelligence for the Informed" />
+  <meta property="og:description" content="Signal over noise. AI, finance, and fintech intelligence for serious readers." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════
+       DESIGN SYSTEM — INSIGHT LEDGER
+    ═══════════════════════════════════════ */
+    :root {
+      --bg-deep:       #080c14;
+      --bg-base:       #0d1321;
+      --bg-card:       #111827;
+      --bg-card-hover: #141f30;
+      --bg-subtle:     #1a2235;
+
+      --border:        rgba(255,255,255,0.07);
+      --border-accent: rgba(56,189,248,0.25);
+
+      --text-primary:  #f0f4f8;
+      --text-secondary:#94a3b8;
+      --text-muted:    #4b6080;
+
+      --accent:        #38bdf8;        /* electric cyan */
+      --accent-dim:    rgba(56,189,248,0.12);
+      --accent-glow:   rgba(56,189,248,0.06);
+      --emerald:       #10b981;
+      --amber:         #f59e0b;
+      --rose:          #f43f5e;
+
+      --font-display:  'Playfair Display', Georgia, serif;
+      --font-sans:     'DM Sans', system-ui, sans-serif;
+      --font-mono:     'DM Mono', monospace;
+
+      --radius-sm:     4px;
+      --radius-md:     8px;
+      --radius-lg:     12px;
+
+      --shadow-card:   0 1px 3px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
+      --shadow-glow:   0 0 40px rgba(56,189,248,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ═══════════════════════════════════════
+       UTILITY
+    ═══════════════════════════════════════ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 3px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      border: 1px solid rgba(56,189,248,0.18);
+    }
+    .tag.finance { background: rgba(16,185,129,0.12); color: var(--emerald); border-color: rgba(16,185,129,0.2); }
+    .tag.crypto  { background: rgba(245,158,11,0.12); color: var(--amber);   border-color: rgba(245,158,11,0.2); }
+    .tag.business{ background: rgba(244,63,94,0.1);  color: var(--rose);    border-color: rgba(244,63,94,0.18); }
+
+    /* ═══════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(8,12,20,0.82);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+    .nav-logo-mark {
+      width: 28px; height: 28px;
+      background: var(--accent);
+      border-radius: 4px;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--bg-deep);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--text-primary);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { color: var(--text-primary); border-color: rgba(255,255,255,0.15); }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-deep);
+      font-weight: 600;
+    }
+    .btn-primary:hover { background: #7dd3fc; box-shadow: 0 0 20px rgba(56,189,248,0.3); }
+
+    /* ═══════════════════════════════════════
+       LIVE TICKER
+    ═══════════════════════════════════════ */
+    .ticker-bar {
+      margin-top: 60px;
+      background: var(--bg-base);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      height: 36px;
+      display: flex;
+      align-items: center;
+    }
+    .ticker-label {
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 0 16px;
+      border-right: 1px solid var(--border);
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .ticker-scroll {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 0;
+      animation: ticker 35s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-secondary);
+      padding: 0 28px;
+      border-right: 1px solid var(--border);
+    }
+    .ticker-item .up   { color: var(--emerald); }
+    .ticker-item .down { color: var(--rose); }
+
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      position: relative;
+      padding: 80px 0 72px;
+      overflow: hidden;
+    }
+
+    /* Subtle grid overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(56,189,248,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,189,248,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* Glow blob */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, rgba(56,189,248,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hero-left {}
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(56,189,248,0.4); }
+      50%       { opacity: 0.7; box-shadow: 0 0 0 6px rgba(56,189,248,0); }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 440px;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-stat-value {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* Featured story card (right side of hero) */
+    .hero-feature {
+      position: relative;
+    }
+    .hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .hero-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-glow);
+    }
+    .hero-card-img {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #0f1e33 0%, #0d2040 50%, #091830 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-card-img-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(56,189,248,0.04) 30px, rgba(56,189,248,0.04) 31px),
+        repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(56,189,248,0.04) 30px, rgba(56,189,248,0.04) 31px);
+    }
+    .hero-card-img-label {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 700;
+      color: rgba(56,189,248,0.15);
+      letter-spacing: -0.03em;
+      text-align: center;
+      line-height: 1;
+    }
+    .hero-card-body { padding: 24px; }
+    .hero-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .hero-card-time {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .hero-card-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .hero-card-dek {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .hero-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-card-author {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+    .avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #818cf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--bg-deep);
+      flex-shrink: 0;
+    }
+    .read-link {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: gap 0.2s;
+    }
+    .read-link:hover { gap: 9px; }
+
+    /* ═══════════════════════════════════════
+       SECTION HEADERS
+    ═══════════════════════════════════════ */
+    .section { padding: 64px 0; }
+    .section + .section { border-top: 1px solid var(--border); }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      gap: 16px;
+    }
+    .section-header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+    .section-line {
+      width: 36px; height: 2px;
+      background: var(--accent);
+      border-radius: 1px;
+    }
+    .view-all {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: gap 0.2s;
+      flex-shrink: 0;
+    }
+    .view-all:hover { gap: 9px; }
+
+    /* ═══════════════════════════════════════
+       ARTICLE CARDS
+    ═══════════════════════════════════════ */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .cards-grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+      cursor: pointer;
+    }
+    .card:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-2px);
+    }
+
+    .card-thumb {
+      height: 160px;
+      background: var(--bg-subtle);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-thumb-inner {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #0f1e33, #0a1628);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-thumb-icon {
+      font-size: 36px;
+      opacity: 0.18;
+      user-select: none;
+    }
+
+    .card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .card-date {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      flex: 1;
+    }
+    .card-dek {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .card-readtime {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    /* ═══════════════════════════════════════
+       LATEST UPDATES — LIST VIEW
+    ═══════════════════════════════════════ */
+    .latest-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 32px;
+    }
+
+    .latest-list { display: flex; flex-direction: column; }
+
+    .latest-item {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .latest-item:first-child { padding-top: 0; }
+    .latest-item:last-child { border-bottom: none; }
+    .latest-item:hover .latest-title { color: var(--accent); }
+
+    .latest-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      padding-top: 3px;
+      min-width: 24px;
+    }
+    .latest-content { flex: 1; }
+    .latest-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 7px;
+    }
+    .latest-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      transition: color 0.2s;
+    }
+    .latest-dek {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .latest-thumb {
+      width: 90px;
+      height: 70px;
+      background: var(--bg-subtle);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      opacity: 0.3;
+      flex-shrink: 0;
+    }
+
+    /* Sidebar */
+    .sidebar {}
+    .sidebar-title {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .signals-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .signal-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .signal-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .signal-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .signal-dot.green { background: var(--emerald); }
+    .signal-dot.amber { background: var(--amber); }
+    .signal-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .signal-time {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 3px;
+    }
+
+    /* ═══════════════════════════════════════
+       TOPIC BLOCKS
+    ═══════════════════════════════════════ */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .topic-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .topic-pill:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+    }
+    .topic-pill.active {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .topic-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .topic-count {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+    .topic-icon { font-size: 18px; }
+
+    /* ═══════════════════════════════════════
+       NEWSLETTER
+    ═══════════════════════════════════════ */
+    .newsletter {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg);
+      padding: 64px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .newsletter::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 500px; height: 200px;
+      background: radial-gradient(ellipse, rgba(56,189,248,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .newsletter-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .newsletter-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+    .newsletter-sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 440px;
+      margin: 0 auto 20px;
+    }
+    .newsletter-input {
+      flex: 1;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 11px 16px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .newsletter-input::placeholder { color: var(--text-muted); }
+    .newsletter-input:focus { border-color: var(--accent); }
+    .newsletter-note {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ═══════════════════════════════════════
+       ABOUT / EDITORIAL TRANSPARENCY
+    ═══════════════════════════════════════ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .about-left {}
+    .about-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .about-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .about-body {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .about-principles {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .principle {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .principle-icon {
+      width: 32px; height: 32px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(56,189,248,0.2);
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .principle-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      padding-top: 6px;
+    }
+    .principle-text strong { color: var(--text-primary); font-weight: 500; }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 0 32px;
+      background: var(--bg-base);
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .footer-brand-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 240px;
+    }
+    .footer-col-title {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .footer-socials {
+      display: flex;
+      gap: 14px;
+    }
+    .social-link {
+      width: 32px; height: 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .social-link:hover { color: var(--accent); border-color: var(--border-accent); }
+
+    /* ═══════════════════════════════════════
+       SCROLL REVEAL
+    ═══════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════
+       MOBILE
+    ═══════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .hero-inner      { grid-template-columns: 1fr; gap: 40px; }
+      .cards-grid      { grid-template-columns: 1fr 1fr; }
+      .latest-layout   { grid-template-columns: 1fr; }
+      .sidebar         { display: none; }
+      .topics-grid     { grid-template-columns: repeat(2, 1fr); }
+      .newsletter      { padding: 40px 24px; }
+      .about-grid      { grid-template-columns: 1fr; }
+      .footer-top      { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-links       { display: none; }
+      .cards-grid      { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .footer-top      { grid-template-columns: 1fr; }
+      .footer-bottom   { flex-direction: column; gap: 16px; text-align: center; }
+      .hero-stats      { gap: 24px; }
+      .hero-badge      { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Insight Ledger</h1>
-  <p>Signals from AI, finance and business.</p>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Insight Ledger Home">
+      <div class="nav-logo-mark">IL</div>
+      Insight Ledger
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/ai">AI</a></li>
+      <li><a href="/category/finance">Finance</a></li>
+      <li><a href="/category/crypto">Crypto</a></li>
+      <li><a href="/category/business">Business</a></li>
+      <li><a href="/category/fintech">Fintech</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="btn btn-ghost">Search</button>
+      <a href="#newsletter" class="btn btn-primary">Subscribe</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════ TICKER ═══════════════════ -->
+<div class="ticker-bar" role="marquee" aria-label="Live market signals">
+  <div class="ticker-label">Signals</div>
+  <div class="ticker-scroll">
+    <div class="ticker-track" id="tickerTrack">
+      <span class="ticker-item">BTC <span class="up">+2.4%</span> $97,840</span>
+      <span class="ticker-item">ETH <span class="up">+1.7%</span> $3,620</span>
+      <span class="ticker-item">S&P 500 <span class="down">−0.3%</span> 5,281</span>
+      <span class="ticker-item">NASDAQ <span class="up">+0.5%</span> 18,440</span>
+      <span class="ticker-item">Gold <span class="up">+0.9%</span> $2,341</span>
+      <span class="ticker-item">Fed Rate <span class="up">5.25%</span></span>
+      <span class="ticker-item">AI Index <span class="up">+4.2%</span></span>
+      <span class="ticker-item">NVDA <span class="up">+3.1%</span> $887</span>
+      <!-- duplicate for seamless loop -->
+      <span class="ticker-item">BTC <span class="up">+2.4%</span> $97,840</span>
+      <span class="ticker-item">ETH <span class="up">+1.7%</span> $3,620</span>
+      <span class="ticker-item">S&P 500 <span class="down">−0.3%</span> 5,281</span>
+      <span class="ticker-item">NASDAQ <span class="up">+0.5%</span> 18,440</span>
+      <span class="ticker-item">Gold <span class="up">+0.9%</span> $2,341</span>
+      <span class="ticker-item">Fed Rate <span class="up">5.25%</span></span>
+      <span class="ticker-item">AI Index <span class="up">+4.2%</span></span>
+      <span class="ticker-item">NVDA <span class="up">+3.1%</span> $887</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-inner">
+    <div class="hero-left reveal">
+      <div class="hero-badge">Live editorial — May 31, 2026</div>
+      <h1 class="hero-title">
+        Signal over<br><em>noise.</em>
+      </h1>
+      <p class="hero-sub">
+        Insight Ledger tracks the forces reshaping AI, finance, and the global economy — with the depth serious readers demand and the clarity they deserve.
+      </p>
+      <div class="hero-actions">
+        <a href="#newsletter" class="btn btn-primary">Get the briefing →</a>
+        <a href="/news" class="btn btn-ghost">Browse all stories</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-value">5</div>
+          <div class="hero-stat-label">Topics covered</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">Daily</div>
+          <div class="hero-stat-label">Fresh intelligence</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">100%</div>
+          <div class="hero-stat-label">Editorial integrity</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-feature reveal">
+      <article class="hero-card" aria-label="Featured story">
+        <div class="hero-card-img">
+          <div class="hero-card-img-pattern"></div>
+          <div class="hero-card-img-label">AI×<br>Finance</div>
+        </div>
+        <div class="hero-card-body">
+          <div class="hero-card-meta">
+            <span class="tag">AI</span>
+            <span class="hero-card-time">Today · 6 min read</span>
+          </div>
+          <h2 class="hero-card-title">
+            The Quiet Infrastructure Shift That Could Rewrite Capital Allocation
+          </h2>
+          <p class="hero-card-dek">
+            As large language models begin operating autonomously within trading desks, a new class of financial infrastructure is emerging — one that regulators have yet to fully map.
+          </p>
+          <div class="hero-card-footer">
+            <div class="hero-card-author">
+              <div class="avatar">AR</div>
+              <span>Alex Reeve · Editorial</span>
+            </div>
+            <a href="/article/ai-infrastructure-capital-allocation" class="read-link">
+              Read →
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TOP STORIES ═══════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-line"></div>
+        <h2 class="section-title">Top Stories</h2>
+      </div>
+      <a href="/news" class="view-all">All stories →</a>
+    </div>
+    <div class="cards-grid">
+
+      <article class="card reveal" style="transition-delay:0.05s">
+        <div class="card-thumb"><div class="card-thumb-inner"><span class="card-thumb-icon">📊</span></div></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="tag finance">Finance</span><span class="card-date">May 31</span></div>
+          <h3 class="card-title">Why the Fed's Next Move Has Every Asset Manager on Edge</h3>
+          <p class="card-dek">Two competing inflation signals are creating an unusual impasse at the Federal Open Market Committee — and the resolution could reshape bond markets through year-end.</p>
+          <div class="card-footer">
+            <span class="card-readtime">5 min read</span>
+            <a href="/article/fed-next-move" class="read-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" style="transition-delay:0.1s">
+        <div class="card-thumb"><div class="card-thumb-inner"><span class="card-thumb-icon">🪙</span></div></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="tag crypto">Crypto</span><span class="card-date">May 30</span></div>
+          <h3 class="card-title">Bitcoin's Institutional Accumulation Phase Is Entering a New Stage</h3>
+          <p class="card-dek">On-chain data points to a pattern not seen since early 2023: large wallets are absorbing supply at a rate that historically precedes sustained price discovery.</p>
+          <div class="card-footer">
+            <span class="card-readtime">7 min read</span>
+            <a href="/article/bitcoin-institutional-phase" class="read-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" style="transition-delay:0.15s">
+        <div class="card-thumb"><div class="card-thumb-inner"><span class="card-thumb-icon">🏢</span></div></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="tag business">Business</span><span class="card-date">May 29</span></div>
+          <h3 class="card-title">The CFO Playbook Has Changed. Here's What the Data Shows</h3>
+          <p class="card-dek">A survey of 400 finance chiefs reveals a structural shift in how capital expenditure decisions are being made — AI tools are no longer optional inputs.</p>
+          <div class="card-footer">
+            <span class="card-readtime">4 min read</span>
+            <a href="/article/cfo-playbook-ai" class="read-link">Read →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ LATEST UPDATES ═══════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-line"></div>
+        <h2 class="section-title">Latest Updates</h2>
+      </div>
+      <a href="/news" class="view-all">Full feed →</a>
+    </div>
+
+    <div class="latest-layout">
+      <div class="latest-list">
+
+        <article class="latest-item reveal">
+          <div class="latest-num">01</div>
+          <div class="latest-content">
+            <div class="latest-meta">
+              <span class="tag">AI</span>
+              <span class="card-date">2h ago · 5 min</span>
+            </div>
+            <h3 class="latest-title">Anthropic Releases New Reasoning Benchmark That Challenges GPT-4o on Long-Form Tasks</h3>
+            <p class="latest-dek">The new evaluation suite exposes performance gaps in sequential reasoning that have significant implications for enterprise deployments.</p>
+          </div>
+          <div class="latest-thumb">🤖</div>
+        </article>
+
+        <article class="latest-item reveal" style="transition-delay:0.05s">
+          <div class="latest-num">02</div>
+          <div class="latest-content">
+            <div class="latest-meta">
+              <span class="tag finance">Finance</span>
+              <span class="card-date">4h ago · 3 min</span>
+            </div>
+            <h3 class="latest-title">European Central Bank Signals Cautious Approach to CBDC Timeline</h3>
+            <p class="latest-dek">ECB officials walk back earlier enthusiasm for a 2027 digital euro launch, citing unresolved privacy and interoperability concerns.</p>
+          </div>
+          <div class="latest-thumb">🏦</div>
+        </article>
+
+        <article class="latest-item reveal" style="transition-delay:0.1s">
+          <div class="latest-num">03</div>
+          <div class="latest-content">
+            <div class="latest-meta">
+              <span class="tag crypto">Crypto</span>
+              <span class="card-date">6h ago · 4 min</span>
+            </div>
+            <h3 class="latest-title">BlackRock's Bitcoin ETF Crosses $25B AUM — What It Means for Market Structure</h3>
+            <p class="latest-dek">The milestone reshapes assumptions about institutional crypto exposure and creates new hedging dynamics in the derivatives market.</p>
+          </div>
+          <div class="latest-thumb">📈</div>
+        </article>
+
+        <article class="latest-item reveal" style="transition-delay:0.15s">
+          <div class="latest-num">04</div>
+          <div class="latest-content">
+            <div class="latest-meta">
+              <span class="tag business">Business</span>
+              <span class="card-date">Yesterday · 6 min</span>
+            </div>
+            <h3 class="latest-title">Stripe's Valuation Question Returns as IPO Window Reopens</h3>
+            <p class="latest-dek">With public market conditions improving, pressure is mounting on Stripe's leadership to clarify its path to liquidity — and new revenue data complicates the picture.</p>
+          </div>
+          <div class="latest-thumb">💳</div>
+        </article>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-title">Today's Signals</div>
+        <div class="signals-card">
+          <div class="signal-item">
+            <div class="signal-dot"></div>
+            <div>
+              <div class="signal-text">Fed minutes language shift suggests rate cut delayed to Q4</div>
+              <span class="signal-time">08:42 AM</span>
+            </div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot green"></div>
+            <div>
+              <div class="signal-text">NVDA up 3.1% on enterprise AI compute demand revisions</div>
+              <span class="signal-time">09:15 AM</span>
+            </div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot amber"></div>
+            <div>
+              <div class="signal-text">Fintech layoffs continue: Klarna cuts another 200 roles</div>
+              <span class="signal-time">10:30 AM</span>
+            </div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot"></div>
+            <div>
+              <div class="signal-text">OpenAI in talks with government for classified AI research contract</div>
+              <span class="signal-time">11:55 AM</span>
+            </div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot green"></div>
+            <div>
+              <div class="signal-text">Ethereum L2 volume hits all-time high, Base leads growth</div>
+              <span class="signal-time">01:10 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-title">Trending Topics</div>
+        <div class="signals-card">
+          <div class="signal-item">
+            <div class="signal-dot"></div>
+            <div><div class="signal-text">#AIRegulation — 14 stories</div></div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot green"></div>
+            <div><div class="signal-text">#CryptoInstitutional — 9 stories</div></div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot amber"></div>
+            <div><div class="signal-text">#FedPolicy — 11 stories</div></div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot"></div>
+            <div><div class="signal-text">#FintechIPO — 6 stories</div></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TOPICS ═══════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-line"></div>
+        <h2 class="section-title">Browse by Topic</h2>
+      </div>
+    </div>
+
+    <div class="topics-grid reveal">
+      <a href="/category/ai" class="topic-pill active">
+        <span class="topic-icon">🤖</span>
+        <span class="topic-name">Artificial Intelligence</span>
+        <span class="topic-count">47</span>
+      </a>
+      <a href="/category/finance" class="topic-pill">
+        <span class="topic-icon">📊</span>
+        <span class="topic-name">Finance</span>
+        <span class="topic-count">38</span>
+      </a>
+      <a href="/category/crypto" class="topic-pill">
+        <span class="topic-icon">🪙</span>
+        <span class="topic-name">Crypto</span>
+        <span class="topic-count">29</span>
+      </a>
+      <a href="/category/business" class="topic-pill">
+        <span class="topic-icon">🏢</span>
+        <span class="topic-name">Business</span>
+        <span class="topic-count">31</span>
+      </a>
+      <a href="/category/fintech" class="topic-pill">
+        <span class="topic-icon">💳</span>
+        <span class="topic-name">Fintech</span>
+        <span class="topic-count">22</span>
+      </a>
+      <a href="/category/macro" class="topic-pill">
+        <span class="topic-icon">🌐</span>
+        <span class="topic-name">Macro</span>
+        <span class="topic-count">18</span>
+      </a>
+      <a href="/category/policy" class="topic-pill">
+        <span class="topic-icon">⚖️</span>
+        <span class="topic-name">Policy & Regulation</span>
+        <span class="topic-count">14</span>
+      </a>
+      <a href="/category/signals" class="topic-pill">
+        <span class="topic-icon">📡</span>
+        <span class="topic-name">Market Signals</span>
+        <span class="topic-count">25</span>
+      </a>
+    </div>
+
+    <!-- Second row of cards filtered by AI -->
+    <div class="cards-grid cards-grid-2 reveal">
+      <article class="card">
+        <div class="card-thumb"><div class="card-thumb-inner"><span class="card-thumb-icon">🔬</span></div></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="tag">AI</span><span class="card-date">May 28</span></div>
+          <h3 class="card-title">The Research Lab That's Quietly Changing How Banks Price Risk</h3>
+          <p class="card-dek">A small team inside JPMorgan has built an AI system that combines macroeconomic signals with real-time transaction data — and the implications for credit markets are profound.</p>
+          <div class="card-footer">
+            <span class="card-readtime">8 min read</span>
+            <a href="/article/jpmorgan-ai-risk" class="read-link">Read →</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-thumb"><div class="card-thumb-inner"><span class="card-thumb-icon">⚖️</span></div></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="tag">AI</span><span class="card-date">May 27</span></div>
+          <h3 class="card-title">EU AI Act's First Enforcement Wave: What High-Risk System Operators Must Know Now</h3>
+          <p class="card-dek">With compliance deadlines passing, regulators are signaling their first enforcement priorities — and financial AI systems are at the top of the list.</p>
+          <div class="card-footer">
+            <span class="card-readtime">6 min read</span>
+            <a href="/article/eu-ai-act-enforcement" class="read-link">Read →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ NEWSLETTER ═══════════════════ -->
+<section class="section" id="newsletter">
+  <div class="container">
+    <div class="newsletter reveal">
+      <div class="newsletter-eyebrow">📨 The Briefing</div>
+      <h2 class="newsletter-title">Intelligence, delivered.<br>No noise included.</h2>
+      <p class="newsletter-sub">
+        Join readers who rely on Insight Ledger for daily signal on AI, markets, and the forces that matter. Free. Unsubscribe anytime.
+      </p>
+      <div class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="your@email.com" aria-label="Email address" />
+        <button class="btn btn-primary">Subscribe</button>
+      </div>
+      <p class="newsletter-note">No spam. No sponsored content. Editorial independence, always.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ABOUT / EDITORIAL ═══════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <div class="about-eyebrow">Editorial Principles</div>
+        <h2 class="about-title">Built for readers who<br>think seriously.</h2>
+        <p class="about-body">
+          Insight Ledger exists because most financial and tech media is optimized for clicks, not clarity. We track consequential signals across AI, finance, and global business — and we explain what they mean.
+        </p>
+        <div class="about-principles">
+          <div class="principle">
+            <div class="principle-icon">🎯</div>
+            <div class="principle-text"><strong>Signal, not noise.</strong> We cover what matters and ignore what doesn't.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-icon">🔍</div>
+            <div class="principle-text"><strong>Source transparency.</strong> Every factual claim is backed by verifiable data.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-icon">🚫</div>
+            <div class="principle-text"><strong>No sponsored content.</strong> We don't allow advertiser influence on editorial.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-icon">📐</div>
+            <div class="principle-text"><strong>Calibrated confidence.</strong> We distinguish analysis from speculation — always.</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:0.1s">
+        <div class="signals-card" style="padding:32px">
+          <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;">Coverage breakdown</div>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span style="color:var(--text-secondary)">Artificial Intelligence</span><span style="color:var(--text-primary);font-family:var(--font-mono)">35%</span></div>
+              <div style="height:3px;background:var(--bg-subtle);border-radius:2px;"><div style="width:35%;height:100%;background:var(--accent);border-radius:2px;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span style="color:var(--text-secondary)">Finance & Markets</span><span style="color:var(--text-primary);font-family:var(--font-mono)">28%</span></div>
+              <div style="height:3px;background:var(--bg-subtle);border-radius:2px;"><div style="width:28%;height:100%;background:var(--emerald);border-radius:2px;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span style="color:var(--text-secondary)">Crypto & Digital Assets</span><span style="color:var(--text-primary);font-family:var(--font-mono)">18%</span></div>
+              <div style="height:3px;background:var(--bg-subtle);border-radius:2px;"><div style="width:18%;height:100%;background:var(--amber);border-radius:2px;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span style="color:var(--text-secondary)">Business & Strategy</span><span style="color:var(--text-primary);font-family:var(--font-mono)">19%</span></div>
+              <div style="height:3px;background:var(--bg-subtle);border-radius:2px;"><div style="width:19%;height:100%;background:var(--rose);border-radius:2px;"></div></div>
+            </div>
+          </div>
+          <div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--border);display:flex;gap:24px;">
+            <div><div style="font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--text-primary)">1–2</div><div style="font-size:11px;color:var(--text-muted)">Pieces daily</div></div>
+            <div><div style="font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--text-primary)">5+</div><div style="font-size:11px;color:var(--text-muted)">Min avg read</div></div>
+            <div><div style="font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--text-primary)">100%</div><div style="font-size:11px;color:var(--text-muted)">Independent</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Insight Ledger</div>
+        <p class="footer-brand-desc">Signal over noise. Intelligence for the informed. AI, finance, fintech, and the forces reshaping global business.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Topics</div>
+        <div class="footer-links">
+          <a href="/category/ai">Artificial Intelligence</a>
+          <a href="/category/finance">Finance</a>
+          <a href="/category/crypto">Crypto</a>
+          <a href="/category/business">Business</a>
+          <a href="/category/fintech">Fintech</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Publication</div>
+        <div class="footer-links">
+          <a href="/about">About</a>
+          <a href="/editorial-policy">Editorial Policy</a>
+          <a href="/authors">Authors</a>
+          <a href="/archive">Archive</a>
+          <a href="/rss">RSS Feed</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <div class="footer-links">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Use</a>
+          <a href="/cookies">Cookie Policy</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Insight Ledger. All rights reserved.</div>
+      <div class="footer-socials">
+        <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-link" aria-label="Telegram">✈</a>
+        <a href="#" class="social-link" aria-label="RSS">◎</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "NewsMediaOrganization",
+      "name": "Insight Ledger",
+      "url": "https://insightledger.com",
+      "description": "Signal over noise. Intelligence for the informed on AI, finance, fintech and business.",
+      "publishingPrinciples": "https://insightledger.com/editorial-policy",
+      "logo": { "@type": "ImageObject", "url": "https://insightledger.com/logo.png" }
+    },
+    {
+      "@type": "WebSite",
+      "name": "Insight Ledger",
+      "url": "https://insightledger.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://insightledger.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Topic filter toggle (visual only)
+  document.querySelectorAll('.topic-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.topic-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>
