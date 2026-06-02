@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO — динамически меняется через JS -->
+  <title>AI — Insight Ledger</title>
+  <meta name="description" content="Analysis and intelligence on Artificial Intelligence from Insight Ledger." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://insightledger.com/category/ai/" />
+
+  <meta property="og:type"       content="website" />
+  <meta property="og:site_name"  content="Insight Ledger" />
+  <meta property="og:title"      content="AI — Insight Ledger" />
+  <meta property="og:image"      content="https://insightledger.com/og-home.png" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI — Insight Ledger",
+    "url": "https://insightledger.com/category/ai/",
+    "publisher": { "@type": "NewsMediaOrganization", "name": "Insight Ledger" }
+  }
+  </script>
+
+<style>
+:root {
+  --bg0: #060a11; --bg1: #0b1120; --bg2: #101827;
+  --bg3: #16202f; --bg4: #1d2a3e;
+
+  --s50:  #f0f5f9; --s100: #d2dde8; --s200: #a9bece;
+  --s300: #7d9bb3; --s400: #567a96; --s500: #3d5e78;
+
+  --cyan: #22d3ee;
+  --cdim: rgba(34,211,238,.10);
+  --em:   #34d399;
+  --am:   #fbbf24;
+  --ro:   #fb7185;
+
+  --b1: rgba(255,255,255,.055);
+  --b2: rgba(34,211,238,.22);
+
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fu: 'Syne', system-ui, sans-serif;
+  --fb: 'Source Serif 4', Georgia, serif;
+  --fm: 'JetBrains Mono', monospace;
+
+  --r1: 3px; --r2: 6px; --r3: 10px; --r4: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg0); color: var(--s50);
+  font-family: var(--fb); font-size: 16px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+}
+::selection { background: rgba(34,211,238,.22); color: var(--s50); }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 1220px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+
+/* ── TAGS ── */
+.tag {
+  display: inline-flex; align-items: center;
+  font-family: var(--fm); font-size: 9px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: var(--r1);
+  background: var(--cdim); color: var(--cyan);
+  border: 1px solid rgba(34,211,238,.15); white-space: nowrap;
+}
+.tag.fin { background: rgba(52,211,153,.10); color: var(--em); border-color: rgba(52,211,153,.18); }
+.tag.cry { background: rgba(251,191,36,.10);  color: var(--am); border-color: rgba(251,191,36,.18); }
+.tag.biz { background: rgba(251,113,133,.10); color: var(--ro); border-color: rgba(251,113,133,.18); }
+.tag.fin2{ background: rgba(34,211,238,.07);  color: var(--s200); border-color: var(--b1); }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--fu); font-size: 11px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  padding: 10px 22px; border-radius: var(--r1); border: none; cursor: pointer;
+  transition: all .22s cubic-bezier(.25,.46,.45,.94);
+}
+.btn-p { background: var(--cyan); color: var(--bg0); }
+.btn-p:hover { background: #67e8f9; box-shadow: 0 0 28px rgba(34,211,238,.35); transform: translateY(-1px); }
+.btn-g { background: transparent; color: var(--s300); border: 1px solid var(--b1); }
+.btn-g:hover { color: var(--s50); border-color: rgba(255,255,255,.15); }
+
+.rl {
+  font-family: var(--fm); font-size: 10px; color: var(--cyan);
+  letter-spacing: .08em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 5px; transition: gap .2s;
+}
+.rl:hover { gap: 9px; }
+
+/* ════════ NAV ════════ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(6,10,17,.78);
+  backdrop-filter: blur(20px) saturate(170%);
+  border-bottom: 1px solid var(--b1);
+}
+.nav-in {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 58px; max-width: 1220px; margin: 0 auto; padding: 0 28px;
+}
+.logo {
+  display: flex; align-items: center; gap: 11px;
+  font-family: var(--fd); font-size: 19px; font-weight: 600; color: var(--s50);
+}
+.logo-mark {
+  width: 30px; height: 30px; border-radius: var(--r1); background: var(--cyan);
+  display: grid; place-items: center;
+  font-family: var(--fu); font-size: 11px; font-weight: 800; color: var(--bg0);
+  box-shadow: 0 0 14px rgba(34,211,238,.45);
+}
+.nav-links { display: flex; gap: 0; list-style: none; }
+.nav-links a {
+  font-family: var(--fu); font-size: 11px; font-weight: 500;
+  letter-spacing: .07em; text-transform: uppercase;
+  color: var(--s400); padding: 8px 13px; border-radius: var(--r1);
+  transition: color .18s, background .18s;
+}
+.nav-links a:hover { color: var(--s50); background: rgba(255,255,255,.04); }
+.nav-links a.on { color: var(--cyan); }
+.nav-r { display: flex; align-items: center; gap: 10px; }
+
+/* ════════ PROGRESS BAR ════════ */
+#pb {
+  position: fixed; top: 0; left: 0; z-index: 300;
+  height: 2px; width: 0%;
+  background: linear-gradient(90deg, var(--cyan), #67e8f9);
+  box-shadow: 0 0 8px rgba(34,211,238,.6);
+  transition: width .1s linear;
+}
+
+/* ════════ CATEGORY HERO ════════ */
+.cat-hero {
+  margin-top: 58px; position: relative; overflow: hidden;
+  padding: 56px 0 52px;
+}
+.cat-hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, var(--bg1) 0%, var(--bg0) 100%);
+}
+.cat-hero-grid {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(34,211,238,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,211,238,.025) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse 70% 80% at 50% 0%, black 20%, transparent 85%);
+}
+.cat-hero-glow {
+  position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 350px; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(34,211,238,.05) 0%, transparent 65%);
+}
+.cat-hero-inner {
+  position: relative; z-index: 1;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  flex-wrap: wrap; gap: 24px;
+}
+
+.cat-breadcrumb {
+  font-family: var(--fm); font-size: 10px; color: var(--s400);
+  display: flex; align-items: center; gap: 8px; margin-bottom: 20px;
+}
+.cat-breadcrumb a { color: var(--s400); transition: color .18s; }
+.cat-breadcrumb a:hover { color: var(--cyan); }
+.cat-breadcrumb span { opacity: .4; }
+
+.cat-icon-big {
+  font-size: 48px; line-height: 1; margin-bottom: 16px;
+  display: block;
+}
+.cat-label {
+  font-family: var(--fm); font-size: 10px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--cyan);
+  margin-bottom: 10px;
+}
+.cat-title {
+  font-family: var(--fd); font-size: clamp(36px, 5vw, 64px);
+  font-weight: 600; line-height: 1.05; letter-spacing: -.025em; color: var(--s50);
+  margin-bottom: 14px;
+}
+.cat-desc {
+  font-family: var(--fb); font-size: 16px; font-weight: 300;
+  color: var(--s300); line-height: 1.68; max-width: 520px;
+}
+.cat-stats {
+  display: flex; gap: 32px; align-items: flex-end;
+  flex-shrink: 0;
+}
+.cat-stat-n {
+  font-family: var(--fd); font-size: 40px; font-weight: 700;
+  color: var(--s50); letter-spacing: -.025em; line-height: 1;
+  margin-bottom: 4px;
+}
+.cat-stat-n span { color: var(--cyan); }
+.cat-stat-l {
+  font-family: var(--fu); font-size: 10px; font-weight: 500;
+  letter-spacing: .07em; text-transform: uppercase; color: var(--s400);
+}
+
+/* ════════ FILTERS BAR ════════ */
+.filters-bar {
+  position: sticky; top: 58px; z-index: 100;
+  background: rgba(6,10,17,.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--b1);
+  padding: 0;
+}
+.filters-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; height: 52px;
+  flex-wrap: nowrap; overflow-x: auto;
+}
+.filters-left { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.filter-btn {
+  font-family: var(--fu); font-size: 10px; font-weight: 600;
+  letter-spacing: .07em; text-transform: uppercase;
+  padding: 6px 14px; border-radius: var(--r1);
+  border: 1px solid var(--b1); background: transparent; color: var(--s400);
+  cursor: pointer; transition: all .2s; white-space: nowrap;
+}
+.filter-btn:hover { color: var(--s50); border-color: rgba(255,255,255,.14); background: var(--bg3); }
+.filter-btn.on { background: var(--cdim); color: var(--cyan); border-color: rgba(34,211,238,.25); }
+
+.filters-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.sort-select {
+  font-family: var(--fu); font-size: 10px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  background: transparent; border: 1px solid var(--b1);
+  color: var(--s300); padding: 6px 12px; border-radius: var(--r1);
+  cursor: pointer; outline: none;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='%23567a96' stroke-width='1.5'%3E%3Cpath d='M1 1l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+  padding-right: 28px;
+}
+.sort-select option { background: var(--bg1); color: var(--s50); }
+
+/* ════════ CONTENT LAYOUT ════════ */
+.cat-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 48px;
+  padding: 48px 0 80px;
+}
+
+/* ════════ FEATURED ARTICLE (top) ════════ */
+.featured-card {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; background: var(--bg2); border: 1px solid var(--b1);
+  border-radius: var(--r4); overflow: hidden; cursor: pointer;
+  transition: border-color .25s, box-shadow .25s;
+  margin-bottom: 32px;
+}
+.featured-card:hover {
+  border-color: var(--b2);
+  box-shadow: 0 0 50px rgba(34,211,238,.07);
+}
+.featured-vis {
+  background: linear-gradient(155deg, #0d1e35 0%, #081422 55%, #060e1c 100%);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 240px;
+}
+.featured-vis-grid {
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 26px, rgba(34,211,238,.04) 26px, rgba(34,211,238,.04) 27px),
+    repeating-linear-gradient(90deg, transparent, transparent 26px, rgba(34,211,238,.04) 26px, rgba(34,211,238,.04) 27px);
+}
+.featured-vis-glow {
+  position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
+  width: 260px; height: 130px;
+  background: radial-gradient(ellipse, rgba(34,211,238,.18) 0%, transparent 65%);
+}
+.featured-vis-lbl {
+  position: relative; z-index: 1;
+  font-family: var(--fd); font-size: 44px; font-weight: 700;
+  color: rgba(34,211,238,.12); letter-spacing: -.03em; text-align: center; line-height: 1;
+  user-select: none;
+}
+.featured-body { padding: 32px 36px; display: flex; flex-direction: column; justify-content: center; }
+.featured-badge {
+  font-family: var(--fm); font-size: 9px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--cyan); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 7px;
+}
+.featured-badge::before {
+  content: '★'; font-size: 10px;
+}
+.featured-h {
+  font-family: var(--fd); font-size: clamp(20px, 2.5vw, 28px); font-weight: 600;
+  line-height: 1.18; letter-spacing: -.015em; color: var(--s50);
+  margin-bottom: 12px; transition: color .2s;
+}
+.featured-card:hover .featured-h { color: var(--cyan); }
+.featured-dek {
+  font-family: var(--fb); font-size: 14px; font-weight: 300;
+  color: var(--s300); line-height: 1.62; margin-bottom: 22px;
+}
+.featured-foot { display: flex; align-items: center; justify-content: space-between; }
+.featured-meta { font-family: var(--fm); font-size: 10px; color: var(--s400); }
+
+/* ════════ ARTICLES LIST ════════ */
+.articles-list { display: flex; flex-direction: column; gap: 0; }
+
+.art-row {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 22px 0; border-bottom: 1px solid var(--b1); cursor: pointer;
+  transition: background .18s;
+}
+.art-row:first-child { padding-top: 0; }
+.art-row:last-child  { border-bottom: none; padding-bottom: 0; }
+.art-row:hover .art-row-h { color: var(--cyan); }
+
+.art-row-num {
+  font-family: var(--fm); font-size: 10px; color: var(--s500);
+  padding-top: 4px; min-width: 22px; flex-shrink: 0;
+}
+.art-row-body { flex: 1; }
+.art-row-meta { display: flex; align-items: center; gap: 9px; margin-bottom: 9px; }
+.art-row-date { font-family: var(--fm); font-size: 10px; color: var(--s400); }
+.art-row-h {
+  font-family: var(--fd); font-size: 19px; font-weight: 600;
+  line-height: 1.26; letter-spacing: -.01em; color: var(--s50);
+  margin-bottom: 6px; transition: color .2s;
+}
+.art-row-dek {
+  font-family: var(--fb); font-size: 13.5px; font-weight: 300;
+  color: var(--s300); line-height: 1.55;
+}
+.art-row-foot { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+.art-row-rt { font-family: var(--fm); font-size: 10px; color: var(--s400); }
+.art-row-thumb {
+  width: 88px; height: 68px; border-radius: var(--r2);
+  background: var(--bg3); border: 1px solid var(--b1);
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 22px; opacity: .35;
+}
+
+/* LOAD MORE */
+.load-more-wrap { display: flex; justify-content: center; padding-top: 36px; }
+.load-more {
+  font-family: var(--fu); font-size: 11px; font-weight: 600;
+  letter-spacing: .07em; text-transform: uppercase;
+  padding: 12px 32px; border-radius: var(--r1);
+  border: 1px solid var(--b1); background: transparent; color: var(--s300);
+  cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; gap: 8px;
+}
+.load-more:hover { color: var(--cyan); border-color: var(--b2); }
+
+/* ════════ SIDEBAR ════════ */
+.cat-sidebar { display: flex; flex-direction: column; gap: 18px; }
+.sib {
+  background: var(--bg2); border: 1px solid var(--b1);
+  border-radius: var(--r3); padding: 18px 20px;
+  position: sticky; top: 120px;
+}
+.sib-t {
+  font-family: var(--fu); font-size: 9px; font-weight: 600;
+  letter-spacing: .13em; text-transform: uppercase; color: var(--s400);
+  margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+}
+.sib-t::after { content: ''; flex: 1; height: 1px; background: var(--b1); }
+
+/* OTHER CATEGORIES */
+.other-cats { display: flex; flex-direction: column; gap: 8px; }
+.other-cat {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px; border-radius: var(--r2);
+  border: 1px solid var(--b1); background: transparent;
+  cursor: pointer; transition: all .2s; text-decoration: none;
+}
+.other-cat:hover { border-color: var(--b2); background: var(--cdim); }
+.other-cat.active { border-color: var(--b2); background: var(--cdim); }
+.other-cat-left { display: flex; align-items: center; gap: 9px; }
+.other-cat-ico { font-size: 16px; }
+.other-cat-n { font-family: var(--fu); font-size: 12px; font-weight: 500; color: var(--s200); }
+.other-cat.active .other-cat-n { color: var(--cyan); }
+.other-cat-cnt { font-family: var(--fm); font-size: 10px; color: var(--s400); }
+
+/* POPULAR TAGS */
+.tags-cloud { display: flex; flex-wrap: wrap; gap: 7px; }
+.pop-tag {
+  font-family: var(--fm); font-size: 9px; color: var(--s300);
+  border: 1px solid var(--b1); border-radius: var(--r1);
+  padding: 4px 10px; letter-spacing: .06em; text-transform: uppercase;
+  transition: color .18s, border-color .18s; cursor: pointer;
+}
+.pop-tag:hover { color: var(--cyan); border-color: var(--b2); }
+
+/* SUBSCRIBE SIDEBAR */
+.sub-sib {
+  background: var(--bg2); border: 1px solid var(--b2);
+  border-radius: var(--r3); padding: 22px 20px;
+  position: relative; overflow: hidden;
+}
+.sub-sib::before {
+  content: ''; position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
+  width: 200px; height: 100px; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(34,211,238,.08) 0%, transparent 65%);
+}
+.sub-sib-t { font-family: var(--fd); font-size: 20px; font-weight: 600; color: var(--s50); margin-bottom: 8px; letter-spacing: -.01em; position: relative; z-index: 1; }
+.sub-sib-d { font-family: var(--fb); font-size: 13px; font-weight: 300; color: var(--s300); line-height: 1.6; margin-bottom: 16px; position: relative; z-index: 1; }
+.sub-sib-in {
+  width: 100%; background: var(--bg0); border: 1px solid var(--b1);
+  border-radius: var(--r1); padding: 10px 14px;
+  font-family: var(--fb); font-size: 13px; color: var(--s50); outline: none;
+  transition: border-color .2s; margin-bottom: 8px;
+  position: relative; z-index: 1; display: block;
+}
+.sub-sib-in::placeholder { color: var(--s400); }
+.sub-sib-in:focus { border-color: var(--cyan); }
+.sub-sib-btn {
+  width: 100%; background: var(--cyan); color: var(--bg0);
+  font-family: var(--fu); font-size: 11px; font-weight: 700;
+  letter-spacing: .07em; text-transform: uppercase;
+  padding: 11px; border: none; border-radius: var(--r1);
+  cursor: pointer; transition: all .2s; position: relative; z-index: 1;
+}
+.sub-sib-btn:hover { background: #67e8f9; box-shadow: 0 0 20px rgba(34,211,238,.3); }
+
+/* EMPTY STATE */
+.empty-state {
+  text-align: center; padding: 80px 20px;
+  display: none;
+}
+.empty-state.show { display: block; }
+.empty-ico { font-size: 48px; margin-bottom: 16px; opacity: .4; }
+.empty-t { font-family: var(--fd); font-size: 24px; font-weight: 600; color: var(--s300); margin-bottom: 8px; }
+.empty-d { font-family: var(--fb); font-size: 14px; font-weight: 300; color: var(--s400); }
+
+/* ════════ NEWSLETTER BOTTOM ════════ */
+.nl-bottom {
+  border-top: 1px solid var(--b1); padding: 64px 0;
+}
+.nl {
+  position: relative; overflow: hidden;
+  background: var(--bg2); border: 1px solid var(--b2);
+  border-radius: var(--r4); padding: 56px 80px; text-align: center;
+}
+.nl::before {
+  content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+  width: 500px; height: 240px; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(34,211,238,.08) 0%, transparent 65%);
+}
+.nl-eye { font-family: var(--fm); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; position: relative; z-index: 1; }
+.nl-h { font-family: var(--fd); font-size: clamp(28px, 3.5vw, 44px); font-weight: 600; letter-spacing: -.025em; line-height: 1.1; color: var(--s50); margin-bottom: 12px; position: relative; z-index: 1; }
+.nl-h em { font-style: italic; color: var(--cyan); }
+.nl-sub { font-family: var(--fb); font-size: 15px; font-weight: 300; color: var(--s300); line-height: 1.65; margin-bottom: 32px; max-width: 420px; margin-left: auto; margin-right: auto; position: relative; z-index: 1; }
+.nl-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto 14px; position: relative; z-index: 1; }
+.nl-in { flex: 1; background: var(--bg0); border: 1px solid var(--b1); border-radius: var(--r1); padding: 11px 16px; font-family: var(--fb); font-size: 14px; color: var(--s50); outline: none; transition: border-color .2s; }
+.nl-in::placeholder { color: var(--s400); }
+.nl-in:focus { border-color: var(--cyan); }
+.nl-note { font-family: var(--fu); font-size: 11px; color: var(--s400); position: relative; z-index: 1; }
+
+/* ════════ FOOTER ════════ */
+footer { background: var(--bg1); border-top: 1px solid var(--b1); padding: 52px 0 28px; }
+.ft-g { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--b1); }
+.ft-brand-n { font-family: var(--fd); font-size: 20px; font-weight: 600; color: var(--s50); margin-bottom: 10px; }
+.ft-brand-d { font-family: var(--fb); font-size: 13px; font-weight: 300; color: var(--s400); line-height: 1.65; max-width: 230px; }
+.ft-ct { font-family: var(--fu); font-size: 9px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--s400); margin-bottom: 14px; }
+.ft-ls { display: flex; flex-direction: column; gap: 9px; }
+.ft-ls a { font-family: var(--fb); font-size: 13px; font-weight: 300; color: var(--s300); transition: color .18s; }
+.ft-ls a:hover { color: var(--cyan); }
+.ft-bot { display: flex; align-items: center; justify-content: space-between; }
+.ft-copy { font-family: var(--fu); font-size: 11px; font-weight: 500; letter-spacing: .03em; color: var(--s400); }
+.ft-soc { display: flex; gap: 10px; }
+.soc { width: 32px; height: 32px; border-radius: var(--r1); border: 1px solid var(--b1); display: grid; place-items: center; font-size: 12px; color: var(--s400); transition: color .18s, border-color .18s; }
+.soc:hover { color: var(--cyan); border-color: var(--b2); }
+
+/* ════════ SCROLL REVEAL ════════ */
+[data-r] { opacity: 0; transform: translateY(16px); transition: opacity .6s cubic-bezier(.25,.46,.45,.94), transform .6s cubic-bezier(.25,.46,.45,.94); }
+[data-r].in { opacity: 1; transform: translateY(0); }
+
+/* ════════ RESPONSIVE ════════ */
+@media (max-width: 1024px) {
+  .cat-layout { grid-template-columns: 1fr; }
+  .cat-sidebar { display: none; }
+}
+@media (max-width: 768px) {
+  .wrap { padding: 0 18px; }
+  .nav-links { display: none; }
+  .featured-card { grid-template-columns: 1fr; }
+  .featured-vis { min-height: 160px; }
+  .nl { padding: 40px 20px; }
+  .cat-stats { display: none; }
+}
+@media (max-width: 540px) {
+  .ft-g { grid-template-columns: 1fr; }
+  .ft-bot { flex-direction: column; gap: 14px; text-align: center; }
+  .nl-form { flex-direction: column; }
+  .filters-inner { gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<div id="pb" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav" role="navigation" aria-label="Primary navigation">
+  <div class="nav-in">
+    <a href="/index.html" class="logo" aria-label="Insight Ledger home">
+      <div class="logo-mark" aria-hidden="true">IL</div>
+      Insight Ledger
+    </a>
+    <ul class="nav-links" role="list" id="navLinks">
+      <li><a href="index.html#ai" id="nav-ai">AI</a></li>
+      <li><a href="index.html#finance" id="nav-finance">Finance</a></li>
+      <li><a href="index.html#crypto" id="nav-crypto">Crypto</a></li>
+      <li><a href="index.html#business" id="nav-business">Business</a></li>
+      <li><a href="index.html#fintech" id="nav-fintech">Fintech</a></li>
+    </ul>
+    <div class="nav-r">
+      <a href="index.html" class="btn btn-g">← Home</a>
+      <a href="#newsletter" class="btn btn-p">Subscribe</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════ CATEGORY HERO ════════ -->
+<header class="cat-hero" id="catHero">
+  <div class="cat-hero-bg" aria-hidden="true"></div>
+  <div class="cat-hero-grid" aria-hidden="true"></div>
+  <div class="cat-hero-glow" aria-hidden="true" id="heroGlow"></div>
+  <div class="wrap">
+    <nav class="cat-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span id="breadcrumbCat">AI</span>
+    </nav>
+    <div class="cat-hero-inner">
+      <div>
+        <div id="catIcon" class="cat-icon-big">🤖</div>
+        <div class="cat-label" id="catLabel">Category</div>
+        <h1 class="cat-title" id="catTitle">Artificial Intelligence</h1>
+        <p class="cat-desc" id="catDesc">Analysis and intelligence on AI from Insight Ledger.</p>
+      </div>
+      <div class="cat-stats">
+        <div>
+          <div class="cat-stat-n" id="catCount">47<span>+</span></div>
+          <div class="cat-stat-l">Articles</div>
+        </div>
+        <div>
+          <div class="cat-stat-n">Daily</div>
+          <div class="cat-stat-l">Updated</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ════════ FILTERS ════════ -->
+<div class="filters-bar" role="toolbar" aria-label="Filter and sort articles">
+  <div class="wrap">
+    <div class="filters-inner">
+      <div class="filters-left">
+        <button class="filter-btn on" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="analysis" aria-pressed="false">Analysis</button>
+        <button class="filter-btn" data-filter="news" aria-pressed="false">News</button>
+        <button class="filter-btn" data-filter="deep-dive" aria-pressed="false">Deep Dive</button>
+      </div>
+      <div class="filters-right">
+        <select class="sort-select" id="sortSelect" aria-label="Sort articles">
+          <option value="latest">Latest</option>
+          <option value="popular">Most Read</option>
+          <option value="featured">Featured</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ MAIN CONTENT ════════ -->
+<main>
+  <div class="wrap">
+    <div class="cat-layout">
+
+      <!-- ARTICLES -->
+      <div>
+        <!-- Featured -->
+        <a href="article.html" class="featured-card" id="featuredCard" data-r aria-label="Featured article">
+          <div class="featured-vis" aria-hidden="true">
+            <div class="featured-vis-grid"></div>
+            <div class="featured-vis-glow"></div>
+            <div class="featured-vis-lbl" id="featuredVisLabel">AI×<br>Capital</div>
+          </div>
+          <div class="featured-body">
+            <div class="featured-badge">Featured Story</div>
+            <h2 class="featured-h" id="featuredTitle">
+              The Quiet Infrastructure Shift That Could Rewrite Capital Allocation
+            </h2>
+            <p class="featured-dek" id="featuredDek">
+              As large language models begin operating autonomously within trading desks, a new class of financial infrastructure is emerging — one regulators have yet to fully map.
+            </p>
+            <div class="featured-foot">
+              <span class="featured-meta" id="featuredMeta">May 31, 2026 · 6 min read</span>
+              <span class="rl">Read →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Article list -->
+        <div class="articles-list" id="articlesList" role="feed" aria-label="Articles list"></div>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="emptyState">
+          <div class="empty-ico">🔍</div>
+          <div class="empty-t">No articles found</div>
+          <div class="empty-d">Try a different filter or check back soon.</div>
+        </div>
+
+        <!-- Load more -->
+        <div class="load-more-wrap" id="loadMoreWrap">
+          <button class="load-more" id="loadMoreBtn" onclick="loadMore()">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            Load more stories
+          </button>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="cat-sidebar" aria-label="Category sidebar">
+
+        <!-- Other categories -->
+        <div class="sib">
+          <div class="sib-t">All Topics</div>
+          <div class="other-cats" id="otherCats">
+            <a href="category.html#ai" class="other-cat" data-cat="ai">
+              <div class="other-cat-left"><span class="other-cat-ico">🤖</span><span class="other-cat-n">AI</span></div>
+              <span class="other-cat-cnt">47</span>
+            </a>
+            <a href="category.html#finance" class="other-cat" data-cat="finance">
+              <div class="other-cat-left"><span class="other-cat-ico">📊</span><span class="other-cat-n">Finance</span></div>
+              <span class="other-cat-cnt">38</span>
+            </a>
+            <a href="category.html#crypto" class="other-cat" data-cat="crypto">
+              <div class="other-cat-left"><span class="other-cat-ico">🪙</span><span class="other-cat-n">Crypto</span></div>
+              <span class="other-cat-cnt">29</span>
+            </a>
+            <a href="category.html#business" class="other-cat" data-cat="business">
+              <div class="other-cat-left"><span class="other-cat-ico">🏢</span><span class="other-cat-n">Business</span></div>
+              <span class="other-cat-cnt">31</span>
+            </a>
+            <a href="category.html#fintech" class="other-cat" data-cat="fintech">
+              <div class="other-cat-left"><span class="other-cat-ico">💳</span><span class="other-cat-n">Fintech</span></div>
+              <span class="other-cat-cnt">22</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Popular tags -->
+        <div class="sib">
+          <div class="sib-t">Popular Tags</div>
+          <div class="tags-cloud" id="tagCloud"></div>
+        </div>
+
+        <!-- Subscribe -->
+        <div class="sub-sib">
+          <div class="sub-sib-t">The Briefing</div>
+          <div class="sub-sib-d">Daily intelligence on AI, markets, and the forces that matter.</div>
+          <form onsubmit="onSubSib(event)" novalidate>
+            <input type="email" class="sub-sib-in" placeholder="your@email.com" required />
+            <button type="submit" class="sub-sib-btn">Subscribe free →</button>
+          </form>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER BOTTOM -->
+  <div class="nl-bottom" id="newsletter">
+    <div class="wrap">
+      <div class="nl">
+        <div class="nl-eye">📨 The Briefing</div>
+        <h2 class="nl-h">Intelligence, <em>delivered.</em></h2>
+        <p class="nl-sub">Daily signal on AI, markets, and the forces that matter. Free. No spam.</p>
+        <form class="nl-form" onsubmit="onSubNl(event)" novalidate>
+          <input type="email" class="nl-in" placeholder="your@email.com" required />
+          <button type="submit" class="btn btn-p">Subscribe</button>
+        </form>
+        <p class="nl-note">No sponsored content. Editorial independence, always.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand-n">Insight Ledger</div>
+        <p class="ft-brand-d">Signal over noise. Intelligence for the informed on AI, finance, fintech and business.</p>
+      </div>
+      <div>
+        <div class="ft-ct">Topics</div>
+        <nav class="ft-ls">
+          <a href="category.html#ai">AI</a>
+          <a href="category.html#finance">Finance</a>
+          <a href="category.html#crypto">Crypto</a>
+          <a href="category.html#business">Business</a>
+          <a href="category.html#fintech">Fintech</a>
+        </nav>
+      </div>
+      <div>
+        <div class="ft-ct">Publication</div>
+        <nav class="ft-ls">
+          <a href="/about">About</a>
+          <a href="/editorial-policy">Editorial Policy</a>
+          <a href="/authors">Authors</a>
+          <a href="/archive">Archive</a>
+          <a href="/rss">RSS</a>
+        </nav>
+      </div>
+      <div>
+        <div class="ft-ct">Legal</div>
+        <nav class="ft-ls">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="/cookies">Cookies</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <div class="ft-copy">© 2026 Insight Ledger. All rights reserved.</div>
+      <div class="ft-soc">
+        <a href="#" class="soc" aria-label="X">𝕏</a>
+        <a href="#" class="soc" aria-label="LinkedIn">in</a>
+        <a href="#" class="soc" aria-label="Telegram">✈</a>
+        <a href="#" class="soc" aria-label="RSS">◎</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════
+   CATEGORY DATA — редактируй здесь
+══════════════════════════════════════════ */
+const CATEGORIES = {
+  ai: {
+    icon: '🤖', label: 'Category', title: 'Artificial Intelligence',
+    desc: 'Analysis and intelligence on AI, LLMs, automation, and the technology reshaping industries — from Insight Ledger.',
+    count: 47, accentColor: '#22d3ee',
+    featuredVis: 'AI×Capital',
+    tags: ['LLM', 'OpenAI', 'Anthropic', 'Regulation', 'Automation', 'AgentAI', 'MLOps', 'Foundation Models'],
+  },
+  finance: {
+    icon: '📊', label: 'Category', title: 'Finance & Markets',
+    desc: 'Independent analysis of monetary policy, capital markets, asset allocation, and the macroeconomic forces shaping global finance.',
+    count: 38, accentColor: '#34d399',
+    featuredVis: 'Macro×Markets',
+    tags: ['Fed', 'Rates', 'Bonds', 'Equities', 'Macro', 'Inflation', 'CentralBanks', 'FX'],
+  },
+  crypto: {
+    icon: '🪙', label: 'Category', title: 'Crypto & Digital Assets',
+    desc: 'On-chain intelligence, institutional adoption, regulatory developments, and market structure analysis for digital assets.',
+    count: 29, accentColor: '#fbbf24',
+    featuredVis: 'BTC×ETH',
+    tags: ['Bitcoin', 'Ethereum', 'DeFi', 'ETF', 'OnChain', 'Stablecoins', 'L2', 'Regulation'],
+  },
+  business: {
+    icon: '🏢', label: 'Category', title: 'Business & Strategy',
+    desc: 'Executive decisions, corporate strategy, venture capital, and the business models being built — and disrupted — in the current cycle.',
+    count: 31, accentColor: '#fb7185',
+    featuredVis: 'Strategy×Growth',
+    tags: ['IPO', 'M&A', 'Startups', 'VC', 'Leadership', 'Strategy', 'Layoffs', 'Revenue'],
+  },
+  fintech: {
+    icon: '💳', label: 'Category', title: 'Fintech & Payments',
+    desc: 'The infrastructure of money — payments, banking-as-a-service, embedded finance, and the companies rebuilding financial plumbing.',
+    count: 22, accentColor: '#22d3ee',
+    featuredVis: 'Fintech×Infra',
+    tags: ['Payments', 'BNPL', 'BaaS', 'Neobank', 'CBDC', 'OpenBanking', 'Stripe', 'Embedded'],
+  },
+};
+
+/* ══════════════════════════════════════════
+   ARTICLES DATA — добавляй свои статьи сюда
+══════════════════════════════════════════ */
+const ALL_ARTICLES = [
+  { id:1, cat:'ai', type:'analysis', icon:'🤖', title:'Anthropic Releases New Reasoning Benchmark That Challenges GPT-4o', dek:'The evaluation suite exposes performance gaps in sequential reasoning with significant implications for enterprise deployments.', date:'May 31, 2026', datetime:'2026-05-31', read:'5 min', slug:'article.html' },
+  { id:2, cat:'ai', type:'deep-dive', icon:'🔬', title:'The Research Lab Quietly Changing How Banks Price Risk', dek:'A small JPMorgan team has built an AI system combining macroeconomic signals with real-time transaction data — with profound implications for credit markets.', date:'May 28, 2026', datetime:'2026-05-28', read:'8 min', slug:'article.html' },
+  { id:3, cat:'ai', type:'analysis', icon:'⚖️', title:'EU AI Act\'s First Enforcement Wave: What High-Risk Operators Must Know', dek:'Regulators are signaling enforcement priorities — and financial AI systems are at the top of the list.', date:'May 27, 2026', datetime:'2026-05-27', read:'6 min', slug:'article.html' },
+  { id:4, cat:'ai', type:'news', icon:'📡', title:'OpenAI in Talks with US Government for Classified AI Research Contract', dek:'The development marks a significant shift in the relationship between frontier AI labs and national security apparatus.', date:'May 26, 2026', datetime:'2026-05-26', read:'4 min', slug:'article.html' },
+  { id:5, cat:'ai', type:'analysis', icon:'🧠', title:'Why Foundation Model Costs Are Finally Starting to Fall', dek:'Efficiency gains in training and inference are compressing the economics of AI deployment — and shifting the competitive dynamics.', date:'May 24, 2026', datetime:'2026-05-24', read:'7 min', slug:'article.html' },
+
+  { id:6, cat:'finance', type:'analysis', icon:'📊', title:'Why the Fed\'s Next Move Has Every Asset Manager on Edge', dek:'Two competing inflation signals are creating an unusual impasse at the FOMC — and the resolution could reshape bond markets through year-end.', date:'May 31, 2026', datetime:'2026-05-31', read:'5 min', slug:'article.html' },
+  { id:7, cat:'finance', type:'news', icon:'🏦', title:'ECB Signals Cautious Approach to CBDC Timeline', dek:'Officials walk back earlier enthusiasm for a 2027 digital euro launch, citing unresolved interoperability and legal framework gaps.', date:'May 31, 2026', datetime:'2026-05-31', read:'3 min', slug:'article.html' },
+  { id:8, cat:'finance', type:'deep-dive', icon:'📉', title:'The Bond Market Is Pricing in a Scenario Most Equity Investors Are Ignoring', dek:'A divergence between fixed income and equity valuations has opened up that historically precedes significant market repricing.', date:'May 29, 2026', datetime:'2026-05-29', read:'9 min', slug:'article.html' },
+
+  { id:9,  cat:'crypto', type:'analysis', icon:'🪙', title:'Bitcoin\'s Institutional Accumulation Phase Is Entering a New Stage', dek:'On-chain data points to a pattern not seen since early 2023: large wallets are absorbing supply at a rate that historically precedes sustained price discovery.', date:'May 30, 2026', datetime:'2026-05-30', read:'7 min', slug:'article.html' },
+  { id:10, cat:'crypto', type:'news', icon:'📈', title:'BlackRock\'s Bitcoin ETF Crosses $25B AUM — What It Means for Market Structure', dek:'The milestone reshapes institutional crypto exposure assumptions and creates new hedging dynamics in the derivatives market.', date:'May 31, 2026', datetime:'2026-05-31', read:'4 min', slug:'article.html' },
+
+  { id:11, cat:'business', type:'analysis', icon:'🏢', title:'The CFO Playbook Has Changed. Here\'s What the Data Shows.', dek:'A survey of 400 finance chiefs reveals a structural shift in capital decisions — AI tools are no longer optional inputs.', date:'May 29, 2026', datetime:'2026-05-29', read:'4 min', slug:'article.html' },
+  { id:12, cat:'business', type:'deep-dive', icon:'💳', title:'Stripe\'s Valuation Question Returns as the IPO Window Reopens', dek:'With public market conditions improving, pressure is mounting on Stripe\'s leadership — and new revenue data complicates the picture.', date:'May 30, 2026', datetime:'2026-05-30', read:'6 min', slug:'article.html' },
+
+  { id:13, cat:'fintech', type:'news', icon:'💰', title:'Klarna Cuts 200 More Roles as Fintech Cost Discipline Continues', dek:'The Swedish buy-now-pay-later giant accelerates its path to profitability ahead of a renewed IPO push.', date:'May 31, 2026', datetime:'2026-05-31', read:'3 min', slug:'article.html' },
+  { id:14, cat:'fintech', type:'analysis', icon:'🔗', title:'Embedded Finance Is Quietly Eating the Bank Revenue Stack', dek:'New data from banking-as-a-service providers suggests the disintermediation of traditional banks is accelerating in SME lending.', date:'May 28, 2026', datetime:'2026-05-28', read:'6 min', slug:'article.html' },
+];
+
+/* ══════════════════════════════════════════
+   STATE
+══════════════════════════════════════════ */
+let currentCat    = 'ai';
+let currentFilter = 'all';
+let visibleCount  = 5;
+const PAGE_SIZE   = 5;
+
+/* ══════════════════════════════════════════
+   INIT
+══════════════════════════════════════════ */
+function init() {
+  // Читаем категорию из URL hash: category.html#finance
+  const hash = window.location.hash.replace('#','').toLowerCase();
+  currentCat = CATEGORIES[hash] ? hash : 'ai';
+  renderCategoryMeta();
+  renderArticles();
+  renderTagCloud();
+  highlightSidebarCat();
+  highlightNavLink();
+  setupScrollReveal();
+}
+
+/* ══ МЕТА СТРАНИЦЫ ══ */
+function renderCategoryMeta() {
+  const c = CATEGORIES[currentCat];
+  document.title = `${c.title} — Insight Ledger`;
+  document.querySelector('meta[name="description"]').content = c.desc;
+
+  document.getElementById('catIcon').textContent  = c.icon;
+  document.getElementById('catTitle').textContent  = c.title;
+  document.getElementById('catDesc').textContent   = c.desc;
+  document.getElementById('catCount').innerHTML    = `${c.count}<span>+</span>`;
+  document.getElementById('breadcrumbCat').textContent = c.title;
+  document.getElementById('featuredVisLabel').innerHTML = c.featuredVis.replace('×','×<br>');
+}
+
+/* ══ СТАТЬИ ══ */
+function getFiltered() {
+  return ALL_ARTICLES.filter(a => {
+    const catMatch    = a.cat === currentCat;
+    const filterMatch = currentFilter === 'all' || a.type === currentFilter;
+    return catMatch && filterMatch;
+  });
+}
+
+function renderArticles() {
+  const list  = document.getElementById('articlesList');
+  const empty = document.getElementById('emptyState');
+  const lmw   = document.getElementById('loadMoreWrap');
+  const filtered = getFiltered();
+
+  // Update featured card
+  if (filtered.length > 0) {
+    const f = filtered[0];
+    document.getElementById('featuredTitle').textContent = f.title;
+    document.getElementById('featuredDek').textContent   = f.dek;
+    document.getElementById('featuredMeta').textContent  = `${f.date} · ${f.read}`;
+    document.getElementById('featuredCard').href         = f.slug;
+    document.getElementById('featuredCard').style.display = '';
+  } else {
+    document.getElementById('featuredCard').style.display = 'none';
+  }
+
+  // Remaining articles (skip first — shown as featured)
+  const rest   = filtered.slice(1);
+  const toShow = rest.slice(0, visibleCount);
+
+  list.innerHTML = '';
+  if (toShow.length === 0 && filtered.length <= 1) {
+    empty.classList.add('show');
+    lmw.style.display = 'none';
+  } else {
+    empty.classList.remove('show');
+    toShow.forEach((a, i) => {
+      list.insertAdjacentHTML('beforeend', articleRowHTML(a, i + 1));
+    });
+    lmw.style.display = rest.length > visibleCount ? '' : 'none';
+  }
+}
+
+function articleRowHTML(a, n) {
+  const tagClass = { finance:'fin', crypto:'cry', business:'biz', fintech:'fin2' }[a.cat] || '';
+  const typeLabel = { analysis:'Analysis', news:'News', 'deep-dive':'Deep Dive' }[a.type] || a.type;
+  return `
+  <article class="art-row" onclick="location.href='${a.slug}'" role="article">
+    <div class="art-row-num" aria-hidden="true">0${n}</div>
+    <div class="art-row-body">
+      <div class="art-row-meta">
+        <span class="tag ${tagClass}">${typeLabel}</span>
+        <time class="art-row-date" datetime="${a.datetime}">${a.date}</time>
+      </div>
+      <h2 class="art-row-h">${a.title}</h2>
+      <p class="art-row-dek">${a.dek}</p>
+      <div class="art-row-foot">
+        <span class="art-row-rt">${a.read} read</span>
+        <span class="rl">Read →</span>
+      </div>
+    </div>
+    <div class="art-row-thumb" aria-hidden="true">${a.icon}</div>
+  </article>`;
+}
+
+function loadMore() {
+  visibleCount += PAGE_SIZE;
+  renderArticles();
+}
+
+/* ══ TAG CLOUD ══ */
+function renderTagCloud() {
+  const tags = CATEGORIES[currentCat].tags || [];
+  document.getElementById('tagCloud').innerHTML = tags
+    .map(t => `<span class="pop-tag">#${t}</span>`).join('');
+}
+
+/* ══ SIDEBAR HIGHLIGHT ══ */
+function highlightSidebarCat() {
+  document.querySelectorAll('.other-cat').forEach(el => {
+    el.classList.toggle('active', el.dataset.cat === currentCat);
+  });
+}
+
+/* ══ NAV HIGHLIGHT ══ */
+function highlightNavLink() {
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('on'));
+  const el = document.getElementById(`nav-${currentCat}`);
+  if (el) el.classList.add('on');
+}
+
+/* ══ FILTER BUTTONS ══ */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+    btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+    currentFilter = btn.dataset.filter;
+    visibleCount  = PAGE_SIZE;
+    renderArticles();
+  });
+});
+
+/* ══ HASH CHANGE (switch category without reload) ══ */
+window.addEventListener('hashchange', () => {
+  const hash = window.location.hash.replace('#','').toLowerCase();
+  if (CATEGORIES[hash]) {
+    currentCat    = hash;
+    currentFilter = 'all';
+    visibleCount  = PAGE_SIZE;
+    document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+    document.querySelector('.filter-btn[data-filter="all"]').classList.add('on');
+    renderCategoryMeta();
+    renderArticles();
+    renderTagCloud();
+    highlightSidebarCat();
+    highlightNavLink();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+/* ══ SCROLL PROGRESS ══ */
+const pb = document.getElementById('pb');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - innerHeight) * 100;
+  pb.style.width = Math.min(100, pct) + '%';
+}, { passive: true });
+
+/* ══ SCROLL REVEAL ══ */
+function setupScrollReveal() {
+  const els = document.querySelectorAll('[data-r]');
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  els.forEach(el => obs.observe(el));
+}
+
+/* ══ NEWSLETTER ══ */
+function onSubNl(e)  { e.preventDefault(); handleSub(e.target); }
+function onSubSib(e) { e.preventDefault(); handleSub(e.target); }
+function handleSub(form) {
+  const inp = form.querySelector('input[type="email"]');
+  const btn = form.querySelector('button');
+  if (!inp.value.includes('@')) { inp.style.borderColor = 'var(--ro)'; return; }
+  inp.style.borderColor = 'var(--em)';
+  btn.textContent = '✓ You\'re in';
+  btn.style.cssText = 'background:var(--em);color:var(--bg0);pointer-events:none;width:100%';
+  inp.disabled = true;
+}
+
+/* ══ RUN ══ */
+init();
+</script>
+</body>
+</html>
