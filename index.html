@@ -672,11 +672,11 @@ footer { background: var(--bg1); border-top: 1px solid var(--b1); padding: 52px 
       Insight Ledger
     </a>
     <ul class="nav-links" role="list">
-      <li><a href="category.html#ai" class="on">AI</a></li>
-      <li><a href="category.html#finance">Finance</a></li>
-      <li><a href="category.html#crypto">Crypto</a></li>
-      <li><a href="category.html#business">Business</a></li>
-      <li><a href="category.html#fintech">Fintech</a></li>
+      <li><a href="/category/ai" class="on">AI</a></li>
+      <li><a href="/category/finance">Finance</a></li>
+      <li><a href="/category/crypto">Crypto</a></li>
+      <li><a href="/category/business">Business</a></li>
+      <li><a href="/category/fintech">Fintech</a></li>
     </ul>
     <div class="nav-r">
       <button class="btn btn-g" aria-label="Open search">
@@ -738,7 +738,7 @@ footer { background: var(--bg1); border-top: 1px solid var(--b1); padding: 52px 
         </p>
         <div class="hero-cta" data-r style="transition-delay:.19s">
           <a href="#newsletter" class="btn btn-p">Get the briefing →</a>
-          <a href="category.html#ai" class="btn btn-g">Browse stories</a>
+          <a href="/news" class="btn btn-g">Browse stories</a>
         </div>
         <div class="hero-stats" data-r style="transition-delay:.24s">
           <div class="hstat"><div class="hstat-n">5<span>+</span></div><div class="hstat-l">Topics</div></div>
@@ -747,29 +747,8 @@ footer { background: var(--bg1); border-top: 1px solid var(--b1); padding: 52px 
         </div>
       </div>
 
-      <div data-r style="transition-delay:.16s">
-        <article class="hcard" aria-label="Featured article">
-          <div class="hcard-vis" aria-hidden="true">
-            <div class="hcard-vis-grid"></div>
-            <div class="hcard-vis-glow"></div>
-            <div class="hcard-vis-label">AI×<br>Capital</div>
-          </div>
-          <div class="hcard-body">
-            <div class="hcard-meta">
-              <span class="tag">AI</span>
-              <span class="hcard-date">Today · 6 min read</span>
-            </div>
-            <h2 class="hcard-h">The Quiet Infrastructure Shift That Could Rewrite Capital Allocation</h2>
-            <p class="hcard-dek">As large language models begin operating autonomously within trading desks, a new class of financial infrastructure is emerging — one regulators have yet to fully map.</p>
-            <div class="hcard-foot">
-              <div class="author">
-                <div class="av" aria-hidden="true">AR</div>
-                <span class="an">Alex Reeve · Editorial</span>
-              </div>
-              <a href="article.html" class="rl" aria-label="Read full article">Read →</a>
-            </div>
-          </div>
-        </article>
+      <div data-r style="transition-delay:.16s" id="hero-card-wrap">
+        <!-- динамически рендерится из articles.json -->
       </div>
     </div>
   </div>
@@ -784,40 +763,10 @@ footer { background: var(--bg1); border-top: 1px solid var(--b1); padding: 52px 
         <h2 class="sh-t" id="s-top">Top Stories</h2>
         <span class="sh-cnt" aria-label="3 articles">3</span>
       </div>
-      <a href="category.html#ai" class="sh-a">All stories →</a>
+      <a href="/news" class="sh-a">All stories →</a>
     </div>
-    <div class="g3">
-
-      <article class="card" data-r style="transition-delay:.05s">
-        <div class="card-thumb" aria-hidden="true"><div class="card-thumb-ico">📊</div></div>
-        <div class="card-body">
-          <div class="card-meta"><span class="tag fin">Finance</span><time class="card-date" datetime="2026-05-31">May 31</time></div>
-          <h3 class="card-h">Why the Fed's Next Move Has Every Asset Manager on Edge</h3>
-          <p class="card-dek">Two competing inflation signals are creating an unusual impasse at the FOMC — and the resolution could reshape bond markets through year-end.</p>
-          <div class="card-foot"><span class="card-rt">5 min read</span><a href="article.html" class="rl">Read →</a></div>
-        </div>
-      </article>
-
-      <article class="card" data-r style="transition-delay:.10s">
-        <div class="card-thumb" aria-hidden="true"><div class="card-thumb-ico">🪙</div></div>
-        <div class="card-body">
-          <div class="card-meta"><span class="tag cry">Crypto</span><time class="card-date" datetime="2026-05-30">May 30</time></div>
-          <h3 class="card-h">Bitcoin's Institutional Accumulation Phase Is Entering a New Stage</h3>
-          <p class="card-dek">On-chain data points to a pattern not seen since early 2023: large wallets are absorbing supply at a rate that historically precedes sustained price discovery.</p>
-          <div class="card-foot"><span class="card-rt">7 min read</span><a href="article.html" class="rl">Read →</a></div>
-        </div>
-      </article>
-
-      <article class="card" data-r style="transition-delay:.15s">
-        <div class="card-thumb" aria-hidden="true"><div class="card-thumb-ico">🏢</div></div>
-        <div class="card-body">
-          <div class="card-meta"><span class="tag biz">Business</span><time class="card-date" datetime="2026-05-29">May 29</time></div>
-          <h3 class="card-h">The CFO Playbook Has Changed. Here's What the Data Shows.</h3>
-          <p class="card-dek">A survey of 400 finance chiefs reveals a structural shift in capital decisions — AI tools are no longer optional inputs for CFOs.</p>
-          <div class="card-foot"><span class="card-rt">4 min read</span><a href="article.html" class="rl">Read →</a></div>
-        </div>
-      </article>
-
+    <div class="g3" id="top-stories-grid">
+      <!-- динамически из articles.json -->
     </div>
   </div>
 </section>
@@ -830,50 +779,12 @@ footer { background: var(--bg1); border-top: 1px solid var(--b1); padding: 52px 
         <div class="sh-bar" aria-hidden="true"></div>
         <h2 class="sh-t" id="s-lat">Latest Updates</h2>
       </div>
-      <a href="category.html#ai" class="sh-a">Full feed →</a>
+      <a href="/news" class="sh-a">Full feed →</a>
     </div>
     <div class="lat-layout">
 
-      <div role="feed" aria-label="Latest articles">
-        <article class="lat-item" data-r>
-          <div class="lat-n" aria-hidden="true">01</div>
-          <div class="lat-b">
-            <div class="lat-meta"><span class="tag">AI</span><time class="card-date" datetime="2026-05-31">2h ago · 5 min</time></div>
-            <h3 class="lat-h">Anthropic Releases New Reasoning Benchmark That Challenges GPT-4o on Long-Form Tasks</h3>
-            <p class="lat-dek">The evaluation suite exposes performance gaps in sequential reasoning with significant implications for enterprise deployments.</p>
-          </div>
-          <div class="lat-thumb" aria-hidden="true">🤖</div>
-        </article>
-
-        <article class="lat-item" data-r style="transition-delay:.05s">
-          <div class="lat-n" aria-hidden="true">02</div>
-          <div class="lat-b">
-            <div class="lat-meta"><span class="tag fin">Finance</span><time class="card-date" datetime="2026-05-31">4h ago · 3 min</time></div>
-            <h3 class="lat-h">ECB Signals Cautious Approach to CBDC Timeline Amid Unresolved Privacy Concerns</h3>
-            <p class="lat-dek">Officials walk back earlier enthusiasm for a 2027 digital euro launch, citing interoperability and legal framework gaps.</p>
-          </div>
-          <div class="lat-thumb" aria-hidden="true">🏦</div>
-        </article>
-
-        <article class="lat-item" data-r style="transition-delay:.10s">
-          <div class="lat-n" aria-hidden="true">03</div>
-          <div class="lat-b">
-            <div class="lat-meta"><span class="tag cry">Crypto</span><time class="card-date" datetime="2026-05-31">6h ago · 4 min</time></div>
-            <h3 class="lat-h">BlackRock's Bitcoin ETF Crosses $25B AUM — What It Means for Market Structure</h3>
-            <p class="lat-dek">The milestone reshapes institutional crypto exposure assumptions and creates new hedging dynamics in the derivatives market.</p>
-          </div>
-          <div class="lat-thumb" aria-hidden="true">📈</div>
-        </article>
-
-        <article class="lat-item" data-r style="transition-delay:.15s">
-          <div class="lat-n" aria-hidden="true">04</div>
-          <div class="lat-b">
-            <div class="lat-meta"><span class="tag biz">Business</span><time class="card-date" datetime="2026-05-30">Yesterday · 6 min</time></div>
-            <h3 class="lat-h">Stripe's Valuation Question Returns as the IPO Window Reopens</h3>
-            <p class="lat-dek">With public market conditions improving, pressure is mounting on Stripe's leadership — and new revenue data complicates the picture.</p>
-          </div>
-          <div class="lat-thumb" aria-hidden="true">💳</div>
-        </article>
+      <div role="feed" aria-label="Latest articles" id="latest-feed">
+        <!-- динамически из articles.json -->
       </div>
 
       <aside class="sidebar" aria-label="Signals and trending topics">
@@ -915,25 +826,8 @@ footer { background: var(--bg1); border-top: 1px solid var(--b1); padding: 52px 
       <button class="tb" data-topic="business" aria-pressed="false">🏢 Business <span style="opacity:.45;font-weight:400">31</span></button>
       <button class="tb" data-topic="fintech" aria-pressed="false">💳 Fintech <span style="opacity:.45;font-weight:400">22</span></button>
     </div>
-    <div class="g2">
-      <article class="card" data-r style="transition-delay:.05s">
-        <div class="card-thumb" aria-hidden="true"><div class="card-thumb-ico">🔬</div></div>
-        <div class="card-body">
-          <div class="card-meta"><span class="tag">AI</span><time class="card-date" datetime="2026-05-28">May 28</time></div>
-          <h3 class="card-h">The Research Lab Quietly Changing How Banks Price Risk</h3>
-          <p class="card-dek">A small JPMorgan team has built an AI system combining macroeconomic signals with real-time transaction data — with profound implications for credit markets.</p>
-          <div class="card-foot"><span class="card-rt">8 min read</span><a href="article.html" class="rl">Read →</a></div>
-        </div>
-      </article>
-      <article class="card" data-r style="transition-delay:.10s">
-        <div class="card-thumb" aria-hidden="true"><div class="card-thumb-ico">⚖️</div></div>
-        <div class="card-body">
-          <div class="card-meta"><span class="tag">AI</span><time class="card-date" datetime="2026-05-27">May 27</time></div>
-          <h3 class="card-h">EU AI Act's First Enforcement Wave: What High-Risk Operators Must Know Now</h3>
-          <p class="card-dek">Regulators are signaling enforcement priorities — and financial AI systems are at the top of the list.</p>
-          <div class="card-foot"><span class="card-rt">6 min read</span><a href="article.html" class="rl">Read →</a></div>
-        </div>
-      </article>
+    <div class="g2" id="topic-cards-grid">
+      <!-- динамически из articles.json -->
     </div>
   </div>
 </section>
@@ -1000,11 +894,11 @@ footer { background: var(--bg1); border-top: 1px solid var(--b1); padding: 52px 
       <div>
         <div class="ft-ct">Topics</div>
         <nav class="ft-ls" aria-label="Topic pages">
-          <a href="category.html#ai">Artificial Intelligence</a>
-          <a href="category.html#finance">Finance</a>
-          <a href="category.html#crypto">Crypto</a>
-          <a href="category.html#business">Business</a>
-          <a href="category.html#fintech">Fintech</a>
+          <a href="/category/ai">Artificial Intelligence</a>
+          <a href="/category/finance">Finance</a>
+          <a href="/category/crypto">Crypto</a>
+          <a href="/category/business">Business</a>
+          <a href="/category/fintech">Fintech</a>
         </nav>
       </div>
       <div>
@@ -1040,35 +934,165 @@ footer { background: var(--bg1); border-top: 1px solid var(--b1); padding: 52px 
 </footer>
 
 <script>
+/* ══════════════════════════════════════
+   HELPERS
+══════════════════════════════════════ */
+const TAG_CLASS  = { finance:'fin', crypto:'cry', business:'biz', fintech:'fin2' };
+const CAT_LABELS = { ai:'AI', finance:'Finance', crypto:'Crypto', business:'Business', fintech:'Fintech' };
+const TYPE_LBL   = { analysis:'Analysis', news:'News', 'deep-dive':'Deep Dive' };
+
+function artLink(id) { return `article.html?id=${id}`; }
+
+function cardHTML(a, delay) {
+  const tc = TAG_CLASS[a.category] || '';
+  const cl = CAT_LABELS[a.category] || a.category;
+  return `
+  <article class="card" data-r style="transition-delay:${delay}s" onclick="location.href='${artLink(a.id)}'">
+    <div class="card-thumb" aria-hidden="true"><div class="card-thumb-ico">${a.icon||'📰'}</div></div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="tag ${tc}">${cl}</span>
+        <time class="card-date" datetime="${a.datetime}">${a.date}</time>
+      </div>
+      <h3 class="card-h">${a.title}</h3>
+      <p class="card-dek">${a.dek}</p>
+      <div class="card-foot">
+        <span class="card-rt">${a.readTime} min read</span>
+        <a href="${artLink(a.id)}" class="rl">Read →</a>
+      </div>
+    </div>
+  </article>`;
+}
+
+function latItemHTML(a, n) {
+  const tc = TAG_CLASS[a.category] || '';
+  const cl = CAT_LABELS[a.category] || a.category;
+  return `
+  <article class="lat-item" data-r style="transition-delay:${(n-1)*0.05}s" onclick="location.href='${artLink(a.id)}'">
+    <div class="lat-n" aria-hidden="true">0${n}</div>
+    <div class="lat-b">
+      <div class="lat-meta">
+        <span class="tag ${tc}">${cl}</span>
+        <time class="card-date" datetime="${a.datetime}">${a.date} · ${a.readTime} min</time>
+      </div>
+      <h3 class="lat-h">${a.title}</h3>
+      <p class="lat-dek">${a.dek}</p>
+    </div>
+    <div class="lat-thumb" aria-hidden="true">${a.icon||'📰'}</div>
+  </article>`;
+}
+
+/* ══════════════════════════════════════
+   LOAD & RENDER
+══════════════════════════════════════ */
+async function loadAndRender() {
+  let articles = [];
+  try {
+    const res = await fetch('articles.json');
+    if (res.ok) articles = await res.json();
+  } catch(e) { console.warn('articles.json not found, using fallback'); }
+
+  const published = articles.filter(a => a.status === 'published');
+  if (!published.length) return; // ничего не трогаем если JSON не загрузился
+
+  /* ── HERO CARD: featured или самая свежая ── */
+  const featured = published.find(a => a.featured) || published[0];
+  const tc = TAG_CLASS[featured.category] || '';
+  const cl = CAT_LABELS[featured.category] || featured.category;
+  document.getElementById('hero-card-wrap').innerHTML = `
+  <article class="hcard" aria-label="Featured article" onclick="location.href='${artLink(featured.id)}'">
+    <div class="hcard-vis" aria-hidden="true">
+      <div class="hcard-vis-grid"></div>
+      <div class="hcard-vis-glow"></div>
+      <div class="hcard-vis-label">${featured.icon||'📰'}</div>
+    </div>
+    <div class="hcard-body">
+      <div class="hcard-meta">
+        <span class="tag ${tc}">${cl}</span>
+        <span class="hcard-date">${featured.date} · ${featured.readTime} min read</span>
+      </div>
+      <h2 class="hcard-h">${featured.title}</h2>
+      <p class="hcard-dek">${featured.dek}</p>
+      <div class="hcard-foot">
+        <div class="author">
+          <div class="av" aria-hidden="true">${featured.author.initials}</div>
+          <span class="an">${featured.author.name} · ${featured.author.role}</span>
+        </div>
+        <a href="${artLink(featured.id)}" class="rl" aria-label="Read full article">Read →</a>
+      </div>
+    </div>
+  </article>`;
+
+  /* ── TOP STORIES: 3 самые свежие (не featured) ── */
+  const topStories = published.filter(a => !a.featured).slice(0, 3);
+  document.getElementById('top-stories-grid').innerHTML =
+    topStories.map((a, i) => cardHTML(a, (i+1)*0.05)).join('');
+
+  /* ── LATEST: следующие 4 ── */
+  const latest = published.filter(a => !a.featured).slice(0, 4);
+  document.getElementById('latest-feed').innerHTML =
+    latest.map((a, i) => latItemHTML(a, i+1)).join('');
+
+  /* ── TOPIC CARDS: текущий активный фильтр ── */
+  renderTopicCards(published, 'all');
+
+  /* ── TOPIC COUNT В КНОПКАХ ── */
+  document.querySelectorAll('.tb[data-topic]').forEach(btn => {
+    const t = btn.dataset.topic;
+    if (t === 'all') return;
+    const cnt = published.filter(a => a.category === t).length;
+    const span = btn.querySelector('span');
+    if (span) span.textContent = cnt;
+  });
+
+  /* ── SCROLL REVEAL для динамических элементов ── */
+  setupReveal();
+}
+
+function renderTopicCards(published, topic) {
+  const filtered = topic === 'all'
+    ? published.slice(0, 4)
+    : published.filter(a => a.category === topic).slice(0, 4);
+  document.getElementById('topic-cards-grid').innerHTML =
+    filtered.map((a, i) => cardHTML(a, (i+1)*0.05)).join('');
+  setupReveal();
+}
+
+/* ── TOPIC FILTER ── */
+document.querySelectorAll('.tb').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    document.querySelectorAll('.tb').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+    btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+    try {
+      const res = await fetch('articles.json');
+      const all = await res.json();
+      renderTopicCards(all.filter(a => a.status === 'published'), btn.dataset.topic);
+    } catch(e) {}
+  });
+});
+
 /* ── SCROLL REVEAL ── */
-const rEls = document.querySelectorAll('[data-r]');
-const rObs = new IntersectionObserver(es => {
-  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rObs.unobserve(e.target); } });
-}, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
-rEls.forEach(el => rObs.observe(el));
+function setupReveal() {
+  const els = document.querySelectorAll('[data-r]:not(.in)');
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
+  els.forEach(el => obs.observe(el));
+}
 
 /* ── COVERAGE BARS ── */
-const bars = document.querySelectorAll('.cov-fill[data-w]');
 const bObs = new IntersectionObserver(es => {
   es.forEach(e => { if (e.isIntersecting) { e.target.style.width = e.target.dataset.w + '%'; bObs.unobserve(e.target); } });
 }, { threshold: 0.5 });
-bars.forEach(b => bObs.observe(b));
+document.querySelectorAll('.cov-fill[data-w]').forEach(b => bObs.observe(b));
 
-/* ── SCROLL PROGRESS BAR ── */
+/* ── SCROLL PROGRESS ── */
 const pb = document.getElementById('pb');
 window.addEventListener('scroll', () => {
   const pct = window.scrollY / (document.body.scrollHeight - innerHeight) * 100;
   pb.style.width = Math.min(100, pct) + '%';
   pb.setAttribute('aria-valuenow', Math.round(pct));
 }, { passive: true });
-
-/* ── TOPIC FILTER TOGGLE ── */
-document.querySelectorAll('.tb').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tb').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
-    btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
-  });
-});
 
 /* ── NEWSLETTER ── */
 function onSub(e) {
@@ -1081,6 +1105,9 @@ function onSub(e) {
   btn.style.cssText = 'background:var(--em);color:var(--bg0);pointer-events:none';
   inp.disabled = true;
 }
+
+/* ── RUN ── */
+loadAndRender();
 </script>
 </body>
 </html>
