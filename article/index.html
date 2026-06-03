@@ -3,722 +3,244 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading… — Insight Ledger</title>
+  <meta name="robots" content="index, follow" />
 
-  <!-- PRIMARY SEO -->
-  <title>The Quiet Infrastructure Shift That Could Rewrite Capital Allocation — Insight Ledger</title>
-  <meta name="description" content="As large language models begin operating autonomously within trading desks, a new class of financial infrastructure is emerging — one regulators have yet to fully map." />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  <link rel="canonical" href="https://insightledger.com/article/ai-infrastructure-capital-allocation" />
-
-  <!-- OPEN GRAPH -->
-  <meta property="og:type"        content="article" />
-  <meta property="og:site_name"   content="Insight Ledger" />
-  <meta property="og:title"       content="The Quiet Infrastructure Shift That Could Rewrite Capital Allocation" />
-  <meta property="og:description" content="As LLMs begin operating autonomously within trading desks, a new financial infrastructure class is emerging — one regulators have yet to fully map." />
-  <meta property="og:url"         content="https://insightledger.com/article/ai-infrastructure-capital-allocation" />
-  <meta property="og:image"       content="https://insightledger.com/og-article-ai-capital.png" />
-  <meta property="article:published_time" content="2026-05-31T08:00:00Z" />
-  <meta property="article:author"         content="Alex Reeve" />
-  <meta property="article:section"        content="AI" />
-  <meta property="article:tag"            content="AI, Finance, Trading, LLM, Capital Markets" />
-
-  <!-- TWITTER CARD -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:site"        content="@insightledger" />
-  <meta name="twitter:title"       content="The Quiet Infrastructure Shift That Could Rewrite Capital Allocation" />
-  <meta name="twitter:description" content="LLMs are entering trading desks. The infrastructure implications are profound — and largely unmapped." />
-  <meta name="twitter:image"       content="https://insightledger.com/og-article-ai-capital.png" />
-
-  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- SCHEMA: NewsArticle -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "headline": "The Quiet Infrastructure Shift That Could Rewrite Capital Allocation",
-    "description": "As large language models begin operating autonomously within trading desks, a new class of financial infrastructure is emerging — one regulators have yet to fully map.",
-    "image": "https://insightledger.com/og-article-ai-capital.png",
-    "datePublished": "2026-05-31T08:00:00Z",
-    "dateModified":  "2026-05-31T08:00:00Z",
-    "author": { "@type": "Person", "name": "Alex Reeve", "url": "https://insightledger.com/authors/alex-reeve" },
-    "publisher": {
-      "@type": "NewsMediaOrganization",
-      "name": "Insight Ledger",
-      "logo": { "@type": "ImageObject", "url": "https://insightledger.com/logo.png" }
-    },
-    "articleSection": "AI",
-    "keywords": ["AI", "LLM", "capital allocation", "trading", "financial infrastructure"],
-    "url": "https://insightledger.com/article/ai-infrastructure-capital-allocation",
-    "isAccessibleForFree": true,
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://insightledger.com/article/ai-infrastructure-capital-allocation" }
-  }
-  </script>
-
 <style>
-/* ════════════════════════════════════════
-   INSIGHT LEDGER — ARTICLE PAGE
-   Same design system as homepage
-════════════════════════════════════════ */
 :root {
-  --bg0: #060a11; --bg1: #0b1120; --bg2: #101827;
-  --bg3: #16202f; --bg4: #1d2a3e; --bg5: #263548;
+  --bg0:#060a11;--bg1:#0b1120;--bg2:#101827;--bg3:#16202f;--bg4:#1d2a3e;
+  --s50:#f0f5f9;--s100:#d2dde8;--s200:#a9bece;--s300:#7d9bb3;--s400:#567a96;--s500:#3d5e78;
+  --cyan:#22d3ee;--cdim:rgba(34,211,238,.10);--em:#34d399;--am:#fbbf24;--ro:#fb7185;
+  --b1:rgba(255,255,255,.055);--b2:rgba(34,211,238,.22);
+  --fd:'Cormorant Garamond',Georgia,serif;
+  --fu:'Syne',system-ui,sans-serif;
+  --fb:'Source Serif 4',Georgia,serif;
+  --fm:'JetBrains Mono',monospace;
+  --r1:3px;--r2:6px;--r3:10px;--r4:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg0);color:var(--s50);font-family:var(--fb);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");}
+::selection{background:rgba(34,211,238,.22);color:var(--s50);}
+a{color:inherit;text-decoration:none;}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
 
-  --s50:  #f0f5f9; --s100: #d2dde8; --s200: #a9bece;
-  --s300: #7d9bb3; --s400: #567a96; --s500: #3d5e78;
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--fu);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;border-radius:var(--r1);border:none;cursor:pointer;transition:all .22s;}
+.btn-p{background:var(--cyan);color:var(--bg0);}
+.btn-p:hover{background:#67e8f9;box-shadow:0 0 28px rgba(34,211,238,.35);transform:translateY(-1px);}
+.btn-g{background:transparent;color:var(--s300);border:1px solid var(--b1);}
+.btn-g:hover{color:var(--s50);border-color:rgba(255,255,255,.15);}
+.rl{font-family:var(--fm);font-size:10px;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:5px;transition:gap .2s;}
+.rl:hover{gap:9px;}
 
-  --cyan:  #22d3ee;
-  --cdim:  rgba(34,211,238,.10);
-  --em:    #34d399;
-  --am:    #fbbf24;
-  --ro:    #fb7185;
+/* TAGS */
+.tag{display:inline-flex;align-items:center;font-family:var(--fm);font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:var(--r1);background:var(--cdim);color:var(--cyan);border:1px solid rgba(34,211,238,.15);white-space:nowrap;}
+.tag.fin{background:rgba(52,211,153,.10);color:var(--em);border-color:rgba(52,211,153,.18);}
+.tag.cry{background:rgba(251,191,36,.10);color:var(--am);border-color:rgba(251,191,36,.18);}
+.tag.biz{background:rgba(251,113,133,.10);color:var(--ro);border-color:rgba(251,113,133,.18);}
 
-  --b1: rgba(255,255,255,.055);
-  --b2: rgba(34,211,238,.22);
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,10,17,.78);backdrop-filter:blur(20px) saturate(170%);border-bottom:1px solid var(--b1);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:58px;max-width:1220px;margin:0 auto;padding:0 28px;}
+.logo{display:flex;align-items:center;gap:11px;font-family:var(--fd);font-size:19px;font-weight:600;color:var(--s50);}
+.logo-mark{width:30px;height:30px;border-radius:var(--r1);background:var(--cyan);display:grid;place-items:center;font-family:var(--fu);font-size:11px;font-weight:800;color:var(--bg0);box-shadow:0 0 14px rgba(34,211,238,.45);}
+.nav-links{display:flex;gap:0;list-style:none;}
+.nav-links a{font-family:var(--fu);font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--s400);padding:8px 13px;border-radius:var(--r1);transition:color .18s,background .18s;}
+.nav-links a:hover{color:var(--s50);background:rgba(255,255,255,.04);}
+.nav-r{display:flex;align-items:center;gap:10px;}
 
-  --fd: 'Cormorant Garamond', Georgia, serif;
-  --fu: 'Syne', system-ui, sans-serif;
-  --fb: 'Source Serif 4', Georgia, serif;
-  --fm: 'JetBrains Mono', monospace;
+/* PROGRESS */
+#pb{position:fixed;top:0;left:0;z-index:300;height:2px;width:0%;background:linear-gradient(90deg,var(--cyan),#67e8f9);box-shadow:0 0 8px rgba(34,211,238,.6);transition:width .1s linear;}
 
-  --r1: 3px; --r2: 6px; --r3: 10px; --r4: 16px;
-}
+/* ARTICLE HERO */
+.art-hero{margin-top:58px;position:relative;overflow:hidden;padding:64px 0 0;}
+.art-hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,var(--bg1) 0%,var(--bg0) 100%);}
+.art-hero-grid{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(34,211,238,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.025) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 70% 80% at 50% 0%,black 20%,transparent 85%);}
+.art-hero-glow{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:700px;height:350px;z-index:0;pointer-events:none;background:radial-gradient(ellipse,rgba(34,211,238,.05) 0%,transparent 65%);}
+.art-hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 28px;}
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--fm);font-size:10px;color:var(--s400);margin-bottom:24px;}
+.breadcrumb a{color:var(--s400);transition:color .18s;}
+.breadcrumb a:hover{color:var(--cyan);}
+.breadcrumb span{opacity:.4;}
 
-body {
-  background: var(--bg0);
-  color: var(--s50);
-  font-family: var(--fb);
-  font-size: 16px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
+.art-meta-top{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.art-h1{font-family:var(--fd);font-size:clamp(32px,4.5vw,58px);font-weight:600;line-height:1.08;letter-spacing:-.025em;color:var(--s50);margin-bottom:20px;}
+.art-lead{font-family:var(--fb);font-size:19px;font-weight:300;color:var(--s200);line-height:1.68;margin-bottom:32px;border-left:2px solid var(--cyan);padding-left:18px;}
+.art-byline{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);flex-wrap:wrap;gap:16px;}
+.art-byline-l{display:flex;align-items:center;gap:12px;}
+.av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),#818cf8);display:grid;place-items:center;font-family:var(--fu);font-size:13px;font-weight:700;color:var(--bg0);}
+.art-author-n{font-family:var(--fu);font-size:13px;font-weight:600;color:var(--s50);}
+.art-author-r{font-family:var(--fu);font-size:11px;color:var(--s400);}
+.art-byline-r{display:flex;align-items:center;gap:16px;}
+.meta-item{font-family:var(--fm);font-size:10px;color:var(--s400);display:flex;align-items:center;gap:5px;}
 
-body::after {
-  content: '';
-  position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .5;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
-}
+/* HERO VISUAL */
+.art-visual{margin:36px 0 0;height:280px;position:relative;overflow:hidden;background:linear-gradient(155deg,#0d1e35 0%,#081422 55%,#060e1c 100%);display:flex;align-items:center;justify-content:center;}
+.art-visual-grid{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 26px,rgba(34,211,238,.04) 26px,rgba(34,211,238,.04) 27px),repeating-linear-gradient(90deg,transparent,transparent 26px,rgba(34,211,238,.04) 26px,rgba(34,211,238,.04) 27px);}
+.art-visual-glow{position:absolute;bottom:-50px;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(34,211,238,.18) 0%,transparent 65%);}
+.art-visual-lbl{position:relative;z-index:1;font-family:var(--fd);font-size:60px;font-weight:700;color:rgba(34,211,238,.12);letter-spacing:-.03em;line-height:1;text-align:center;user-select:none;}
 
-::selection { background: rgba(34,211,238,.22); color: var(--s50); }
-a { color: inherit; text-decoration: none; }
-.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
-
-.wrap { max-width: 1220px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
-
-/* ── TAGS ── */
-.tag {
-  display: inline-flex; align-items: center;
-  font-family: var(--fm); font-size: 9px; font-weight: 500;
-  letter-spacing: .1em; text-transform: uppercase;
-  padding: 3px 8px; border-radius: var(--r1);
-  background: var(--cdim); color: var(--cyan);
-  border: 1px solid rgba(34,211,238,.15);
-  white-space: nowrap;
-}
-
-/* ── BUTTONS ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-family: var(--fu); font-size: 11px; font-weight: 600;
-  letter-spacing: .06em; text-transform: uppercase;
-  padding: 10px 22px; border-radius: var(--r1);
-  border: none; cursor: pointer;
-  transition: all .22s cubic-bezier(.25,.46,.45,.94);
-}
-.btn-p { background: var(--cyan); color: var(--bg0); }
-.btn-p:hover { background: #67e8f9; box-shadow: 0 0 28px rgba(34,211,238,.35); transform: translateY(-1px); }
-.btn-g { background: transparent; color: var(--s300); border: 1px solid var(--b1); }
-.btn-g:hover { color: var(--s50); border-color: rgba(255,255,255,.15); }
-
-.rl {
-  font-family: var(--fm); font-size: 10px; color: var(--cyan);
-  letter-spacing: .08em; text-transform: uppercase;
-  display: inline-flex; align-items: center; gap: 5px; transition: gap .2s;
-}
-.rl:hover { gap: 9px; }
-
-/* ════════════ NAV ════════════ */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: rgba(6,10,17,.78);
-  backdrop-filter: blur(20px) saturate(170%);
-  border-bottom: 1px solid var(--b1);
-}
-.nav-in {
-  display: flex; align-items: center; justify-content: space-between;
-  height: 58px; max-width: 1220px; margin: 0 auto; padding: 0 28px;
-}
-.logo {
-  display: flex; align-items: center; gap: 11px;
-  font-family: var(--fd); font-size: 19px; font-weight: 600; color: var(--s50);
-}
-.logo-mark {
-  width: 30px; height: 30px; border-radius: var(--r1);
-  background: var(--cyan); display: grid; place-items: center;
-  font-family: var(--fu); font-size: 11px; font-weight: 800; color: var(--bg0);
-  box-shadow: 0 0 14px rgba(34,211,238,.45);
-}
-.nav-links { display: flex; gap: 0; list-style: none; }
-.nav-links a {
-  font-family: var(--fu); font-size: 11px; font-weight: 500;
-  letter-spacing: .07em; text-transform: uppercase;
-  color: var(--s400); padding: 8px 13px; border-radius: var(--r1);
-  transition: color .18s, background .18s;
-}
-.nav-links a:hover { color: var(--s50); background: rgba(255,255,255,.04); }
-.nav-r { display: flex; align-items: center; gap: 10px; }
-
-/* ════════════ PROGRESS BAR ════════════ */
-#pb {
-  position: fixed; top: 0; left: 0; z-index: 300;
-  height: 2px; width: 0%;
-  background: linear-gradient(90deg, var(--cyan), #67e8f9);
-  box-shadow: 0 0 8px rgba(34,211,238,.6);
-  transition: width .1s linear;
-}
-
-/* ════════════ ARTICLE HERO ════════════ */
-.art-hero {
-  margin-top: 58px;
-  position: relative; overflow: hidden;
-  padding: 64px 0 0;
-}
-.art-hero-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background: linear-gradient(180deg, var(--bg1) 0%, var(--bg0) 100%);
-}
-.art-hero-grid {
-  position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(34,211,238,.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34,211,238,.025) 1px, transparent 1px);
-  background-size: 50px 50px;
-  mask-image: radial-gradient(ellipse 70% 80% at 50% 0%, black 20%, transparent 85%);
-}
-.art-hero-glow {
-  position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
-  width: 700px; height: 350px; z-index: 0; pointer-events: none;
-  background: radial-gradient(ellipse, rgba(34,211,238,.05) 0%, transparent 65%);
-}
-
-.art-hero-inner {
-  position: relative; z-index: 1;
-  max-width: 760px; margin: 0 auto; padding: 0 28px;
-}
-
-.art-breadcrumb {
-  display: flex; align-items: center; gap: 8px;
-  font-family: var(--fm); font-size: 10px; color: var(--s400);
-  margin-bottom: 24px;
-}
-.art-breadcrumb a { color: var(--s400); transition: color .18s; }
-.art-breadcrumb a:hover { color: var(--cyan); }
-.art-breadcrumb span { opacity: .4; }
-
-.art-meta-top {
-  display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
-}
-.art-cat { font-family: var(--fm); font-size: 10px; color: var(--cyan); letter-spacing: .1em; text-transform: uppercase; }
-
-.art-h1 {
-  font-family: var(--fd);
-  font-size: clamp(32px, 4.5vw, 58px);
-  font-weight: 600; line-height: 1.08;
-  letter-spacing: -.025em; color: var(--s50);
-  margin-bottom: 20px;
-}
-
-.art-lead {
-  font-family: var(--fb); font-size: 19px; font-weight: 300;
-  color: var(--s200); line-height: 1.68;
-  margin-bottom: 32px;
-  border-left: 2px solid var(--cyan);
-  padding-left: 18px;
-}
-
-.art-byline {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 0; border-top: 1px solid var(--b1); border-bottom: 1px solid var(--b1);
-  margin-bottom: 0; flex-wrap: wrap; gap: 16px;
-}
-.art-byline-left { display: flex; align-items: center; gap: 12px; }
-.av {
-  width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
-  background: linear-gradient(135deg, var(--cyan), #818cf8);
-  display: grid; place-items: center;
-  font-family: var(--fu); font-size: 13px; font-weight: 700; color: var(--bg0);
-}
-.art-author-n { font-family: var(--fu); font-size: 13px; font-weight: 600; color: var(--s50); }
-.art-author-role { font-family: var(--fu); font-size: 11px; color: var(--s400); }
-.art-byline-right { display: flex; align-items: center; gap: 16px; }
-.art-meta-item {
-  font-family: var(--fm); font-size: 10px; color: var(--s400);
-  display: flex; align-items: center; gap: 5px;
-}
-
-/* HERO IMAGE AREA */
-.art-visual {
-  margin: 36px 0 0;
-  height: 320px; position: relative; overflow: hidden;
-  background: linear-gradient(155deg, #0d1e35 0%, #081422 55%, #060e1c 100%);
-  display: flex; align-items: center; justify-content: center;
-}
-.art-visual-grid {
-  position: absolute; inset: 0;
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 26px, rgba(34,211,238,.04) 26px, rgba(34,211,238,.04) 27px),
-    repeating-linear-gradient(90deg, transparent, transparent 26px, rgba(34,211,238,.04) 26px, rgba(34,211,238,.04) 27px);
-}
-.art-visual-glow {
-  position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%);
-  width: 400px; height: 200px;
-  background: radial-gradient(ellipse, rgba(34,211,238,.18) 0%, transparent 65%);
-}
-.art-visual-label {
-  position: relative; z-index: 1;
-  font-family: var(--fd); font-size: 64px; font-weight: 700;
-  color: rgba(34,211,238,.12); letter-spacing: -.03em;
-  line-height: 1; text-align: center; user-select: none;
-}
-
-/* ════════════ ARTICLE LAYOUT ════════════ */
-.art-layout {
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 56px;
-  max-width: 1100px; margin: 0 auto;
-  padding: 0 28px;
-  position: relative; z-index: 1;
-}
-
-/* ════════════ ARTICLE BODY ════════════ */
-.art-body { padding: 48px 0 64px; }
+/* LAYOUT */
+.art-layout{display:grid;grid-template-columns:1fr 280px;gap:56px;max-width:1100px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
+.art-body{padding:48px 0 64px;}
 
 /* TOC */
-.toc {
-  background: var(--bg2); border: 1px solid var(--b1);
-  border-left: 2px solid var(--cyan);
-  border-radius: var(--r3); padding: 22px 24px;
-  margin-bottom: 44px;
-}
-.toc-t {
-  font-family: var(--fu); font-size: 10px; font-weight: 600;
-  letter-spacing: .12em; text-transform: uppercase; color: var(--s400);
-  margin-bottom: 14px;
-}
-.toc-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.toc-list li { display: flex; align-items: baseline; gap: 8px; }
-.toc-num { font-family: var(--fm); font-size: 9px; color: var(--s500); min-width: 16px; }
-.toc-list a {
-  font-family: var(--fu); font-size: 12px; font-weight: 500;
-  color: var(--s300); transition: color .18s;
-}
-.toc-list a:hover { color: var(--cyan); }
+.toc{background:var(--bg2);border:1px solid var(--b1);border-left:2px solid var(--cyan);border-radius:var(--r3);padding:22px 24px;margin-bottom:44px;}
+.toc-t{font-family:var(--fu);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--s400);margin-bottom:14px;}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.toc-list li{display:flex;align-items:baseline;gap:8px;}
+.toc-n{font-family:var(--fm);font-size:9px;color:var(--s500);min-width:16px;}
+.toc-list a{font-family:var(--fu);font-size:12px;font-weight:500;color:var(--s300);transition:color .18s;}
+.toc-list a:hover{color:var(--cyan);}
 
 /* WHY IT MATTERS */
-.wim {
-  background: linear-gradient(135deg, rgba(34,211,238,.06) 0%, rgba(34,211,238,.02) 100%);
-  border: 1px solid var(--b2); border-radius: var(--r3);
-  padding: 28px 30px; margin: 44px 0;
-}
-.wim-t {
-  font-family: var(--fu); font-size: 10px; font-weight: 600;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--cyan);
-  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
-}
-.wim-t::before { content: '⚡'; font-size: 14px; }
-.wim-body {
-  font-family: var(--fb); font-size: 15px; font-weight: 300;
-  color: var(--s200); line-height: 1.72;
-}
+.wim{background:linear-gradient(135deg,rgba(34,211,238,.06) 0%,rgba(34,211,238,.02) 100%);border:1px solid var(--b2);border-radius:var(--r3);padding:28px 30px;margin:0 0 44px;}
+.wim-t{font-family:var(--fu);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.wim-t::before{content:'⚡';font-size:14px;}
+.wim-body{font-family:var(--fb);font-size:15px;font-weight:300;color:var(--s200);line-height:1.72;}
 
 /* KEY TAKEAWAYS */
-.kta {
-  background: var(--bg2); border: 1px solid var(--b1);
-  border-radius: var(--r3); padding: 28px 30px; margin: 44px 0;
-}
-.kta-t {
-  font-family: var(--fu); font-size: 10px; font-weight: 600;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--s400);
-  margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
-}
-.kta-t::before { content: '◆'; font-size: 10px; color: var(--cyan); }
-.kta-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.kta-list li {
-  display: flex; gap: 12px; align-items: flex-start;
-  font-family: var(--fb); font-size: 14.5px; font-weight: 300;
-  color: var(--s200); line-height: 1.6;
-}
-.kta-list li::before {
-  content: '→'; font-family: var(--fm); font-size: 11px;
-  color: var(--cyan); margin-top: 3px; flex-shrink: 0;
-}
+.kta{background:var(--bg2);border:1px solid var(--b1);border-radius:var(--r3);padding:28px 30px;margin:0 0 44px;}
+.kta-t{font-family:var(--fu);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--s400);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.kta-t::before{content:'◆';font-size:10px;color:var(--cyan);}
+.kta-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.kta-list li{display:flex;gap:12px;align-items:flex-start;font-family:var(--fb);font-size:14.5px;font-weight:300;color:var(--s200);line-height:1.6;}
+.kta-list li::before{content:'→';font-family:var(--fm);font-size:11px;color:var(--cyan);margin-top:3px;flex-shrink:0;}
 
-/* PROSE TYPOGRAPHY */
-.prose h2 {
-  font-family: var(--fd); font-size: clamp(24px, 3vw, 32px); font-weight: 600;
-  letter-spacing: -.02em; line-height: 1.18; color: var(--s50);
-  margin: 44px 0 16px;
-  padding-top: 44px; border-top: 1px solid var(--b1);
-}
-.prose h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
-
-.prose h3 {
-  font-family: var(--fu); font-size: 16px; font-weight: 600;
-  letter-spacing: .02em; text-transform: uppercase;
-  color: var(--s200); margin: 32px 0 12px;
-}
-
-.prose p {
-  font-family: var(--fb); font-size: 17px; font-weight: 300;
-  color: var(--s200); line-height: 1.78;
-  margin-bottom: 22px; max-width: 68ch;
-}
-
-.prose strong { color: var(--s50); font-weight: 600; }
-.prose em { font-style: italic; color: var(--s100); }
-
-.prose a {
-  color: var(--cyan); border-bottom: 1px solid rgba(34,211,238,.3);
-  transition: border-color .18s;
-}
-.prose a:hover { border-color: var(--cyan); }
-
-/* BLOCKQUOTE */
-.prose blockquote {
-  border-left: 2px solid var(--cyan);
-  margin: 36px 0; padding: 4px 0 4px 24px;
-}
-.prose blockquote p {
-  font-family: var(--fd); font-size: 22px; font-style: italic;
-  font-weight: 400; color: var(--s100); line-height: 1.55;
-  margin-bottom: 8px;
-}
-.prose blockquote cite {
-  font-family: var(--fm); font-size: 10px; letter-spacing: .08em;
-  text-transform: uppercase; color: var(--s400);
-}
-
-/* CALLOUT */
-.callout {
-  background: var(--bg3); border: 1px solid var(--b1);
-  border-radius: var(--r2); padding: 20px 22px;
-  margin: 32px 0;
-}
-.callout-l {
-  font-family: var(--fm); font-size: 9px; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--am); margin-bottom: 8px;
-}
-.callout p {
-  font-size: 14.5px !important; color: var(--s300) !important;
-  margin-bottom: 0 !important;
-}
-
-/* DATA HIGHLIGHT */
-.data-hl {
-  display: inline-flex; align-items: baseline; gap: 6px;
-  background: var(--cdim); border: 1px solid rgba(34,211,238,.15);
-  border-radius: var(--r1); padding: 2px 10px;
-}
-.data-hl .num {
-  font-family: var(--fd); font-size: 22px; font-weight: 700;
-  color: var(--cyan); line-height: 1;
-}
-.data-hl .lbl {
-  font-family: var(--fm); font-size: 10px; color: var(--s400);
-  text-transform: uppercase; letter-spacing: .06em;
-}
-
-/* DATA ROW */
-.data-row {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 16px; margin: 32px 0;
-}
-.data-card {
-  background: var(--bg2); border: 1px solid var(--b1);
-  border-radius: var(--r2); padding: 18px 20px; text-align: center;
-}
-.data-card .dn {
-  font-family: var(--fd); font-size: 30px; font-weight: 700;
-  color: var(--s50); letter-spacing: -.02em; line-height: 1; margin-bottom: 5px;
-}
-.data-card .dn span { color: var(--cyan); }
-.data-card .dl {
-  font-family: var(--fu); font-size: 10px; font-weight: 500;
-  letter-spacing: .07em; text-transform: uppercase; color: var(--s400);
-}
-
-/* FAQ */
-.faq { margin: 44px 0; }
-.faq-t {
-  font-family: var(--fd); font-size: 26px; font-weight: 600;
-  letter-spacing: -.015em; color: var(--s50); margin-bottom: 24px;
-  padding-top: 44px; border-top: 1px solid var(--b1);
-}
-.faq-item {
-  border-bottom: 1px solid var(--b1); overflow: hidden;
-}
-.faq-q {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 0; cursor: pointer; gap: 16px;
-}
-.faq-q-text {
-  font-family: var(--fu); font-size: 14px; font-weight: 600;
-  color: var(--s100); transition: color .2s;
-}
-.faq-q:hover .faq-q-text { color: var(--cyan); }
-.faq-icon {
-  font-family: var(--fm); font-size: 16px; color: var(--cyan);
-  transition: transform .25s; flex-shrink: 0; user-select: none;
-}
-.faq-item.open .faq-icon { transform: rotate(45deg); }
-.faq-a {
-  max-height: 0; overflow: hidden;
-  transition: max-height .35s cubic-bezier(.4,0,.2,1);
-}
-.faq-item.open .faq-a { max-height: 400px; }
-.faq-a-inner {
-  font-family: var(--fb); font-size: 14.5px; font-weight: 300;
-  color: var(--s300); line-height: 1.7;
-  padding: 0 0 18px;
-}
+/* PROSE */
+.prose h2{font-family:var(--fd);font-size:clamp(22px,3vw,30px);font-weight:600;letter-spacing:-.02em;line-height:1.18;color:var(--s50);margin:44px 0 16px;padding-top:44px;border-top:1px solid var(--b1);}
+.prose h2:first-child{margin-top:0;padding-top:0;border-top:none;}
+.prose h3{font-family:var(--fu);font-size:15px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--s200);margin:28px 0 10px;}
+.prose p{font-family:var(--fb);font-size:17px;font-weight:300;color:var(--s200);line-height:1.78;margin-bottom:22px;max-width:68ch;}
+.prose strong{color:var(--s50);font-weight:600;}
+.prose blockquote{border-left:2px solid var(--cyan);margin:36px 0;padding:4px 0 4px 24px;}
+.prose blockquote p{font-family:var(--fd);font-size:22px;font-style:italic;font-weight:400;color:var(--s100);line-height:1.55;margin-bottom:8px;}
+.prose cite{font-family:var(--fm);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--s400);}
 
 /* TAGS ROW */
-.art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 40px 0; padding-top: 32px; border-top: 1px solid var(--b1); }
-.art-tag-item {
-  font-family: var(--fm); font-size: 10px; color: var(--s300);
-  border: 1px solid var(--b1); border-radius: var(--r1);
-  padding: 5px 12px; letter-spacing: .06em; text-transform: uppercase;
-  transition: color .18s, border-color .18s;
-}
-.art-tag-item:hover { color: var(--cyan); border-color: var(--b2); }
-
-/* SOURCES */
-.sources { margin: 40px 0; }
-.sources-t {
-  font-family: var(--fu); font-size: 10px; font-weight: 600;
-  letter-spacing: .12em; text-transform: uppercase; color: var(--s400);
-  margin-bottom: 12px;
-}
-.sources-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-.sources-list li {
-  font-family: var(--fb); font-size: 13px; font-weight: 300; color: var(--s400);
-  display: flex; gap: 8px; align-items: baseline;
-}
-.sources-list li::before { content: '[' attr(data-n) ']'; font-family: var(--fm); font-size: 9px; color: var(--s500); flex-shrink: 0; }
+.art-tags{display:flex;flex-wrap:wrap;gap:8px;margin:40px 0;padding-top:32px;border-top:1px solid var(--b1);}
+.art-tag{font-family:var(--fm);font-size:10px;color:var(--s300);border:1px solid var(--b1);border-radius:var(--r1);padding:5px 12px;letter-spacing:.06em;text-transform:uppercase;transition:color .18s,border-color .18s;}
+.art-tag:hover{color:var(--cyan);border-color:var(--b2);}
 
 /* SHARE */
-.art-share {
-  display: flex; align-items: center; gap: 12px; margin: 40px 0;
-  padding: 20px 0; border-top: 1px solid var(--b1); border-bottom: 1px solid var(--b1);
-  flex-wrap: wrap;
-}
-.art-share-l {
-  font-family: var(--fu); font-size: 11px; font-weight: 600;
-  letter-spacing: .08em; text-transform: uppercase; color: var(--s400);
-  margin-right: 4px;
-}
-.share-btn {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-family: var(--fu); font-size: 11px; font-weight: 600;
-  letter-spacing: .05em; text-transform: uppercase;
-  padding: 8px 16px; border-radius: var(--r1);
-  border: 1px solid var(--b1); background: transparent; color: var(--s300);
-  cursor: pointer; transition: all .2s;
-}
-.share-btn:hover { color: var(--cyan); border-color: var(--b2); }
+.art-share{display:flex;align-items:center;gap:12px;margin:40px 0;padding:20px 0;border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);flex-wrap:wrap;}
+.share-l{font-family:var(--fu);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--s400);margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--fu);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:8px 16px;border-radius:var(--r1);border:1px solid var(--b1);background:transparent;color:var(--s300);cursor:pointer;transition:all .2s;}
+.share-btn:hover{color:var(--cyan);border-color:var(--b2);}
 
-/* ARTICLE CTA */
-.art-cta {
-  background: var(--bg2); border: 1px solid var(--b2);
-  border-radius: var(--r4); padding: 36px 40px;
-  text-align: center; position: relative; overflow: hidden;
-  margin: 40px 0 0;
-}
-.art-cta::before {
-  content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
-  width: 400px; height: 180px; pointer-events: none;
-  background: radial-gradient(ellipse, rgba(34,211,238,.08) 0%, transparent 65%);
-}
-.art-cta-eye {
-  font-family: var(--fm); font-size: 10px; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--cyan); margin-bottom: 12px;
-  position: relative; z-index: 1;
-}
-.art-cta-h {
-  font-family: var(--fd); font-size: 28px; font-weight: 600;
-  letter-spacing: -.02em; color: var(--s50); margin-bottom: 10px;
-  position: relative; z-index: 1; line-height: 1.15;
-}
-.art-cta-sub {
-  font-family: var(--fb); font-size: 14px; font-weight: 300;
-  color: var(--s300); margin-bottom: 24px;
-  position: relative; z-index: 1;
-}
-.art-cta-form {
-  display: flex; gap: 10px; max-width: 380px; margin: 0 auto;
-  position: relative; z-index: 1;
-}
-.art-cta-in {
-  flex: 1; background: var(--bg0); border: 1px solid var(--b1);
-  border-radius: var(--r1); padding: 10px 16px;
-  font-family: var(--fb); font-size: 14px; color: var(--s50); outline: none;
-  transition: border-color .2s;
-}
-.art-cta-in::placeholder { color: var(--s400); }
-.art-cta-in:focus { border-color: var(--cyan); }
+/* SOURCES */
+.sources{margin:40px 0;}
+.sources-t{font-family:var(--fu);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--s400);margin-bottom:12px;}
+.sources-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.sources-list li{font-family:var(--fb);font-size:13px;font-weight:300;color:var(--s400);display:flex;gap:8px;align-items:baseline;}
+.sources-list li::before{content:'['attr(data-n)']';font-family:var(--fm);font-size:9px;color:var(--s500);flex-shrink:0;}
 
-/* ════════════ STICKY SIDEBAR ════════════ */
-.art-sidebar {
-  padding: 48px 0 64px;
-}
-.art-sidebar-inner {
-  position: sticky; top: 76px;
-  display: flex; flex-direction: column; gap: 20px;
-}
+/* SUBSCRIBE CTA */
+.art-cta{background:var(--bg2);border:1px solid var(--b2);border-radius:var(--r4);padding:36px 40px;text-align:center;position:relative;overflow:hidden;margin:40px 0 0;}
+.art-cta::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:180px;pointer-events:none;background:radial-gradient(ellipse,rgba(34,211,238,.08) 0%,transparent 65%);}
+.art-cta-eye{font-family:var(--fm);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:12px;position:relative;z-index:1;}
+.art-cta-h{font-family:var(--fd);font-size:28px;font-weight:600;letter-spacing:-.02em;color:var(--s50);margin-bottom:10px;position:relative;z-index:1;line-height:1.15;}
+.art-cta-sub{font-family:var(--fb);font-size:14px;font-weight:300;color:var(--s300);margin-bottom:24px;position:relative;z-index:1;}
+.art-cta-form{display:flex;gap:10px;max-width:380px;margin:0 auto;position:relative;z-index:1;}
+.art-cta-in{flex:1;background:var(--bg0);border:1px solid var(--b1);border-radius:var(--r1);padding:10px 16px;font-family:var(--fb);font-size:14px;color:var(--s50);outline:none;transition:border-color .2s;}
+.art-cta-in::placeholder{color:var(--s400);}
+.art-cta-in:focus{border-color:var(--cyan);}
 
-.sib {
-  background: var(--bg2); border: 1px solid var(--b1);
-  border-radius: var(--r3); padding: 18px 20px;
-}
-.sib-t {
-  font-family: var(--fu); font-size: 9px; font-weight: 600;
-  letter-spacing: .13em; text-transform: uppercase; color: var(--s400);
-  margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
-}
-.sib-t::after { content: ''; flex: 1; height: 1px; background: var(--b1); }
+/* STICKY SIDEBAR */
+.art-sidebar{padding:48px 0 64px;}
+.sidebar-inner{position:sticky;top:76px;display:flex;flex-direction:column;gap:20px;}
+.sib{background:var(--bg2);border:1px solid var(--b1);border-radius:var(--r3);padding:18px 20px;}
+.sib-t{font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--s400);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.sib-t::after{content:'';flex:1;height:1px;background:var(--b1);}
 
-/* Progress indicator (reading progress) */
-.read-progress {
-  background: var(--bg2); border: 1px solid var(--b1);
-  border-radius: var(--r3); padding: 18px 20px;
-}
-.rp-t {
-  font-family: var(--fu); font-size: 9px; font-weight: 600;
-  letter-spacing: .13em; text-transform: uppercase; color: var(--s400);
-  margin-bottom: 12px;
-}
-.rp-track { height: 3px; background: var(--bg4); border-radius: 3px; margin-bottom: 8px; }
-.rp-fill { height: 100%; background: var(--cyan); border-radius: 3px; width: 0%; transition: width .1s; box-shadow: 0 0 6px rgba(34,211,238,.4); }
-.rp-pct { font-family: var(--fm); font-size: 11px; color: var(--cyan); }
+/* Reading progress sidebar */
+.rp-track{height:3px;background:var(--bg4);border-radius:3px;margin-bottom:8px;}
+.rp-fill{height:100%;background:var(--cyan);border-radius:3px;width:0%;transition:width .1s;box-shadow:0 0 6px rgba(34,211,238,.4);}
+.rp-pct{font-family:var(--fm);font-size:11px;color:var(--cyan);}
 
 /* TOC sidebar */
-.toc-side-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-.toc-side-list a {
-  font-family: var(--fb); font-size: 13px; font-weight: 300; color: var(--s400);
-  display: flex; gap: 9px; align-items: baseline; line-height: 1.45;
-  transition: color .18s;
-}
-.toc-side-list a:hover { color: var(--cyan); }
-.toc-side-list a.active { color: var(--s100); }
-.toc-num { font-family: var(--fm); font-size: 9px; color: var(--s500); flex-shrink: 0; }
+.toc-side-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.toc-side-list a{font-family:var(--fb);font-size:13px;font-weight:300;color:var(--s400);display:flex;gap:9px;align-items:baseline;line-height:1.45;transition:color .18s;}
+.toc-side-list a:hover{color:var(--cyan);}
+.toc-side-list a.active{color:var(--s100);}
+.toc-side-n{font-family:var(--fm);font-size:9px;color:var(--s500);flex-shrink:0;}
 
-/* Related sidebar */
-.rel-item {
-  display: flex; gap: 11px; align-items: flex-start;
-  padding: 10px 0; border-bottom: 1px solid var(--b1); cursor: pointer;
-}
-.rel-item:first-of-type { padding-top: 0; }
-.rel-item:last-child    { border-bottom: none; padding-bottom: 0; }
-.rel-item:hover .rel-t  { color: var(--cyan); }
-.rel-thumb {
-  width: 48px; height: 38px; border-radius: var(--r1);
-  background: var(--bg3); border: 1px solid var(--b1);
-  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-  font-size: 16px; opacity: .4;
-}
-.rel-t {
-  font-family: var(--fb); font-size: 12.5px; font-weight: 300;
-  color: var(--s200); line-height: 1.45; transition: color .2s;
-  margin-bottom: 3px;
-}
-.rel-meta { font-family: var(--fm); font-size: 9px; color: var(--s400); }
+/* Related */
+.rel-item{display:flex;gap:11px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--b1);cursor:pointer;}
+.rel-item:first-of-type{padding-top:0;}
+.rel-item:last-child{border-bottom:none;padding-bottom:0;}
+.rel-item:hover .rel-t{color:var(--cyan);}
+.rel-thumb{width:48px;height:38px;border-radius:var(--r1);background:var(--bg3);border:1px solid var(--b1);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;opacity:.4;}
+.rel-t{font-family:var(--fb);font-size:12.5px;font-weight:300;color:var(--s200);line-height:1.45;transition:color .2s;margin-bottom:3px;}
+.rel-meta{font-family:var(--fm);font-size:9px;color:var(--s400);}
 
-/* ════════════ RELATED ARTICLES (bottom) ════════════ */
-.related-section { padding: 64px 0; border-top: 1px solid var(--b1); }
-.g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-.card {
-  background: var(--bg2); border: 1px solid var(--b1); border-radius: var(--r3);
-  overflow: hidden; display: flex; flex-direction: column; cursor: pointer;
-  transition: border-color .25s, box-shadow .25s, transform .28s cubic-bezier(.25,.46,.45,.94);
-}
-.card:hover { border-color: var(--b2); box-shadow: 0 0 50px rgba(34,211,238,.07); transform: translateY(-3px); }
-.card-thumb {
-  height: 140px; overflow: hidden; position: relative;
-  background: linear-gradient(135deg, var(--bg3), var(--bg1));
-  display: flex; align-items: center; justify-content: center;
-}
-.card-thumb-ico { font-size: 34px; opacity: .16; user-select: none; }
-.card-thumb::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(transparent, var(--bg2)); }
-.card-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
-.card-meta { display: flex; align-items: center; gap: 9px; margin-bottom: 10px; }
-.card-date { font-family: var(--fm); font-size: 10px; color: var(--s400); }
-.card-h { font-family: var(--fd); font-size: 16px; font-weight: 600; line-height: 1.3; letter-spacing: -.01em; color: var(--s50); margin-bottom: 6px; flex: 1; transition: color .2s; }
-.card:hover .card-h { color: var(--cyan); }
-.card-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--b1); margin-top: auto; }
-.card-rt { font-family: var(--fm); font-size: 10px; color: var(--s400); }
+/* RELATED SECTION */
+.related-section{padding:64px 0;border-top:1px solid var(--b1);}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.card{background:var(--bg2);border:1px solid var(--b1);border-radius:var(--r3);overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .25s,box-shadow .25s,transform .28s;}
+.card:hover{border-color:var(--b2);box-shadow:0 0 50px rgba(34,211,238,.07);transform:translateY(-3px);}
+.card-thumb{height:140px;overflow:hidden;position:relative;background:linear-gradient(135deg,var(--bg3),var(--bg1));display:flex;align-items:center;justify-content:center;}
+.card-thumb-ico{font-size:34px;opacity:.16;user-select:none;}
+.card-thumb::after{content:'';position:absolute;bottom:0;left:0;right:0;height:30px;background:linear-gradient(transparent,var(--bg2));}
+.card-body{padding:18px 20px;flex:1;display:flex;flex-direction:column;}
+.card-meta{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
+.card-date{font-family:var(--fm);font-size:10px;color:var(--s400);}
+.card-h{font-family:var(--fd);font-size:16px;font-weight:600;line-height:1.3;letter-spacing:-.01em;color:var(--s50);margin-bottom:6px;flex:1;transition:color .2s;}
+.card:hover .card-h{color:var(--cyan);}
+.card-foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--b1);margin-top:auto;}
+.card-rt{font-family:var(--fm);font-size:10px;color:var(--s400);}
 
-/* ════════════ FOOTER ════════════ */
-footer { background: var(--bg1); border-top: 1px solid var(--b1); padding: 52px 0 28px; }
-.ft-g { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--b1); }
-.ft-brand-n { font-family: var(--fd); font-size: 20px; font-weight: 600; color: var(--s50); margin-bottom: 10px; }
-.ft-brand-d { font-family: var(--fb); font-size: 13px; font-weight: 300; color: var(--s400); line-height: 1.65; max-width: 230px; }
-.ft-ct { font-family: var(--fu); font-size: 9px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--s400); margin-bottom: 14px; }
-.ft-ls { display: flex; flex-direction: column; gap: 9px; }
-.ft-ls a { font-family: var(--fb); font-size: 13px; font-weight: 300; color: var(--s300); transition: color .18s; }
-.ft-ls a:hover { color: var(--cyan); }
-.ft-bot { display: flex; align-items: center; justify-content: space-between; }
-.ft-copy { font-family: var(--fu); font-size: 11px; font-weight: 500; letter-spacing: .03em; color: var(--s400); }
-.ft-soc { display: flex; gap: 10px; }
-.soc { width: 32px; height: 32px; border-radius: var(--r1); border: 1px solid var(--b1); display: grid; place-items: center; font-size: 12px; color: var(--s400); transition: color .18s, border-color .18s, box-shadow .18s; }
-.soc:hover { color: var(--cyan); border-color: var(--b2); box-shadow: 0 0 12px rgba(34,211,238,.15); }
+/* FOOTER */
+footer{background:var(--bg1);border-top:1px solid var(--b1);padding:52px 0 28px;}
+.ft-g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--b1);}
+.ft-brand-n{font-family:var(--fd);font-size:20px;font-weight:600;color:var(--s50);margin-bottom:10px;}
+.ft-brand-d{font-family:var(--fb);font-size:13px;font-weight:300;color:var(--s400);line-height:1.65;max-width:230px;}
+.ft-ct{font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--s400);margin-bottom:14px;}
+.ft-ls{display:flex;flex-direction:column;gap:9px;}
+.ft-ls a{font-family:var(--fb);font-size:13px;font-weight:300;color:var(--s300);transition:color .18s;}
+.ft-ls a:hover{color:var(--cyan);}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;}
+.ft-copy{font-family:var(--fu);font-size:11px;font-weight:500;letter-spacing:.03em;color:var(--s400);}
+.ft-soc{display:flex;gap:10px;}
+.soc{width:32px;height:32px;border-radius:var(--r1);border:1px solid var(--b1);display:grid;place-items:center;font-size:12px;color:var(--s400);transition:color .18s,border-color .18s;}
+.soc:hover{color:var(--cyan);border-color:var(--b2);}
 
-/* ════════════ SCROLL REVEAL ════════════ */
-[data-r] { opacity: 0; transform: translateY(16px); transition: opacity .6s cubic-bezier(.25,.46,.45,.94), transform .6s cubic-bezier(.25,.46,.45,.94); }
-[data-r].in { opacity: 1; transform: translateY(0); }
+/* NOT FOUND */
+.not-found{text-align:center;padding:120px 20px;margin-top:58px;}
+.not-found-ico{font-size:56px;margin-bottom:20px;opacity:.4;}
+.not-found-t{font-family:var(--fd);font-size:32px;font-weight:600;color:var(--s300);margin-bottom:12px;}
+.not-found-d{font-family:var(--fb);font-size:15px;font-weight:300;color:var(--s400);margin-bottom:28px;}
 
-/* ════════════ RESPONSIVE ════════════ */
-@media (max-width: 1024px) {
-  .art-layout { grid-template-columns: 1fr; }
-  .art-sidebar { display: none; }
-  .art-hero-inner, .art-body { max-width: 100%; }
-}
-@media (max-width: 768px) {
-  .wrap { padding: 0 18px; }
-  .nav-links { display: none; }
-  .art-layout { padding: 0 18px; }
-  .g3 { grid-template-columns: 1fr 1fr; }
-  .data-row { grid-template-columns: 1fr; }
-  .art-byline { flex-direction: column; }
-  .art-cta-form { flex-direction: column; }
-  .nl,.art-cta { padding: 36px 20px; }
-}
-@media (max-width: 540px) {
-  .g3 { grid-template-columns: 1fr; }
-  .ft-g { grid-template-columns: 1fr; }
-  .ft-bot { flex-direction: column; gap: 14px; text-align: center; }
-}
+/* SCROLL REVEAL */
+[data-r]{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.25,.46,.45,.94),transform .6s cubic-bezier(.25,.46,.45,.94);}
+[data-r].in{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.art-layout{grid-template-columns:1fr;}.art-sidebar{display:none;}}
+@media(max-width:768px){.wrap{padding:0 18px;}.nav-links{display:none;}.art-layout{padding:0 18px;}.g3{grid-template-columns:1fr 1fr;}.art-byline{flex-direction:column;}.art-cta-form{flex-direction:column;}}
+@media(max-width:540px){.g3{grid-template-columns:1fr;}.ft-g{grid-template-columns:1fr;}.ft-bot{flex-direction:column;gap:14px;text-align:center;}}
 </style>
 </head>
 <body>
 
-<div id="pb" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Reading progress"></div>
+<div id="pb"></div>
 
-<!-- ════════════ NAV ════════════ -->
-<nav class="nav" role="navigation" aria-label="Primary navigation">
+<!-- NAV -->
+<nav class="nav">
   <div class="nav-in">
-    <a href="/" class="logo" aria-label="Insight Ledger home">
+    <a href="index.html" class="logo">
       <div class="logo-mark" aria-hidden="true">IL</div>
       Insight Ledger
     </a>
-    <ul class="nav-links" role="list">
+    <ul class="nav-links">
       <li><a href="category.html#ai">AI</a></li>
       <li><a href="category.html#finance">Finance</a></li>
       <li><a href="category.html#crypto">Crypto</a></li>
@@ -726,474 +248,430 @@ footer { background: var(--bg1); border-top: 1px solid var(--b1); padding: 52px 
       <li><a href="category.html#fintech">Fintech</a></li>
     </ul>
     <div class="nav-r">
-      <a href="/" class="btn btn-g">← Home</a>
-      <a href="#art-cta" class="btn btn-p">Subscribe</a>
+      <a href="index.html" class="btn btn-g">← Home</a>
+      <a href="#cta" class="btn btn-p">Subscribe</a>
     </div>
   </div>
 </nav>
 
-<!-- ════════════ ARTICLE HERO ════════════ -->
-<header class="art-hero">
-  <div class="art-hero-bg" aria-hidden="true"></div>
-  <div class="art-hero-grid" aria-hidden="true"></div>
-  <div class="art-hero-glow" aria-hidden="true"></div>
+<!-- ARTICLE CONTENT — рендерится JS -->
+<div id="app"></div>
 
-  <div class="art-hero-inner">
-    <!-- Breadcrumb -->
-    <nav class="art-breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a>
-      <span aria-hidden="true">/</span>
-      <a href="category.html#ai">AI</a>
-      <span aria-hidden="true">/</span>
-      <span aria-current="page">AI Infrastructure & Capital</span>
-    </nav>
-
-    <div class="art-meta-top" data-r>
-      <span class="tag">AI</span>
-      <span class="art-cat">Deep Analysis</span>
-    </div>
-
-    <h1 class="art-h1" data-r style="transition-delay:.06s">
-      The Quiet Infrastructure Shift That Could Rewrite Capital Allocation
-    </h1>
-
-    <p class="art-lead" data-r style="transition-delay:.12s">
-      As large language models begin operating autonomously within trading desks, a new class of financial infrastructure is emerging — one regulators have yet to fully map. The implications extend far beyond efficiency gains.
-    </p>
-
-    <div class="art-byline" data-r style="transition-delay:.17s">
-      <div class="art-byline-left">
-        <div class="av" aria-hidden="true">AR</div>
-        <div>
-          <div class="art-author-n">Alex Reeve</div>
-          <div class="art-author-role">Senior Editor, AI & Markets</div>
-        </div>
-      </div>
-      <div class="art-byline-right">
-        <div class="art-meta-item">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <time datetime="2026-05-31">May 31, 2026</time>
-        </div>
-        <div class="art-meta-item">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          6 min read
-        </div>
-        <div class="art-meta-item">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          2.4k views
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hero visual -->
-  <div class="art-visual" aria-hidden="true" style="max-width:1100px;margin:36px auto 0;">
-    <div class="art-visual-grid"></div>
-    <div class="art-visual-glow"></div>
-    <div class="art-visual-label">AI×<br>Capital</div>
-  </div>
-</header>
-
-<!-- ════════════ ARTICLE LAYOUT ════════════ -->
-<div class="art-layout">
-
-  <!-- MAIN BODY -->
-  <main class="art-body" id="article-body">
-
-    <!-- TABLE OF CONTENTS -->
-    <nav class="toc" aria-label="Article contents" data-r>
-      <div class="toc-t">Contents</div>
-      <ol class="toc-list">
-        <li><span class="toc-num">01</span><a href="#s1">The invisible layer beneath modern trading</a></li>
-        <li><span class="toc-num">02</span><a href="#s2">How LLMs are entering the decision stack</a></li>
-        <li><span class="toc-num">03</span><a href="#s3">What the data shows — and what it doesn't</a></li>
-        <li><span class="toc-num">04</span><a href="#s4">The regulatory blind spot</a></li>
-        <li><span class="toc-num">05</span><a href="#s5">What comes next</a></li>
-      </ol>
-    </nav>
-
-    <!-- WHY IT MATTERS -->
-    <div class="wim" data-r>
-      <div class="wim-t">Why it matters</div>
-      <div class="wim-body">
-        Capital allocation decisions — which assets to hold, when to trade, how to price risk — are being influenced by AI systems that operate faster than any human oversight mechanism. Understanding this shift is essential for investors, regulators, and anyone who depends on financial markets functioning as intended.
-      </div>
-    </div>
-
-    <!-- KEY TAKEAWAYS -->
-    <div class="kta" data-r>
-      <div class="kta-t">Key takeaways</div>
-      <ul class="kta-list">
-        <li>At least 6 of the top 10 global investment banks have integrated LLM-based tools into trading workflows as of Q1 2026</li>
-        <li>These systems operate at latencies below 200ms — faster than any regulatory reporting framework currently requires</li>
-        <li>Existing financial regulation was not designed with autonomous AI agents in mind; significant grey areas remain</li>
-        <li>The firms deploying these systems are gaining measurable alpha on short-term volatility trades</li>
-        <li>Second-order systemic risks — AI systems interacting with each other — are not yet being modelled by regulators</li>
-      </ul>
-    </div>
-
-    <!-- PROSE -->
-    <div class="prose">
-
-      <h2 id="s1">The invisible layer beneath modern trading</h2>
-
-      <p>Walk onto any major trading floor today and the visual experience is largely unchanged from a decade ago — screens, terminals, people watching numbers. But underneath the surface, something has changed fundamentally in the past eighteen months.</p>
-
-      <p>A new layer of infrastructure has emerged: AI systems that ingest, process, and act on information before any human has had a chance to read it. These aren't the algorithmic trading systems of the 2010s, which operated on rigid rule sets. The new systems are language models — the same class of technology behind consumer chatbots — adapted for financial decision-making.</p>
-
-      <blockquote>
-        <p>"We're not replacing traders. We're giving them a co-pilot who has read every research note ever written and can summarise any situation in 40 milliseconds."</p>
-        <cite>— Head of Quantitative Research, tier-1 investment bank (anonymous)</cite>
-      </blockquote>
-
-      <p>The distinction matters enormously. Traditional algorithmic systems are deterministic: given identical inputs, they always produce the same output. Language models are probabilistic, contextual, and can generalise across domains their designers never explicitly anticipated.</p>
-
-      <div class="data-row" data-r>
-        <div class="data-card"><div class="dn">6<span>/10</span></div><div class="dl">Top banks with LLM in trading workflows</div></div>
-        <div class="data-card"><div class="dn">&lt;<span>200</span>ms</div><div class="dl">LLM decision latency</div></div>
-        <div class="data-card"><div class="dn">$<span>4.2</span>T</div><div class="dl">Daily volume influenced by AI systems</div></div>
-      </div>
-
-      <h2 id="s2">How LLMs are entering the decision stack</h2>
-
-      <p>The integration isn't uniform. Based on conversations with practitioners across the industry, three distinct deployment patterns have emerged.</p>
-
-      <h3>Pattern 1 — Research synthesis</h3>
-
-      <p>The most common application: LLMs that ingest earnings calls, research notes, news feeds, and regulatory filings in real time, producing structured summaries and <strong>relevance scores</strong> for portfolio positions. These systems are largely assistive — they surface information to human decision-makers who then act.</p>
-
-      <div class="callout">
-        <div class="callout-l">⚠ Editor's note</div>
-        <p>This article draws on interviews with 14 practitioners across investment banks, hedge funds, and regulatory bodies conducted between February and May 2026. All sources requested anonymity. Insight Ledger's editorial policy requires at least two independent sources for all factual claims.</p>
-      </div>
-
-      <h3>Pattern 2 — Signal generation</h3>
-
-      <p>More sophisticated — and more consequential — are systems that generate <strong>autonomous trading signals</strong>. These LLMs monitor market microstructure, news flow, and social sentiment simultaneously, generating probability-weighted assessments of short-term price movements. A human still approves the final trade, but the decision is increasingly shaped by the AI's output.</p>
-
-      <h3>Pattern 3 — Autonomous execution</h3>
-
-      <p>The most advanced — and least publicly disclosed — deployments involve AI systems with limited autonomous execution authority. Within pre-defined risk parameters, these systems can initiate and unwind positions without human approval for individual trades. Human oversight operates at the portfolio level, not the transaction level.</p>
-
-      <h2 id="s3">What the data shows — and what it doesn't</h2>
-
-      <p>Measuring the impact of these systems is difficult by design. Firms deploying them treat the specifics as competitive intelligence, and no regulatory body currently requires disclosure of AI involvement in individual trading decisions.</p>
-
-      <p>What we can observe is circumstantial but significant. Analysis of market microstructure data by several academic teams suggests that the <strong>speed profile of certain order types has shifted</strong> in ways inconsistent with human decision-making. Patterns that previously took minutes to emerge now appear in seconds.</p>
-
-      <blockquote>
-        <p>"The question isn't whether AI is making these decisions. It clearly is. The question is whether anyone outside the firm knows exactly which decisions."</p>
-        <cite>— Senior researcher, academic finance lab</cite>
-      </blockquote>
-
-      <p>On the performance side, the evidence is also indirect. Several hedge funds with known heavy investment in LLM infrastructure have posted notably strong Sharpe ratios on short-volatility strategies over the past 12 months — a period where those strategies were particularly difficult for traditional systematic approaches.</p>
-
-      <h2 id="s4">The regulatory blind spot</h2>
-
-      <p>Financial regulation was built on a set of assumptions about how markets work — assumptions that AI is quietly dismantling. The core assumption: that market participants are humans or human-controlled systems, and that meaningful oversight can occur at the decision level.</p>
-
-      <p>Neither assumption holds cleanly for the new generation of LLM-based systems. The decision level may operate at 40ms. The human oversight layer may be several abstraction layers away from the actual trade. And the system's reasoning — why it generated a particular signal — may not be fully interpretable even by its creators.</p>
-
-      <p>Current frameworks — MiFID II in Europe, Reg NMS in the US — require audit trails and best-execution documentation. These requirements were designed for systems that produce deterministic, inspectable outputs. How they apply to probabilistic language models is, at best, unclear.</p>
-
-      <h2 id="s5">What comes next</h2>
-
-      <p>The trajectory is towards deeper integration, not less. The competitive advantage conferred by these systems is real, and the firms that have deployed them are unlikely to pull back voluntarily. The infrastructure is already being built for the next generation — multimodal systems that integrate satellite imagery, supply chain sensor data, and social network analysis alongside traditional financial signals.</p>
-
-      <p>The regulatory response, when it comes, will likely lag the technology by several years. In the interim, the industry is effectively self-governing — with all the systemic risks that implies.</p>
-
-      <p>The key question for investors and observers alike: when AI systems trained on historical market data begin trading against each other at scale, do their correlated behaviours create new forms of systemic risk that no existing stress-testing framework has modelled? The answer, as of today, is that nobody is certain — and that uncertainty may itself be the most important signal of all.</p>
-
-    </div><!-- /prose -->
-
-    <!-- TAGS -->
-    <div class="art-tags" aria-label="Article tags">
-      <a href="/tag/ai" class="art-tag-item">AI</a>
-      <a href="/tag/llm" class="art-tag-item">LLM</a>
-      <a href="/tag/capital-markets" class="art-tag-item">Capital Markets</a>
-      <a href="/tag/trading" class="art-tag-item">Trading</a>
-      <a href="/tag/regulation" class="art-tag-item">Regulation</a>
-      <a href="/tag/fintech" class="art-tag-item">Fintech</a>
-      <a href="/tag/infrastructure" class="art-tag-item">Infrastructure</a>
-    </div>
-
-    <!-- SHARE -->
-    <div class="art-share" aria-label="Share article">
-      <span class="art-share-l">Share</span>
-      <button class="share-btn" onclick="copyLink()">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <span id="copy-label">Copy link</span>
-      </button>
-      <a href="https://twitter.com/intent/tweet?text=The+Quiet+Infrastructure+Shift+That+Could+Rewrite+Capital+Allocation&url=https://insightledger.com/article/ai-infrastructure-capital-allocation" target="_blank" rel="noopener noreferrer" class="share-btn">
-        𝕏 Post
-      </a>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://insightledger.com/article/ai-infrastructure-capital-allocation" target="_blank" rel="noopener noreferrer" class="share-btn">
-        in Share
-      </a>
-    </div>
-
-    <!-- SOURCES -->
-    <div class="sources" data-r>
-      <div class="sources-t">Sources &amp; references</div>
-      <ul class="sources-list">
-        <li data-n="1">BIS Working Paper No. 1192 — "Artificial intelligence and financial stability" (2025)</li>
-        <li data-n="2">ESMA Discussion Paper — "The use of AI in trading" (Feb 2026)</li>
-        <li data-n="3">FCA Feedback Statement FS26/1 — "AI systems in wholesale markets"</li>
-        <li data-n="4">14 practitioner interviews conducted Feb–May 2026 (anonymous)</li>
-        <li data-n="5">Bloomberg Intelligence — "AI adoption in buy-side firms" (Q1 2026)</li>
-      </ul>
-    </div>
-
-    <!-- FAQ (SEO) -->
-    <div class="faq" data-r>
-      <div class="faq-t">Frequently asked questions</div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">Are AI systems currently making autonomous trading decisions?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </div>
-        <div class="faq-a" role="region">
-          <div class="faq-a-inner">Yes, in limited and constrained forms. The most advanced deployments allow AI systems to initiate and unwind positions within pre-defined risk parameters without requiring approval for individual trades. Human oversight typically operates at the portfolio level. The extent of autonomous authority varies significantly by firm and strategy type.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">How does LLM-based trading differ from traditional algorithmic trading?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </div>
-        <div class="faq-a" role="region">
-          <div class="faq-a-inner">Traditional algorithmic systems are deterministic — they follow fixed rules and produce predictable outputs given identical inputs. LLM-based systems are probabilistic and contextual, able to generalise across domains and integrate unstructured information like news articles, earnings transcripts, and regulatory filings alongside structured market data. This makes them more flexible but also less interpretable.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">What regulatory frameworks currently govern AI in trading?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </div>
-        <div class="faq-a" role="region">
-          <div class="faq-a-inner">In Europe, MiFID II requires audit trails and best-execution documentation. In the US, Reg NMS governs order handling. Neither framework was designed with probabilistic AI systems in mind. The EU AI Act classifies certain financial AI applications as "high risk" requiring conformity assessments, but enforcement is still developing. Significant regulatory grey areas remain.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">What are the systemic risks of AI systems trading against each other?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </div>
-        <div class="faq-a" role="region">
-          <div class="faq-a-inner">When multiple AI systems trained on similar historical data interact in the same markets, their behaviours may be correlated in ways that amplify volatility rather than damping it. Flash crashes — sudden, self-reinforcing price moves — are one concern. More subtle is the risk of AI systems collectively driving asset prices away from fundamental values in ways that persist until human intervention occurs. Existing stress-testing frameworks were not designed to model these dynamics.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ARTICLE CTA / SUBSCRIBE -->
-    <div class="art-cta" id="art-cta" data-r>
-      <div class="art-cta-eye">📨 The Briefing</div>
-      <h2 class="art-cta-h">More analysis like this,<br>daily in your inbox.</h2>
-      <p class="art-cta-sub">Join readers who rely on Insight Ledger for signal on AI, markets, and the forces that matter.</p>
-      <form class="art-cta-form" onsubmit="onSubArt(event)" novalidate>
-        <label for="art-email" class="sr-only">Email address</label>
-        <input type="email" id="art-email" class="art-cta-in" placeholder="your@email.com" required autocomplete="email" />
-        <button type="submit" class="btn btn-p">Subscribe</button>
-      </form>
-    </div>
-
-  </main>
-
-  <!-- ════════════ STICKY SIDEBAR ════════════ -->
-  <aside class="art-sidebar" aria-label="Article navigation">
-    <div class="art-sidebar-inner">
-
-      <!-- Reading progress -->
-      <div class="read-progress">
-        <div class="rp-t">Reading progress</div>
-        <div class="rp-track"><div class="rp-fill" id="rp-fill"></div></div>
-        <div class="rp-pct" id="rp-pct">0%</div>
-      </div>
-
-      <!-- TOC -->
-      <div class="sib">
-        <div class="sib-t">In this article</div>
-        <ol class="toc-side-list">
-          <li><span class="toc-num">01</span><a href="#s1">The invisible layer</a></li>
-          <li><span class="toc-num">02</span><a href="#s2">LLMs in the decision stack</a></li>
-          <li><span class="toc-num">03</span><a href="#s3">What the data shows</a></li>
-          <li><span class="toc-num">04</span><a href="#s4">The regulatory blind spot</a></li>
-          <li><span class="toc-num">05</span><a href="#s5">What comes next</a></li>
-        </ol>
-      </div>
-
-      <!-- Related -->
-      <div class="sib">
-        <div class="sib-t">Related</div>
-        <div class="rel-item">
-          <div class="rel-thumb" aria-hidden="true">📊</div>
-          <div>
-            <div class="rel-t">Why the Fed's Next Move Has Every Asset Manager on Edge</div>
-            <div class="rel-meta">Finance · 5 min</div>
-          </div>
-        </div>
-        <div class="rel-item">
-          <div class="rel-thumb" aria-hidden="true">⚖️</div>
-          <div>
-            <div class="rel-t">EU AI Act: What High-Risk Financial Operators Must Know</div>
-            <div class="rel-meta">AI · 6 min</div>
-          </div>
-        </div>
-        <div class="rel-item">
-          <div class="rel-thumb" aria-hidden="true">🔬</div>
-          <div>
-            <div class="rel-t">The Research Lab Quietly Changing How Banks Price Risk</div>
-            <div class="rel-meta">AI · 8 min</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </aside>
-
-</div><!-- /art-layout -->
-
-<!-- ════════════ RELATED ARTICLES ════════════ -->
-<section class="related-section" aria-labelledby="related-h">
-  <div class="wrap">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;">
-      <div style="display:flex;align-items:center;gap:14px;">
-        <div style="width:3px;height:22px;background:var(--cyan);border-radius:2px;" aria-hidden="true"></div>
-        <h2 style="font-family:var(--fd);font-size:28px;font-weight:600;letter-spacing:-.015em;color:var(--s50);" id="related-h">Related Articles</h2>
-      </div>
-      <a href="category.html#ai" style="font-family:var(--fm);font-size:10px;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:5px;transition:gap .2s;" onmouseover="this.style.gap='9px'" onmouseout="this.style.gap='5px'">More AI →</a>
-    </div>
-    <div class="g3">
-      <article class="card" data-r>
-        <div class="card-thumb" aria-hidden="true"><div class="card-thumb-ico">📊</div></div>
-        <div class="card-body">
-          <div class="card-meta"><span class="tag" style="background:rgba(52,211,153,.10);color:var(--em);border-color:rgba(52,211,153,.18)">Finance</span><time class="card-date" datetime="2026-05-31">May 31</time></div>
-          <h3 class="card-h">Why the Fed's Next Move Has Every Asset Manager on Edge</h3>
-          <div class="card-foot"><span class="card-rt">5 min read</span><a href="article.html" class="rl">Read →</a></div>
-        </div>
-      </article>
-      <article class="card" data-r style="transition-delay:.06s">
-        <div class="card-thumb" aria-hidden="true"><div class="card-thumb-ico">⚖️</div></div>
-        <div class="card-body">
-          <div class="card-meta"><span class="tag">AI</span><time class="card-date" datetime="2026-05-27">May 27</time></div>
-          <h3 class="card-h">EU AI Act's First Enforcement Wave: What High-Risk Operators Must Know Now</h3>
-          <div class="card-foot"><span class="card-rt">6 min read</span><a href="article.html" class="rl">Read →</a></div>
-        </div>
-      </article>
-      <article class="card" data-r style="transition-delay:.12s">
-        <div class="card-thumb" aria-hidden="true"><div class="card-thumb-ico">🔬</div></div>
-        <div class="card-body">
-          <div class="card-meta"><span class="tag">AI</span><time class="card-date" datetime="2026-05-28">May 28</time></div>
-          <h3 class="card-h">The Research Lab Quietly Changing How Banks Price Risk</h3>
-          <div class="card-foot"><span class="card-rt">8 min read</span><a href="article.html" class="rl">Read →</a></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ FOOTER ════════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="ft-g">
       <div>
         <div class="ft-brand-n">Insight Ledger</div>
-        <p class="ft-brand-d">Signal over noise. Intelligence for the informed on AI, finance, fintech and the forces reshaping global business.</p>
+        <p class="ft-brand-d">Signal over noise. Intelligence for the informed on AI, finance, fintech and business.</p>
       </div>
       <div>
         <div class="ft-ct">Topics</div>
-        <nav class="ft-ls"><a href="category.html#ai">Artificial Intelligence</a><a href="category.html#finance">Finance</a><a href="category.html#crypto">Crypto</a><a href="category.html#business">Business</a><a href="category.html#fintech">Fintech</a></nav>
+        <nav class="ft-ls">
+          <a href="category.html#ai">AI</a>
+          <a href="category.html#finance">Finance</a>
+          <a href="category.html#crypto">Crypto</a>
+          <a href="category.html#business">Business</a>
+          <a href="category.html#fintech">Fintech</a>
+        </nav>
       </div>
       <div>
         <div class="ft-ct">Publication</div>
-        <nav class="ft-ls"><a href="#">About</a><a href="#">Editorial Policy</a><a href="#">Authors</a><a href="#">Archive</a><a href="#">RSS</a></nav>
+        <nav class="ft-ls">
+          <a href="#">About</a>
+          <a href="#">Editorial Policy</a>
+          <a href="#">Authors</a>
+          <a href="#">Archive</a>
+        </nav>
       </div>
       <div>
         <div class="ft-ct">Legal</div>
-        <nav class="ft-ls"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a><a href="#">Contact</a></nav>
+        <nav class="ft-ls">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+          <a href="#">Contact</a>
+        </nav>
       </div>
     </div>
     <div class="ft-bot">
       <div class="ft-copy">© 2026 Insight Ledger. All rights reserved.</div>
-      <div class="ft-soc" aria-label="Social media">
-        <a href="#" class="soc" aria-label="X / Twitter">𝕏</a>
-        <a href="#" class="soc" aria-label="LinkedIn">in</a>
-        <a href="#" class="soc" aria-label="Telegram">✈</a>
-        <a href="#" class="soc" aria-label="RSS">◎</a>
+      <div class="ft-soc">
+        <a href="#" class="soc">𝕏</a>
+        <a href="#" class="soc">in</a>
+        <a href="#" class="soc">✈</a>
+        <a href="#" class="soc">◎</a>
       </div>
     </div>
   </div>
 </footer>
 
 <script>
-/* ── SCROLL REVEAL ── */
-const rEls = document.querySelectorAll('[data-r]');
-const rObs = new IntersectionObserver(es => {
-  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rObs.unobserve(e.target); } });
-}, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
-rEls.forEach(el => rObs.observe(el));
+/* ══════════════════════════════════════
+   Читаем ID статьи из URL:
+   article.html?id=fed-next-move
+   или article/index.html?id=fed-next-move
+══════════════════════════════════════ */
 
-/* ── READ PROGRESS ── */
-const pb = document.getElementById('pb');
-const rpFill = document.getElementById('rp-fill');
-const rpPct  = document.getElementById('rp-pct');
-const artBody = document.getElementById('article-body');
+const TAG_CLASS = { finance:'fin', crypto:'cry', business:'biz', fintech:'fin2' };
+const CAT_LABELS = { ai:'AI', finance:'Finance', crypto:'Crypto', business:'Business', fintech:'Fintech' };
+const TYPE_LABELS = { analysis:'Analysis', news:'News', 'deep-dive':'Deep Dive' };
 
-window.addEventListener('scroll', () => {
-  const rect = artBody ? artBody.getBoundingClientRect() : null;
-  let artPct = 0;
-  if (rect) {
-    const total = artBody.offsetHeight;
-    const scrolled = -rect.top + window.innerHeight * 0.1;
-    artPct = Math.max(0, Math.min(100, (scrolled / total) * 100));
+function getParam(name) {
+  return new URLSearchParams(window.location.search).get(name);
+}
+
+async function loadArticles() {
+  try {
+    // Путь к JSON относительно текущего файла
+    const base = window.location.pathname.includes('/article/') ? '../' : '';
+    const res  = await fetch(base + 'articles.json');
+    if (!res.ok) throw new Error('fetch failed');
+    return await res.json();
+  } catch(e) {
+    console.error('Could not load articles.json', e);
+    return [];
   }
-  const pagePct = window.scrollY / (document.body.scrollHeight - innerHeight) * 100;
-  pb.style.width = Math.min(100, pagePct) + '%';
-  pb.setAttribute('aria-valuenow', Math.round(pagePct));
-  if (rpFill) rpFill.style.width = artPct + '%';
-  if (rpPct)  rpPct.textContent = Math.round(artPct) + '%';
-}, { passive: true });
+}
 
-/* ── ACTIVE TOC ── */
-const sections = document.querySelectorAll('.prose h2[id]');
-const tocLinks = document.querySelectorAll('.toc-side-list a');
-const secObs = new IntersectionObserver(es => {
-  es.forEach(e => {
-    if (e.isIntersecting) {
-      tocLinks.forEach(l => l.classList.remove('active'));
-      const active = document.querySelector(`.toc-side-list a[href="#${e.target.id}"]`);
-      if (active) active.classList.add('active');
+async function init() {
+  const articles = await loadArticles();
+  const id = getParam('id');
+
+  if (!id) {
+    // Нет ID — показать список последних
+    renderList(articles);
+    return;
+  }
+
+  const article = articles.find(a => a.id === id);
+  if (!article) {
+    renderNotFound();
+    return;
+  }
+
+  // Обновляем SEO мета-теги
+  document.title = article.seo.title;
+  setMeta('description', article.seo.description);
+  setMeta('og:title', article.title, true);
+  setMeta('og:description', article.seo.description, true);
+  setMeta('og:image', article.seo.ogImage, true);
+  setMeta('og:type', 'article', true);
+  setMeta('article:published_time', article.datetime + 'T08:00:00Z', true);
+
+  // Связанные статьи
+  const related = (article.relatedIds || [])
+    .map(rid => articles.find(a => a.id === rid))
+    .filter(Boolean)
+    .slice(0, 3);
+
+  renderArticle(article, related);
+  setupInteractivity(article);
+}
+
+function setMeta(name, content, isOg) {
+  let el = isOg
+    ? document.querySelector(`meta[property="${name}"]`)
+    : document.querySelector(`meta[name="${name}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    if (isOg) el.setAttribute('property', name);
+    else el.setAttribute('name', name);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', content);
+}
+
+/* ════ RENDER ARTICLE ════ */
+function renderArticle(a, related) {
+  const tagCls = TAG_CLASS[a.category] || '';
+  const catLabel = CAT_LABELS[a.category] || a.category;
+
+  // Build TOC from h2 blocks
+  const h2s = (a.body || []).filter(b => b.type === 'h2');
+  const tocHTML = h2s.length ? `
+    <nav class="toc" aria-label="Contents">
+      <div class="toc-t">Contents</div>
+      <ol class="toc-list">
+        ${h2s.map((b,i) => `<li><span class="toc-n">0${i+1}</span><a href="#${b.id}">${b.text}</a></li>`).join('')}
+      </ol>
+    </nav>` : '';
+
+  const tocSideHTML = h2s.length ? h2s.map((b,i) =>
+    `<li><span class="toc-side-n">0${i+1}</span><a href="#${b.id}" class="toc-side-lnk">${b.text}</a></li>`
+  ).join('') : '';
+
+  const app = document.getElementById('app');
+  app.innerHTML = `
+  <!-- HERO -->
+  <header class="art-hero">
+    <div class="art-hero-bg" aria-hidden="true"></div>
+    <div class="art-hero-grid" aria-hidden="true"></div>
+    <div class="art-hero-glow" aria-hidden="true"></div>
+    <div class="art-hero-inner">
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <a href="category.html#${a.category}">${catLabel}</a><span>/</span>
+        <span>${a.title.substring(0,40)}…</span>
+      </nav>
+      <div class="art-meta-top" data-r>
+        <span class="tag ${tagCls}">${catLabel}</span>
+        <span style="font-family:var(--fm);font-size:10px;color:var(--s400)">${TYPE_LABELS[a.type]||a.type}</span>
+      </div>
+      <h1 class="art-h1" data-r style="transition-delay:.06s">${a.title}</h1>
+      <p class="art-lead" data-r style="transition-delay:.12s">${a.dek}</p>
+      <div class="art-byline" data-r style="transition-delay:.17s">
+        <div class="art-byline-l">
+          <div class="av" aria-hidden="true">${a.author.initials}</div>
+          <div>
+            <div class="art-author-n">${a.author.name}</div>
+            <div class="art-author-r">${a.author.role}</div>
+          </div>
+        </div>
+        <div class="art-byline-r">
+          <div class="meta-item">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <time datetime="${a.datetime}">${a.date}</time>
+          </div>
+          <div class="meta-item">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ${a.readTime} min read
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="art-visual" style="max-width:1100px;margin:36px auto 0;" aria-hidden="true">
+      <div class="art-visual-grid"></div>
+      <div class="art-visual-glow"></div>
+      <div class="art-visual-lbl">${a.icon || '📰'}</div>
+    </div>
+  </header>
+
+  <!-- LAYOUT -->
+  <div class="art-layout">
+    <main class="art-body" id="art-body">
+      ${tocHTML}
+      ${renderBody(a.body)}
+
+      <!-- TAGS -->
+      <div class="art-tags">
+        ${(a.tags||[]).map(t => `<span class="art-tag">#${t}</span>`).join('')}
+      </div>
+
+      <!-- SHARE -->
+      <div class="art-share">
+        <span class="share-l">Share</span>
+        <button class="share-btn" onclick="copyLink()">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span id="copy-lbl">Copy link</span>
+        </button>
+        <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(a.title)}&url=${encodeURIComponent(window.location.href)}" target="_blank" rel="noopener" class="share-btn">𝕏 Post</a>
+        <a href="https://linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}" target="_blank" rel="noopener" class="share-btn">in Share</a>
+      </div>
+
+      <!-- SOURCES -->
+      ${a.sources && a.sources.length ? `
+      <div class="sources">
+        <div class="sources-t">Sources</div>
+        <ul class="sources-list">
+          ${a.sources.map((s,i) => `<li data-n="${i+1}">${s}</li>`).join('')}
+        </ul>
+      </div>` : ''}
+
+      <!-- SUBSCRIBE CTA -->
+      <div class="art-cta" id="cta" data-r>
+        <div class="art-cta-eye">📨 The Briefing</div>
+        <h2 class="art-cta-h">More analysis like this,<br>daily in your inbox.</h2>
+        <p class="art-cta-sub">Join readers who rely on Insight Ledger for signal on AI, markets, and the forces that matter.</p>
+        <form class="art-cta-form" onsubmit="onSub(event)" novalidate>
+          <input type="email" class="art-cta-in" placeholder="your@email.com" required />
+          <button type="submit" class="btn btn-p">Subscribe</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="art-sidebar">
+      <div class="sidebar-inner">
+        <div class="sib">
+          <div class="sib-t">Progress</div>
+          <div class="rp-track"><div class="rp-fill" id="rp-fill"></div></div>
+          <div class="rp-pct" id="rp-pct">0%</div>
+        </div>
+        ${h2s.length ? `
+        <div class="sib">
+          <div class="sib-t">In this article</div>
+          <ol class="toc-side-list">${tocSideHTML}</ol>
+        </div>` : ''}
+        ${related.length ? `
+        <div class="sib">
+          <div class="sib-t">Related</div>
+          ${related.map(r => `
+          <div class="rel-item" onclick="location.href='article.html?id=${r.id}'">
+            <div class="rel-thumb" aria-hidden="true">${r.icon||'📰'}</div>
+            <div>
+              <div class="rel-t">${r.title}</div>
+              <div class="rel-meta">${CAT_LABELS[r.category]||r.category} · ${r.readTime} min</div>
+            </div>
+          </div>`).join('')}
+        </div>` : ''}
+      </div>
+    </aside>
+  </div>
+
+  <!-- RELATED BOTTOM -->
+  ${related.length ? `
+  <section class="related-section">
+    <div class="wrap">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:3px;height:22px;background:var(--cyan);border-radius:2px;"></div>
+          <h2 style="font-family:var(--fd);font-size:28px;font-weight:600;letter-spacing:-.015em;color:var(--s50);">Related Articles</h2>
+        </div>
+        <a href="category.html#${a.category}" style="font-family:var(--fm);font-size:10px;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:5px;">
+          More ${catLabel} →
+        </a>
+      </div>
+      <div class="g3">
+        ${related.map((r,i) => `
+        <article class="card" onclick="location.href='article.html?id=${r.id}'" style="transition-delay:${i*.06}s" data-r>
+          <div class="card-thumb"><div class="card-thumb-ico">${r.icon||'📰'}</div></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag ${TAG_CLASS[r.category]||''}">${CAT_LABELS[r.category]||r.category}</span>
+              <time class="card-date" datetime="${r.datetime}">${r.date}</time>
+            </div>
+            <h3 class="card-h">${r.title}</h3>
+            <div class="card-foot">
+              <span class="card-rt">${r.readTime} min read</span>
+              <span class="rl">Read →</span>
+            </div>
+          </div>
+        </article>`).join('')}
+      </div>
+    </div>
+  </section>` : ''}
+  `;
+
+  setupScrollReveal();
+}
+
+/* ════ RENDER BODY BLOCKS ════ */
+function renderBody(blocks) {
+  if (!blocks) return '';
+  let html = '<div class="prose">';
+  blocks.forEach(b => {
+    if (b.type === 'why-it-matters') {
+      html += `<div class="wim"><div class="wim-t">Why it matters</div><div class="wim-body">${b.text}</div></div>`;
+    } else if (b.type === 'takeaways') {
+      html += `<div class="kta"><div class="kta-t">Key takeaways</div><ul class="kta-list">${(b.items||[]).map(i=>`<li>${i}</li>`).join('')}</ul></div>`;
+    } else if (b.type === 'h2') {
+      html += `<h2 id="${b.id||''}">${b.text}</h2>`;
+    } else if (b.type === 'h3') {
+      html += `<h3>${b.text}</h3>`;
+    } else if (b.type === 'p') {
+      html += `<p>${b.text}</p>`;
+    } else if (b.type === 'quote') {
+      html += `<blockquote><p>${b.text}</p>${b.cite ? `<cite>— ${b.cite}</cite>` : ''}</blockquote>`;
     }
   });
-}, { rootMargin: '-20% 0px -60% 0px' });
-sections.forEach(s => secObs.observe(s));
-
-/* ── FAQ TOGGLE ── */
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-  btn.setAttribute('aria-expanded', !isOpen);
+  html += '</div>';
+  return html;
 }
 
-/* ── COPY LINK ── */
+/* ════ NOT FOUND ════ */
+function renderNotFound() {
+  document.getElementById('app').innerHTML = `
+  <div class="not-found">
+    <div class="not-found-ico">🔍</div>
+    <div class="not-found-t">Article not found</div>
+    <div class="not-found-d">The article you're looking for doesn't exist or has been moved.</div>
+    <a href="index.html" class="btn btn-p">← Back to home</a>
+  </div>`;
+}
+
+/* ════ RENDER LIST (fallback) ════ */
+function renderList(articles) {
+  const published = articles.filter(a => a.status === 'published');
+  document.getElementById('app').innerHTML = `
+  <div style="margin-top:58px;padding:64px 0;">
+    <div class="wrap">
+      <h1 style="font-family:var(--fd);font-size:48px;font-weight:600;letter-spacing:-.025em;margin-bottom:40px;">All Articles</h1>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        ${published.map((a,i) => `
+        <article style="display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--b1);cursor:pointer;" onclick="location.href='article.html?id=${a.id}'">
+          <div style="font-family:var(--fm);font-size:10px;color:var(--s500);padding-top:5px;min-width:24px;">${String(i+1).padStart(2,'0')}</div>
+          <div style="flex:1;">
+            <div style="display:flex;gap:9px;margin-bottom:8px;">
+              <span class="tag ${TAG_CLASS[a.category]||''}">${CAT_LABELS[a.category]||a.category}</span>
+              <time style="font-family:var(--fm);font-size:10px;color:var(--s400);">${a.date}</time>
+            </div>
+            <h2 style="font-family:var(--fd);font-size:19px;font-weight:600;line-height:1.26;color:var(--s50);margin-bottom:6px;">${a.title}</h2>
+            <p style="font-family:var(--fb);font-size:13px;font-weight:300;color:var(--s300);">${a.dek}</p>
+          </div>
+          <div style="font-size:22px;opacity:.3;">${a.icon||'📰'}</div>
+        </article>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ════ INTERACTIVITY ════ */
+function setupInteractivity(a) {
+  // Progress bar
+  const pb    = document.getElementById('pb');
+  const rpF   = document.getElementById('rp-fill');
+  const rpP   = document.getElementById('rp-pct');
+  const body  = document.getElementById('art-body');
+
+  window.addEventListener('scroll', () => {
+    const pagePct = window.scrollY / (document.body.scrollHeight - innerHeight) * 100;
+    if (pb) pb.style.width = Math.min(100, pagePct) + '%';
+
+    if (body && rpF) {
+      const rect    = body.getBoundingClientRect();
+      const scrolled = -rect.top + window.innerHeight * 0.1;
+      const pct     = Math.max(0, Math.min(100, (scrolled / body.offsetHeight) * 100));
+      rpF.style.width = pct + '%';
+      if (rpP) rpP.textContent = Math.round(pct) + '%';
+    }
+  }, { passive: true });
+
+  // Active TOC
+  const h2els  = document.querySelectorAll('.prose h2[id]');
+  const sideLinks = document.querySelectorAll('.toc-side-lnk');
+  if (h2els.length) {
+    const obs = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          sideLinks.forEach(l => l.classList.remove('active'));
+          const al = document.querySelector(`.toc-side-lnk[href="#${e.target.id}"]`);
+          if (al) al.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    h2els.forEach(h => obs.observe(h));
+  }
+}
+
+function setupScrollReveal() {
+  const els = document.querySelectorAll('[data-r]');
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  els.forEach(el => obs.observe(el));
+}
+
 function copyLink() {
   navigator.clipboard?.writeText(window.location.href).then(() => {
-    const lbl = document.getElementById('copy-label');
-    lbl.textContent = '✓ Copied';
-    setTimeout(() => { lbl.textContent = 'Copy link'; }, 2000);
+    const lbl = document.getElementById('copy-lbl');
+    if (lbl) { lbl.textContent = '✓ Copied'; setTimeout(() => { lbl.textContent = 'Copy link'; }, 2000); }
   });
 }
 
-/* ── NEWSLETTER ── */
-function onSubArt(e) {
+function onSub(e) {
   e.preventDefault();
-  const inp = document.getElementById('art-email');
+  const inp = e.target.querySelector('input');
   const btn = e.target.querySelector('button');
   if (!inp.value.includes('@')) { inp.style.borderColor = 'var(--ro)'; return; }
   inp.style.borderColor = 'var(--em)';
@@ -1201,6 +679,8 @@ function onSubArt(e) {
   btn.style.cssText = 'background:var(--em);color:var(--bg0);pointer-events:none';
   inp.disabled = true;
 }
+
+init();
 </script>
 </body>
 </html>
