@@ -798,94 +798,86 @@ const CATEGORIES = {
 };
 
 /* ══════════════════════════════════════════
-   ARTICLES DATA — добавляй свои статьи сюда
-══════════════════════════════════════════ */
-const ALL_ARTICLES = [
-  { id:1, cat:'ai', type:'analysis', icon:'🤖', title:'Anthropic Releases New Reasoning Benchmark That Challenges GPT-4o', dek:'The evaluation suite exposes performance gaps in sequential reasoning with significant implications for enterprise deployments.', date:'May 31, 2026', datetime:'2026-05-31', read:'5 min', slug:'article.html' },
-  { id:2, cat:'ai', type:'deep-dive', icon:'🔬', title:'The Research Lab Quietly Changing How Banks Price Risk', dek:'A small JPMorgan team has built an AI system combining macroeconomic signals with real-time transaction data — with profound implications for credit markets.', date:'May 28, 2026', datetime:'2026-05-28', read:'8 min', slug:'article.html' },
-  { id:3, cat:'ai', type:'analysis', icon:'⚖️', title:'EU AI Act\'s First Enforcement Wave: What High-Risk Operators Must Know', dek:'Regulators are signaling enforcement priorities — and financial AI systems are at the top of the list.', date:'May 27, 2026', datetime:'2026-05-27', read:'6 min', slug:'article.html' },
-  { id:4, cat:'ai', type:'news', icon:'📡', title:'OpenAI in Talks with US Government for Classified AI Research Contract', dek:'The development marks a significant shift in the relationship between frontier AI labs and national security apparatus.', date:'May 26, 2026', datetime:'2026-05-26', read:'4 min', slug:'article.html' },
-  { id:5, cat:'ai', type:'analysis', icon:'🧠', title:'Why Foundation Model Costs Are Finally Starting to Fall', dek:'Efficiency gains in training and inference are compressing the economics of AI deployment — and shifting the competitive dynamics.', date:'May 24, 2026', datetime:'2026-05-24', read:'7 min', slug:'article.html' },
-
-  { id:6, cat:'finance', type:'analysis', icon:'📊', title:'Why the Fed\'s Next Move Has Every Asset Manager on Edge', dek:'Two competing inflation signals are creating an unusual impasse at the FOMC — and the resolution could reshape bond markets through year-end.', date:'May 31, 2026', datetime:'2026-05-31', read:'5 min', slug:'article.html' },
-  { id:7, cat:'finance', type:'news', icon:'🏦', title:'ECB Signals Cautious Approach to CBDC Timeline', dek:'Officials walk back earlier enthusiasm for a 2027 digital euro launch, citing unresolved interoperability and legal framework gaps.', date:'May 31, 2026', datetime:'2026-05-31', read:'3 min', slug:'article.html' },
-  { id:8, cat:'finance', type:'deep-dive', icon:'📉', title:'The Bond Market Is Pricing in a Scenario Most Equity Investors Are Ignoring', dek:'A divergence between fixed income and equity valuations has opened up that historically precedes significant market repricing.', date:'May 29, 2026', datetime:'2026-05-29', read:'9 min', slug:'article.html' },
-
-  { id:9,  cat:'crypto', type:'analysis', icon:'🪙', title:'Bitcoin\'s Institutional Accumulation Phase Is Entering a New Stage', dek:'On-chain data points to a pattern not seen since early 2023: large wallets are absorbing supply at a rate that historically precedes sustained price discovery.', date:'May 30, 2026', datetime:'2026-05-30', read:'7 min', slug:'article.html' },
-  { id:10, cat:'crypto', type:'news', icon:'📈', title:'BlackRock\'s Bitcoin ETF Crosses $25B AUM — What It Means for Market Structure', dek:'The milestone reshapes institutional crypto exposure assumptions and creates new hedging dynamics in the derivatives market.', date:'May 31, 2026', datetime:'2026-05-31', read:'4 min', slug:'article.html' },
-
-  { id:11, cat:'business', type:'analysis', icon:'🏢', title:'The CFO Playbook Has Changed. Here\'s What the Data Shows.', dek:'A survey of 400 finance chiefs reveals a structural shift in capital decisions — AI tools are no longer optional inputs.', date:'May 29, 2026', datetime:'2026-05-29', read:'4 min', slug:'article.html' },
-  { id:12, cat:'business', type:'deep-dive', icon:'💳', title:'Stripe\'s Valuation Question Returns as the IPO Window Reopens', dek:'With public market conditions improving, pressure is mounting on Stripe\'s leadership — and new revenue data complicates the picture.', date:'May 30, 2026', datetime:'2026-05-30', read:'6 min', slug:'article.html' },
-
-  { id:13, cat:'fintech', type:'news', icon:'💰', title:'Klarna Cuts 200 More Roles as Fintech Cost Discipline Continues', dek:'The Swedish buy-now-pay-later giant accelerates its path to profitability ahead of a renewed IPO push.', date:'May 31, 2026', datetime:'2026-05-31', read:'3 min', slug:'article.html' },
-  { id:14, cat:'fintech', type:'analysis', icon:'🔗', title:'Embedded Finance Is Quietly Eating the Bank Revenue Stack', dek:'New data from banking-as-a-service providers suggests the disintermediation of traditional banks is accelerating in SME lending.', date:'May 28, 2026', datetime:'2026-05-28', read:'6 min', slug:'article.html' },
-];
-
-/* ══════════════════════════════════════════
    STATE
 ══════════════════════════════════════════ */
+let ALL_ARTICLES  = [];
 let currentCat    = 'ai';
 let currentFilter = 'all';
 let visibleCount  = 5;
 const PAGE_SIZE   = 5;
 
+const TAG_CLASS  = { finance:'fin', crypto:'cry', business:'biz', fintech:'fin2' };
+const TYPE_LBL   = { analysis:'Analysis', news:'News', 'deep-dive':'Deep Dive' };
+const CAT_LABELS = { ai:'AI', finance:'Finance', crypto:'Crypto', business:'Business', fintech:'Fintech' };
+
+function artLink(id) { return `article.html?id=${id}`; }
+
 /* ══════════════════════════════════════════
-   INIT
+   LOAD JSON + INIT
 ══════════════════════════════════════════ */
-function init() {
-  // Читаем категорию из URL hash: category.html#finance
+async function init() {
+  try {
+    const res = await fetch('articles.json');
+    if (res.ok) ALL_ARTICLES = await res.json();
+  } catch(e) { console.warn('articles.json not found'); }
+
   const hash = window.location.hash.replace('#','').toLowerCase();
   currentCat = CATEGORIES[hash] ? hash : 'ai';
+
   renderCategoryMeta();
   renderArticles();
   renderTagCloud();
+  updateCategoryCounts();
   highlightSidebarCat();
   highlightNavLink();
   setupScrollReveal();
 }
 
-/* ══ МЕТА СТРАНИЦЫ ══ */
+/* ══ МЕТА ══ */
 function renderCategoryMeta() {
   const c = CATEGORIES[currentCat];
   document.title = `${c.title} — Insight Ledger`;
   document.querySelector('meta[name="description"]').content = c.desc;
-
-  document.getElementById('catIcon').textContent  = c.icon;
-  document.getElementById('catTitle').textContent  = c.title;
-  document.getElementById('catDesc').textContent   = c.desc;
-  document.getElementById('catCount').innerHTML    = `${c.count}<span>+</span>`;
+  document.getElementById('catIcon').textContent = c.icon;
+  document.getElementById('catTitle').textContent = c.title;
+  document.getElementById('catDesc').textContent = c.desc;
   document.getElementById('breadcrumbCat').textContent = c.title;
   document.getElementById('featuredVisLabel').innerHTML = c.featuredVis.replace('×','×<br>');
+
+  // Считаем реальное кол-во из JSON
+  const cnt = ALL_ARTICLES.filter(a => a.category === currentCat && a.status === 'published').length;
+  document.getElementById('catCount').innerHTML = `${cnt || c.count}<span>+</span>`;
 }
 
 /* ══ СТАТЬИ ══ */
 function getFiltered() {
   return ALL_ARTICLES.filter(a => {
-    const catMatch    = a.cat === currentCat;
+    if (a.status !== 'published') return false;
+    const catMatch    = a.category === currentCat;
     const filterMatch = currentFilter === 'all' || a.type === currentFilter;
     return catMatch && filterMatch;
   });
 }
 
 function renderArticles() {
-  const list  = document.getElementById('articlesList');
-  const empty = document.getElementById('emptyState');
-  const lmw   = document.getElementById('loadMoreWrap');
+  const list    = document.getElementById('articlesList');
+  const empty   = document.getElementById('emptyState');
+  const lmw     = document.getElementById('loadMoreWrap');
   const filtered = getFiltered();
 
-  // Update featured card
+  // Featured card — первая статья категории
   if (filtered.length > 0) {
     const f = filtered[0];
     document.getElementById('featuredTitle').textContent = f.title;
     document.getElementById('featuredDek').textContent   = f.dek;
-    document.getElementById('featuredMeta').textContent  = `${f.date} · ${f.read}`;
-    document.getElementById('featuredCard').href         = f.slug;
+    document.getElementById('featuredMeta').textContent  = `${f.date} · ${f.readTime} min read`;
+    document.getElementById('featuredCard').href         = artLink(f.id);
     document.getElementById('featuredCard').style.display = '';
   } else {
     document.getElementById('featuredCard').style.display = 'none';
   }
 
-  // Remaining articles (skip first — shown as featured)
+  // Остальные (пропускаем первую — она в featured)
   const rest   = filtered.slice(1);
   const toShow = rest.slice(0, visibleCount);
 
@@ -895,32 +887,31 @@ function renderArticles() {
     lmw.style.display = 'none';
   } else {
     empty.classList.remove('show');
-    toShow.forEach((a, i) => {
-      list.insertAdjacentHTML('beforeend', articleRowHTML(a, i + 1));
-    });
+    toShow.forEach((a, i) => list.insertAdjacentHTML('beforeend', articleRowHTML(a, i+1)));
     lmw.style.display = rest.length > visibleCount ? '' : 'none';
   }
+  setupScrollReveal();
 }
 
 function articleRowHTML(a, n) {
-  const tagClass = { finance:'fin', crypto:'cry', business:'biz', fintech:'fin2' }[a.cat] || '';
-  const typeLabel = { analysis:'Analysis', news:'News', 'deep-dive':'Deep Dive' }[a.type] || a.type;
+  const tc = TAG_CLASS[a.category] || '';
+  const tl = TYPE_LBL[a.type] || a.type;
   return `
-  <article class="art-row" onclick="location.href='${a.slug}'" role="article">
-    <div class="art-row-num" aria-hidden="true">0${n}</div>
+  <article class="art-row" onclick="location.href='${artLink(a.id)}'" role="article">
+    <div class="art-row-num" aria-hidden="true">${String(n).padStart(2,'0')}</div>
     <div class="art-row-body">
       <div class="art-row-meta">
-        <span class="tag ${tagClass}">${typeLabel}</span>
+        <span class="tag ${tc}">${tl}</span>
         <time class="art-row-date" datetime="${a.datetime}">${a.date}</time>
       </div>
       <h2 class="art-row-h">${a.title}</h2>
       <p class="art-row-dek">${a.dek}</p>
       <div class="art-row-foot">
-        <span class="art-row-rt">${a.read} read</span>
+        <span class="art-row-rt">${a.readTime} min read</span>
         <span class="rl">Read →</span>
       </div>
     </div>
-    <div class="art-row-thumb" aria-hidden="true">${a.icon}</div>
+    <div class="art-row-thumb" aria-hidden="true">${a.icon||'📰'}</div>
   </article>`;
 }
 
@@ -931,19 +922,33 @@ function loadMore() {
 
 /* ══ TAG CLOUD ══ */
 function renderTagCloud() {
-  const tags = CATEGORIES[currentCat].tags || [];
-  document.getElementById('tagCloud').innerHTML = tags
-    .map(t => `<span class="pop-tag">#${t}</span>`).join('');
+  // Берём теги из реальных статей категории
+  const tags = ALL_ARTICLES.length
+    ? [...new Set(ALL_ARTICLES
+        .filter(a => a.category === currentCat && a.status === 'published')
+        .flatMap(a => a.tags || [])
+      )].slice(0, 10)
+    : (CATEGORIES[currentCat].tags || []);
+  document.getElementById('tagCloud').innerHTML =
+    tags.map(t => `<span class="pop-tag">#${t}</span>`).join('');
 }
 
-/* ══ SIDEBAR HIGHLIGHT ══ */
-function highlightSidebarCat() {
-  document.querySelectorAll('.other-cat').forEach(el => {
-    el.classList.toggle('active', el.dataset.cat === currentCat);
+/* ══ COUNTS В САЙДБАРЕ ══ */
+function updateCategoryCounts() {
+  if (!ALL_ARTICLES.length) return;
+  document.querySelectorAll('.other-cat[data-cat]').forEach(el => {
+    const cat = el.dataset.cat;
+    const cnt = ALL_ARTICLES.filter(a => a.category === cat && a.status === 'published').length;
+    const span = el.querySelector('.other-cat-cnt');
+    if (span && cnt) span.textContent = cnt;
   });
 }
 
-/* ══ NAV HIGHLIGHT ══ */
+/* ══ HIGHLIGHTS ══ */
+function highlightSidebarCat() {
+  document.querySelectorAll('.other-cat').forEach(el =>
+    el.classList.toggle('active', el.dataset.cat === currentCat));
+}
 function highlightNavLink() {
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('on'));
   const el = document.getElementById(`nav-${currentCat}`);
@@ -961,22 +966,21 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-/* ══ HASH CHANGE (switch category without reload) ══ */
+/* ══ HASH CHANGE — смена категории без перезагрузки ══ */
 window.addEventListener('hashchange', () => {
   const hash = window.location.hash.replace('#','').toLowerCase();
-  if (CATEGORIES[hash]) {
-    currentCat    = hash;
-    currentFilter = 'all';
-    visibleCount  = PAGE_SIZE;
-    document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
-    document.querySelector('.filter-btn[data-filter="all"]').classList.add('on');
-    renderCategoryMeta();
-    renderArticles();
-    renderTagCloud();
-    highlightSidebarCat();
-    highlightNavLink();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  if (!CATEGORIES[hash]) return;
+  currentCat    = hash;
+  currentFilter = 'all';
+  visibleCount  = PAGE_SIZE;
+  document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  document.querySelector('.filter-btn[data-filter="all"]').classList.add('on');
+  renderCategoryMeta();
+  renderArticles();
+  renderTagCloud();
+  highlightSidebarCat();
+  highlightNavLink();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 /* ══ SCROLL PROGRESS ══ */
@@ -988,7 +992,7 @@ window.addEventListener('scroll', () => {
 
 /* ══ SCROLL REVEAL ══ */
 function setupScrollReveal() {
-  const els = document.querySelectorAll('[data-r]');
+  const els = document.querySelectorAll('[data-r]:not(.in)');
   const obs = new IntersectionObserver(es => {
     es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.07 });
