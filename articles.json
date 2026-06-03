@@ -1,0 +1,376 @@
+[
+  {
+    "id": "ai-infrastructure-capital-allocation",
+    "title": "The Quiet Infrastructure Shift That Could Rewrite Capital Allocation",
+    "dek": "As large language models begin operating autonomously within trading desks, a new class of financial infrastructure is emerging — one regulators have yet to fully map.",
+    "body": [
+      { "type": "why-it-matters", "text": "Capital allocation decisions — which assets to hold, when to trade, how to price risk — are being influenced by AI systems that operate faster than any human oversight mechanism." },
+      { "type": "takeaways", "items": [
+        "At least 6 of the top 10 global investment banks have integrated LLM-based tools into trading workflows as of Q1 2026",
+        "These systems operate at latencies below 200ms — faster than any regulatory reporting framework currently requires",
+        "Existing financial regulation was not designed with autonomous AI agents in mind",
+        "The firms deploying these systems are gaining measurable alpha on short-term volatility trades",
+        "Second-order systemic risks are not yet being modelled by regulators"
+      ]},
+      { "type": "h2", "id": "s1", "text": "The invisible layer beneath modern trading" },
+      { "type": "p", "text": "Walk onto any major trading floor today and the visual experience is largely unchanged from a decade ago — screens, terminals, people watching numbers. But underneath the surface, something has changed fundamentally in the past eighteen months." },
+      { "type": "p", "text": "A new layer of infrastructure has emerged: AI systems that ingest, process, and act on information before any human has had a chance to read it." },
+      { "type": "quote", "text": "We're not replacing traders. We're giving them a co-pilot who has read every research note ever written and can summarise any situation in 40 milliseconds.", "cite": "Head of Quantitative Research, tier-1 investment bank (anonymous)" },
+      { "type": "h2", "id": "s2", "text": "How LLMs are entering the decision stack" },
+      { "type": "p", "text": "The integration isn't uniform. Based on conversations with practitioners across the industry, three distinct deployment patterns have emerged." },
+      { "type": "h2", "id": "s3", "text": "What the data shows — and what it doesn't" },
+      { "type": "p", "text": "Measuring the impact of these systems is difficult by design. Firms deploying them treat the specifics as competitive intelligence." },
+      { "type": "h2", "id": "s4", "text": "The regulatory blind spot" },
+      { "type": "p", "text": "Financial regulation was built on a set of assumptions about how markets work — assumptions that AI is quietly dismantling." },
+      { "type": "h2", "id": "s5", "text": "What comes next" },
+      { "type": "p", "text": "The trajectory is towards deeper integration, not less. The competitive advantage conferred by these systems is real, and the firms that have deployed them are unlikely to pull back voluntarily." }
+    ],
+    "category": "ai",
+    "type": "deep-dive",
+    "tags": ["LLM", "Capital Markets", "Trading", "Regulation", "Infrastructure"],
+    "author": { "name": "Alex Reeve", "initials": "AR", "role": "Senior Editor, AI & Markets" },
+    "date": "May 31, 2026",
+    "datetime": "2026-05-31",
+    "readTime": 6,
+    "featured": true,
+    "status": "published",
+    "icon": "🤖",
+    "seo": {
+      "title": "The Quiet Infrastructure Shift That Could Rewrite Capital Allocation — Insight Ledger",
+      "description": "As large language models begin operating autonomously within trading desks, a new class of financial infrastructure is emerging — one regulators have yet to fully map.",
+      "ogImage": "https://insightledger.com/og-article-ai-capital.png"
+    },
+    "sources": [
+      "BIS Working Paper No. 1192 — Artificial intelligence and financial stability (2025)",
+      "ESMA Discussion Paper — The use of AI in trading (Feb 2026)",
+      "FCA Feedback Statement FS26/1 — AI systems in wholesale markets"
+    ],
+    "relatedIds": ["fed-next-move", "eu-ai-act-enforcement", "jpmorgan-ai-risk"]
+  },
+  {
+    "id": "fed-next-move",
+    "title": "Why the Fed's Next Move Has Every Asset Manager on Edge",
+    "dek": "Two competing inflation signals are creating an unusual impasse at the FOMC — and the resolution could reshape bond markets through year-end.",
+    "body": [
+      { "type": "why-it-matters", "text": "Federal Reserve policy decisions ripple through every asset class globally. The current standoff between employment data and inflation signals creates unusual uncertainty that directly affects portfolio positioning." },
+      { "type": "takeaways", "items": [
+        "Core PCE remains above the Fed's 2% target despite 18 months of restrictive policy",
+        "Labour market data continues to surprise to the upside",
+        "Bond markets are pricing in fewer cuts than the Fed's own dot plot suggests",
+        "A higher-for-longer scenario would pressure commercial real estate and leveraged credit"
+      ]},
+      { "type": "h2", "id": "s1", "text": "Two signals, one impasse" },
+      { "type": "p", "text": "The Federal Open Market Committee faces a situation that its models weren't built for: inflation that is sticky but declining, and employment that refuses to soften despite 18 months of the most aggressive tightening cycle in four decades." },
+      { "type": "h2", "id": "s2", "text": "What bond markets are saying" },
+      { "type": "p", "text": "The Treasury market has been the most reliable leading indicator throughout this cycle, and right now it is telling a different story from equity markets." }
+    ],
+    "category": "finance",
+    "type": "analysis",
+    "tags": ["Fed", "Rates", "Bonds", "Macro", "Inflation"],
+    "author": { "name": "Sarah Chen", "initials": "SC", "role": "Markets Editor" },
+    "date": "May 31, 2026",
+    "datetime": "2026-05-31",
+    "readTime": 5,
+    "featured": false,
+    "status": "published",
+    "icon": "📊",
+    "seo": {
+      "title": "Why the Fed's Next Move Has Every Asset Manager on Edge — Insight Ledger",
+      "description": "Two competing inflation signals are creating an unusual impasse at the FOMC — and the resolution could reshape bond markets through year-end.",
+      "ogImage": "https://insightledger.com/og-home.png"
+    },
+    "sources": [
+      "Federal Reserve FOMC Minutes — May 2026",
+      "BLS Employment Situation Summary — April 2026"
+    ],
+    "relatedIds": ["ai-infrastructure-capital-allocation", "bitcoin-institutional-phase"]
+  },
+  {
+    "id": "bitcoin-institutional-phase",
+    "title": "Bitcoin's Institutional Accumulation Phase Is Entering a New Stage",
+    "dek": "On-chain data points to a pattern not seen since early 2023: large wallets are absorbing supply at a rate that historically precedes sustained price discovery.",
+    "body": [
+      { "type": "why-it-matters", "text": "Institutional Bitcoin accumulation patterns have historically been among the most reliable leading indicators of sustained bull markets." },
+      { "type": "takeaways", "items": [
+        "Wallets holding 1,000+ BTC have increased their holdings by 8.3% over the past 60 days",
+        "Exchange reserves are at a 5-year low",
+        "BlackRock's IBIT ETF alone absorbed more Bitcoin in May than was mined",
+        "Options market positioning suggests institutional hedging rather than speculative long exposure"
+      ]},
+      { "type": "h2", "id": "s1", "text": "Reading the on-chain signal" },
+      { "type": "p", "text": "On-chain analytics have become one of the most sophisticated tools in the crypto investor's arsenal. The current data is unusually clear in its signal." },
+      { "type": "h2", "id": "s2", "text": "The ETF effect on market structure" },
+      { "type": "p", "text": "The approval of spot Bitcoin ETFs has fundamentally altered the supply dynamics of the market. For the first time, large pools of institutional capital can access Bitcoin exposure without custodying the asset directly." }
+    ],
+    "category": "crypto",
+    "type": "analysis",
+    "tags": ["Bitcoin", "ETF", "OnChain", "Institutional", "Market Structure"],
+    "author": { "name": "Marcus Webb", "initials": "MW", "role": "Crypto Editor" },
+    "date": "May 30, 2026",
+    "datetime": "2026-05-30",
+    "readTime": 7,
+    "featured": false,
+    "status": "published",
+    "icon": "🪙",
+    "seo": {
+      "title": "Bitcoin's Institutional Accumulation Phase Is Entering a New Stage — Insight Ledger",
+      "description": "On-chain data points to a pattern not seen since early 2023: large wallets absorbing supply at a rate that historically precedes sustained price discovery.",
+      "ogImage": "https://insightledger.com/og-home.png"
+    },
+    "sources": [
+      "Glassnode On-Chain Data — May 2026",
+      "BlackRock IBIT ETF Filings — SEC"
+    ],
+    "relatedIds": ["fed-next-move", "blackrock-bitcoin-etf"]
+  },
+  {
+    "id": "cfo-playbook-ai",
+    "title": "The CFO Playbook Has Changed. Here's What the Data Shows.",
+    "dek": "A survey of 400 finance chiefs reveals a structural shift in how capital expenditure decisions are being made — AI tools are no longer optional inputs.",
+    "body": [
+      { "type": "why-it-matters", "text": "CFOs control capital allocation for the world's largest companies. The accelerating integration of AI into their workflows has implications for every sector of the economy." },
+      { "type": "takeaways", "items": [
+        "73% of CFOs surveyed now use AI tools in financial forecasting, up from 31% in 2024",
+        "AI-assisted scenario modelling has reduced planning cycle times by an average of 40%",
+        "The biggest adoption barrier is data quality, not technology availability"
+      ]},
+      { "type": "h2", "id": "s1", "text": "From spreadsheets to inference engines" },
+      { "type": "p", "text": "The CFO role has always been about synthesising uncertainty into decisions. What's changed is the volume of data that decision must now incorporate — and the speed at which boards expect answers." }
+    ],
+    "category": "business",
+    "type": "analysis",
+    "tags": ["CFO", "AI", "Strategy", "Finance", "Leadership"],
+    "author": { "name": "Alex Reeve", "initials": "AR", "role": "Senior Editor, AI & Markets" },
+    "date": "May 29, 2026",
+    "datetime": "2026-05-29",
+    "readTime": 4,
+    "featured": false,
+    "status": "published",
+    "icon": "🏢",
+    "seo": {
+      "title": "The CFO Playbook Has Changed — Insight Ledger",
+      "description": "A survey of 400 finance chiefs reveals a structural shift in how capital expenditure decisions are being made.",
+      "ogImage": "https://insightledger.com/og-home.png"
+    },
+    "sources": [
+      "Deloitte CFO Survey Q1 2026",
+      "McKinsey Global Survey on AI Adoption — Finance Functions"
+    ],
+    "relatedIds": ["ai-infrastructure-capital-allocation", "fed-next-move"]
+  },
+  {
+    "id": "eu-ai-act-enforcement",
+    "title": "EU AI Act's First Enforcement Wave: What High-Risk Operators Must Know Now",
+    "dek": "With compliance deadlines passing, regulators are signaling their first enforcement priorities — and financial AI systems are at the top of the list.",
+    "body": [
+      { "type": "why-it-matters", "text": "The EU AI Act represents the world's first comprehensive AI regulatory framework. Its enforcement priorities will shape how AI is deployed in financial services globally." },
+      { "type": "takeaways", "items": [
+        "Financial credit scoring and risk assessment AI are classified as high-risk under the Act",
+        "High-risk systems require conformity assessments, human oversight mechanisms, and detailed documentation",
+        "First enforcement actions are expected in Q3 2026",
+        "Non-EU firms serving EU customers are equally subject to the regulation"
+      ]},
+      { "type": "h2", "id": "s1", "text": "What counts as high-risk" },
+      { "type": "p", "text": "The AI Act's risk classification system has created significant compliance complexity. High-risk applications in financial services include AI used for creditworthiness assessment, risk scoring, and certain trading applications." },
+      { "type": "h2", "id": "s2", "text": "The compliance gap" },
+      { "type": "p", "text": "Industry surveys suggest that fewer than 30% of financial institutions with high-risk AI deployments have completed the conformity assessments required by the Act." }
+    ],
+    "category": "ai",
+    "type": "analysis",
+    "tags": ["EU AI Act", "Regulation", "Compliance", "Finance", "Policy"],
+    "author": { "name": "Sarah Chen", "initials": "SC", "role": "Markets Editor" },
+    "date": "May 27, 2026",
+    "datetime": "2026-05-27",
+    "readTime": 6,
+    "featured": false,
+    "status": "published",
+    "icon": "⚖️",
+    "seo": {
+      "title": "EU AI Act's First Enforcement Wave — Insight Ledger",
+      "description": "With compliance deadlines passing, regulators are signaling first enforcement priorities — and financial AI systems are at the top of the list.",
+      "ogImage": "https://insightledger.com/og-home.png"
+    },
+    "sources": [
+      "EU AI Act — Official Journal of the European Union",
+      "European Commission AI Office — Enforcement Guidance (2026)"
+    ],
+    "relatedIds": ["ai-infrastructure-capital-allocation", "jpmorgan-ai-risk"]
+  },
+  {
+    "id": "jpmorgan-ai-risk",
+    "title": "The Research Lab Quietly Changing How Banks Price Risk",
+    "dek": "A small team inside JPMorgan has built an AI system that combines macroeconomic signals with real-time transaction data — and the implications for credit markets are profound.",
+    "body": [
+      { "type": "why-it-matters", "text": "Credit risk pricing underpins the entire lending economy. If AI systems can price risk more accurately than traditional models, the implications extend from bank profitability to the cost of capital for businesses and consumers globally." },
+      { "type": "takeaways", "items": [
+        "JPMorgan's AI risk system processes over 40,000 variables compared to ~200 in traditional models",
+        "Early results show 23% improvement in default prediction accuracy on SME loans",
+        "The system identified sector-level stress signals 6-8 weeks before traditional indicators"
+      ]},
+      { "type": "h2", "id": "s1", "text": "Beyond the scorecard" },
+      { "type": "p", "text": "Traditional credit risk models are built on a relatively small number of variables: income, debt levels, payment history, collateral values. They're interpretable, auditable, and regulators understand them. They're also, in many cases, increasingly inadequate." }
+    ],
+    "category": "ai",
+    "type": "deep-dive",
+    "tags": ["JPMorgan", "Credit Risk", "AI", "Banking", "LLM"],
+    "author": { "name": "Alex Reeve", "initials": "AR", "role": "Senior Editor, AI & Markets" },
+    "date": "May 28, 2026",
+    "datetime": "2026-05-28",
+    "readTime": 8,
+    "featured": false,
+    "status": "published",
+    "icon": "🔬",
+    "seo": {
+      "title": "The Research Lab Quietly Changing How Banks Price Risk — Insight Ledger",
+      "description": "A small JPMorgan team built an AI system combining macroeconomic signals with real-time transaction data.",
+      "ogImage": "https://insightledger.com/og-home.png"
+    },
+    "sources": [
+      "JPMorgan Chase Annual Report 2025",
+      "OCC Interpretive Letter — AI in Credit Underwriting (2026)"
+    ],
+    "relatedIds": ["ai-infrastructure-capital-allocation", "eu-ai-act-enforcement"]
+  },
+  {
+    "id": "stripe-ipo-valuation",
+    "title": "Stripe's Valuation Question Returns as the IPO Window Reopens",
+    "dek": "With public market conditions improving, pressure is mounting on Stripe's leadership to clarify its path to liquidity — and new revenue data complicates the picture.",
+    "body": [
+      { "type": "why-it-matters", "text": "Stripe is the most closely watched private company in fintech. Its IPO will set a valuation benchmark for the entire payments infrastructure sector." },
+      { "type": "takeaways", "items": [
+        "Stripe processed $1.4 trillion in total payment volume in 2025, up 26% year-over-year",
+        "Current valuation estimates range $80-95B",
+        "Key risk: concentration of revenue in a small number of large platform customers"
+      ]},
+      { "type": "h2", "id": "s1", "text": "The numbers behind the delay" },
+      { "type": "p", "text": "Stripe's reluctance to go public has puzzled observers given its scale and profitability. The company processed $1.4 trillion in total payment volume last year — a figure that rivals many national payment systems." }
+    ],
+    "category": "business",
+    "type": "analysis",
+    "tags": ["Stripe", "IPO", "Fintech", "Valuation", "Payments"],
+    "author": { "name": "Marcus Webb", "initials": "MW", "role": "Crypto Editor" },
+    "date": "May 30, 2026",
+    "datetime": "2026-05-30",
+    "readTime": 6,
+    "featured": false,
+    "status": "published",
+    "icon": "💳",
+    "seo": {
+      "title": "Stripe's Valuation Question Returns as the IPO Window Reopens — Insight Ledger",
+      "description": "With public market conditions improving, pressure is mounting on Stripe's leadership to clarify its path to liquidity.",
+      "ogImage": "https://insightledger.com/og-home.png"
+    },
+    "sources": [
+      "Stripe Investor Relations — 2025 Annual Summary",
+      "PitchBook Private Market Data — Q1 2026"
+    ],
+    "relatedIds": ["cfo-playbook-ai", "fed-next-move"]
+  },
+  {
+    "id": "blackrock-bitcoin-etf",
+    "title": "BlackRock's Bitcoin ETF Crosses $25B AUM — What It Means for Market Structure",
+    "dek": "The milestone reshapes assumptions about institutional crypto exposure and creates new hedging dynamics in the derivatives market.",
+    "body": [
+      { "type": "why-it-matters", "text": "BlackRock's IBIT reaching $25B AUM in under 18 months makes it one of the fastest-growing ETFs in history. The structural implications for Bitcoin's market dynamics are only beginning to be understood." },
+      { "type": "takeaways", "items": [
+        "IBIT is now the 3rd largest commodity ETF globally by AUM",
+        "Daily options volume on IBIT has exceeded that of many S&P 500 component stocks",
+        "The ETF wrapper has attracted endowments and pension funds for the first time"
+      ]},
+      { "type": "h2", "id": "s1", "text": "The fastest ETF launch in history" },
+      { "type": "p", "text": "When BlackRock filed for a spot Bitcoin ETF in June 2023, many industry observers expected a repeat of the years-long SEC rejection pattern. What followed shattered every record for ETF inflows in the instrument's history." }
+    ],
+    "category": "crypto",
+    "type": "news",
+    "tags": ["BlackRock", "Bitcoin", "ETF", "Institutional", "AUM"],
+    "author": { "name": "Marcus Webb", "initials": "MW", "role": "Crypto Editor" },
+    "date": "May 31, 2026",
+    "datetime": "2026-05-31",
+    "readTime": 4,
+    "featured": false,
+    "status": "published",
+    "icon": "📈",
+    "seo": {
+      "title": "BlackRock's Bitcoin ETF Crosses $25B AUM — Insight Ledger",
+      "description": "The milestone reshapes assumptions about institutional crypto exposure and creates new hedging dynamics.",
+      "ogImage": "https://insightledger.com/og-home.png"
+    },
+    "sources": [
+      "BlackRock IBIT ETF SEC Filings",
+      "Bloomberg ETF Analytics — May 2026"
+    ],
+    "relatedIds": ["bitcoin-institutional-phase", "fed-next-move"]
+  },
+  {
+    "id": "klarna-layoffs-fintech",
+    "title": "Klarna Cuts 200 More Roles as Fintech Cost Discipline Continues",
+    "dek": "The Swedish buy-now-pay-later giant accelerates its path to profitability ahead of a renewed IPO push.",
+    "body": [
+      { "type": "why-it-matters", "text": "Klarna's cost-cutting trajectory reflects a broader shift in fintech from growth-at-all-costs to sustainable unit economics — a recalibration that is reshaping the entire sector's hiring and product investment decisions." },
+      { "type": "takeaways", "items": [
+        "Klarna has now cut approximately 30% of its peak workforce since 2022",
+        "The company reached operating profitability in Q4 2025",
+        "AI automation is cited as a key driver of the workforce reduction",
+        "IPO filing is expected in H2 2026 at an estimated $15-20B valuation"
+      ]},
+      { "type": "h2", "id": "s1", "text": "The AI efficiency thesis in practice" },
+      { "type": "p", "text": "Klarna CEO Sebastian Siemiatkowski has been among the most vocal proponents of AI-driven workforce reduction in fintech. The company claims its AI customer service assistant now handles the equivalent workload of 700 full-time agents." }
+    ],
+    "category": "fintech",
+    "type": "news",
+    "tags": ["Klarna", "BNPL", "Layoffs", "IPO", "AI Automation"],
+    "author": { "name": "Sarah Chen", "initials": "SC", "role": "Markets Editor" },
+    "date": "May 31, 2026",
+    "datetime": "2026-05-31",
+    "readTime": 3,
+    "featured": false,
+    "status": "published",
+    "icon": "💰",
+    "seo": {
+      "title": "Klarna Cuts 200 More Roles as Fintech Cost Discipline Continues — Insight Ledger",
+      "description": "The Swedish buy-now-pay-later giant accelerates its path to profitability ahead of a renewed IPO push.",
+      "ogImage": "https://insightledger.com/og-home.png"
+    },
+    "sources": [
+      "Klarna Press Release — May 2026",
+      "Financial Times — Klarna IPO preparation coverage"
+    ],
+    "relatedIds": ["stripe-ipo-valuation", "cfo-playbook-ai"]
+  },
+  {
+    "id": "embedded-finance-banks",
+    "title": "Embedded Finance Is Quietly Eating the Bank Revenue Stack",
+    "dek": "New data from banking-as-a-service providers suggests the disintermediation of traditional banks is accelerating in SME lending.",
+    "body": [
+      { "type": "why-it-matters", "text": "Embedded finance — financial services delivered within non-financial products — represents the largest structural shift in banking since the internet. The SME lending market is where the disruption is most advanced and most measurable." },
+      { "type": "takeaways", "items": [
+        "Embedded lending to SMEs grew 67% year-over-year in Q1 2026",
+        "Traditional bank SME loan origination fell 12% over the same period",
+        "Platform businesses now originate more SME loans than regional banks in several European markets",
+        "Margin compression is forcing banks to rethink their distribution strategy"
+      ]},
+      { "type": "h2", "id": "s1", "text": "Where the revenue is going" },
+      { "type": "p", "text": "The traditional bank revenue model in SME lending depends on owning the customer relationship — the current account, the card, the loan. Embedded finance disaggregates this bundle, allowing platform businesses to offer lending at the point of need without the customer ever visiting a bank." }
+    ],
+    "category": "fintech",
+    "type": "analysis",
+    "tags": ["Embedded Finance", "BaaS", "SME", "Banking", "Disruption"],
+    "author": { "name": "Alex Reeve", "initials": "AR", "role": "Senior Editor, AI & Markets" },
+    "date": "May 28, 2026",
+    "datetime": "2026-05-28",
+    "readTime": 6,
+    "featured": false,
+    "status": "published",
+    "icon": "🔗",
+    "seo": {
+      "title": "Embedded Finance Is Quietly Eating the Bank Revenue Stack — Insight Ledger",
+      "description": "New data from banking-as-a-service providers suggests the disintermediation of traditional banks is accelerating.",
+      "ogImage": "https://insightledger.com/og-home.png"
+    },
+    "sources": [
+      "Flagship Advisory Partners — Embedded Finance Report Q1 2026",
+      "European Banking Authority — SME Lending Trends"
+    ],
+    "relatedIds": ["stripe-ipo-valuation", "klarna-layoffs-fintech"]
+  }
+]
